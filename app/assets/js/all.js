@@ -17,12 +17,18 @@ window.addEventListener("DOMContentLoaded", () => {
     const swiper = new Swiper(".swiper", {
         loop: true,
         slidesPerView: 1,
-        autoplay: {
-            delay: 3000,
-        },
+        freeMode: true,
+        // autoplay: {
+        //     delay: 3000,
+        //     disabledOnInteraction: false,
+        // },
         initialSlide: 1,
         breakpoints: {
-            768: {
+            // 768: {
+            //     slidesPerView: 2,
+            //     spaceBetween: 24,
+            // },
+            1024: {
                 slidesPerView: 3,
                 spaceBetween: 24,
                 centeredSlides: true,

@@ -35,7 +35,7 @@
 }
 
 .swiper-slide img {
-    @apply h-[232px] [filter:grayscale(100%)] lg:h-[262px];
+    @apply h-[232px] lg:h-[262px] lg:[filter:grayscale(100%)];
 }
 
 .swiper-slide.swiper-slide-active img {
@@ -45,13 +45,13 @@
 .swiper-slide .artist-name,
 .swiper-slide .artist-description,
 .swiper-slide .artist-more-btn {
-    @apply hidden;
+    @apply lg:hidden;
 }
 
 .swiper-slide.swiper-slide-active .artist-name,
 .swiper-slide.swiper-slide-active .artist-description,
 .swiper-slide.swiper-slide-active .artist-more-btn {
-    @apply block;
+    @apply lg:block;
 }
 
 @layer components {
