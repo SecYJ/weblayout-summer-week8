@@ -1,0 +1,813 @@
+---
+title: 首頁
+layout: ./app/layout.ejs
+engine: ejs
+current: index
+---
+
+<main>
+    <section class="container lg:mt-10">
+        <div class="lg:grid lg:grid-cols-12 lg:border lg:border-black">
+            <!-- top banner -->
+            <div
+                class="relative -mx-4 min-h-[236px] bg-[url('../images/art01.jpg')] bg-cover bg-center lg:col-span-8 lg:mx-0 lg:min-h-[500px] lg:border-b lg:border-black"
+            >
+                <h2
+                    class="hidden bg-black text-[3rem] font-bold leading-none text-white lg:absolute lg:top-0 lg:left-0 lg:bottom-0 lg:block lg:px-6 lg:text-center lg:[writing-mode:vertical-rl]"
+                >
+                    <span class="">Recommend</span>
+                    <span class="text-[1.25rem]"> 推薦系列 </span>
+                </h2>
+            </div>
+
+            <!-- bottom description -->
+            <div
+                class="grid py-8 lg:col-span-4 lg:content-between lg:border-b lg:border-black lg:p-6 lg:pt-20"
+            >
+                <div>
+                    <p>Kemus Wu</p>
+                    <h1 class="mt-2 text-[1.5rem] font-bold lg:text-[3rem]">
+                        瞳孔:流動的脈絡
+                    </h1>
+                    <div class="mt-6">
+                        眼睛，總是吸引著我們的注意力，看、被看，也許眼睛裡有著從另一個世界看我們的世界。
+                    </div>
+                </div>
+                <button
+                    type="button"
+                    class="btn btn-primary btn-outline group relative mt-6 justify-self-end"
+                >
+                    MORE
+                    <span
+                        class="triangle absolute bottom-0 right-0 inline-block h-4 w-4 bg-primary transition-colors group-hover:bg-black"
+                    ></span>
+                </button>
+            </div>
+
+            <!-- Joanne -->
+            <div
+                class="-mx-4 border-t-2 border-black md:mx-0 lg:col-span-3 lg:col-start-4 lg:row-start-2 lg:border-t-0"
+            >
+                <img
+                    src="./assets/images/art02.jpg"
+                    alt="Joanne shared about ocean's myths"
+                    class="h-full w-full object-cover"
+                />
+            </div>
+
+            <div
+                class="grid pt-8 pb-6 lg:col-span-3 lg:col-start-1 lg:row-start-2 lg:content-between lg:px-6"
+            >
+                <div>
+                    <p>Joanne</p>
+                    <h3 class="mt-2 text-[1.5rem] font-bold">海洋波度</h3>
+                    <p class="my-6">
+                        海洋的奧秘向我們揭示了深不可測的一面，它的深度——反映了我們的恐懼、同時也吸引著我們。
+                    </p>
+                </div>
+                <button
+                    type="button"
+                    class="btn btn-primary btn-outline group relative justify-self-end"
+                >
+                    MORE
+                    <span class="decoration"></span>
+                </button>
+            </div>
+
+            <div
+                class="-mx-4 border-t-2 border-black md:mx-0 lg:col-span-3 lg:col-start-10 lg:row-start-2 lg:border-t-0"
+            >
+                <img
+                    src="./assets/images/art21.jpg"
+                    alt="Michael shared a bird stays on window "
+                    class="h-full w-full object-cover"
+                />
+            </div>
+
+            <div
+                class="-mx-4 grid border-b-2 border-black px-4 pt-8 pb-6 md:mx-0 lg:col-span-3 lg:col-start-7 lg:row-start-2 lg:content-between lg:border-b-0 lg:px-6"
+            >
+                <div>
+                    <p>Michael</p>
+                    <h3 class="mt-2 text-[1.5rem] font-bold">我家窗前的鳥</h3>
+                    <p class="my-6">
+                        家門前每天都有不同的小鳥，大多數的小鳥都有特殊能力，特殊能力是什麼我就不說了，希望大家能從作品感受到小鳥的快樂。
+                    </p>
+                </div>
+                <button
+                    type="button"
+                    class="btn btn-outline btn-primary group relative justify-self-end"
+                >
+                    MORE
+                    <span class="decoration"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- section ranking for products -->
+    <section class="container mb-2 mt-10 lg:mt-20 lg:mb-12">
+        <div
+            class="mb-6 flex items-end justify-between border-b border-black lg:mb-12"
+        >
+            <h2
+                class="mb-2 text-[2rem] font-bold leading-none lg:mb-4 lg:text-[3rem]"
+            >
+                Ranking
+                <span
+                    class="hidden text-[1.25rem] leading-normal lg:ml-4 lg:inline-block"
+                >
+                    市價排行榜
+                </span>
+            </h2>
+            <button type="button" class="btn btn-primary group relative">
+                MORE<span class="decoration"></span>
+            </button>
+        </div>
+        <ul class="grid gap-6 lg:auto-cols-fr lg:grid-cols-3">
+            <li class="hidden border border-black lg:block">
+                <div class="group relative">
+                    <div
+                        class="absolute top-0 left-0 z-[1] h-16 w-16 border-r border-b border-black bg-white p-2 text-center text-[2rem]"
+                    >
+                        1
+                    </div>
+                    <button
+                        type="button"
+                        class="btn btn-primary absolute bottom-0 right-0 hidden group-hover:block"
+                    >
+                        MORE
+                        <span class="decoration"></span>
+                    </button>
+                    <img
+                        src="./assets/images/art04.jpg"
+                        alt="散步遇到的女人"
+                        class="h-full max-h-[374px] w-full object-cover object-top"
+                    />
+                </div>
+                <h3 class="border-t border-b border-black p-4">
+                    散步遇到的女人
+                </h3>
+                <div class="flex justify-between px-4 py-2 leading-none">
+                    <p>Zoe Jiang</p>
+                    <p>
+                        <i class="fa-brands fa-ethereum mr-2"></i>
+                        <span>300</span>
+                    </p>
+                </div>
+            </li>
+            <li class="hidden border border-black lg:block">2</li>
+            <li class="hidden border border-black lg:block">3</li>
+            <li
+                class="grid grid-cols-[auto,87px,1fr] items-center border border-black lg:hidden"
+            >
+                <p class="py-6 px-4 text-[1.5rem] leading-none">1</p>
+                <img
+                    src="./assets/images/art04.jpg"
+                    alt="散步遇到的女人"
+                    class="h-full border-l border-r border-black object-cover"
+                />
+                <div class="grid">
+                    <p class="border-b border-black p-4">散步遇到的女人</p>
+                    <div class="flex justify-between py-2 px-4">
+                        <p>Zoe Jiang</p>
+                        <p>
+                            <i class="fa-brands fa-ethereum mr-2"></i>
+                            <span>300</span>
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li
+                class="grid grid-cols-[auto,87px,1fr] items-center border border-black lg:hidden"
+            >
+                <p class="py-6 px-4 text-[1.5rem] leading-none">2</p>
+                <img
+                    src="./assets/images/art05.jpg"
+                    alt="爆炸頭的母親"
+                    class="h-full border-l border-r border-black object-cover"
+                />
+                <div class="grid">
+                    <p class="border-b border-black p-4">爆炸頭的母親</p>
+                    <div class="flex justify-between py-2 px-4">
+                        <p>Yui</p>
+                        <p>
+                            <i class="fa-brands fa-ethereum mr-2"></i>
+                            <span>300</span>
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li
+                class="grid grid-cols-[auto,87px,1fr] items-center border border-black lg:hidden"
+            >
+                <p class="py-6 px-4 text-[1.5rem] leading-none">3</p>
+                <img
+                    src="./assets/images/art06.jpg"
+                    alt="夏天的時候"
+                    class="h-full border-l border-r border-black object-cover"
+                />
+                <div class="grid">
+                    <p class="border-b border-black p-4">夏天的時候</p>
+                    <div class="flex justify-between py-2 px-4">
+                        <p>Bug Lin</p>
+                        <p>
+                            <i class="fa-brands fa-ethereum mr-2"></i>
+                            <span>300</span>
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li
+                class="grid grid-cols-[auto,87px,1fr] items-center border border-black"
+            >
+                <p class="py-6 px-4 text-[1.5rem] leading-none">4</p>
+                <img
+                    src="./assets/images/art29.jpg"
+                    alt="追求者送我的花"
+                    class="h-full border-l border-r border-black"
+                />
+                <!-- class="h-[90px] w-[87px]" -->
+
+                <!-- <a href="#" class="btn-overlay">
+                        MORE
+                        <span class="decoration"></span>
+                    </a> -->
+                <div class="grid">
+                    <p class="border-b border-black p-4">追求者送我的花</p>
+                    <div class="flex justify-between py-2 px-4">
+                        <p>Michael</p>
+                        <p>
+                            <i class="fa-brands fa-ethereum mr-2"></i>
+                            <span>300</span>
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li
+                class="grid grid-cols-[auto,87px,1fr] items-center border border-black"
+            >
+                <p class="py-6 px-4 text-[1.5rem] leading-none">5</p>
+                <img
+                    src="./assets/images/art07.jpg"
+                    alt="今天釣到的魚"
+                    class="h-full border-l border-r border-black object-cover"
+                />
+                <div class="grid">
+                    <p class="border-b border-black p-4">今天釣到的魚</p>
+                    <div class="flex justify-between py-2 px-4">
+                        <p>Wei JJ</p>
+                        <p>
+                            <i class="fa-brands fa-ethereum mr-2"></i>
+                            <span>300</span>
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li
+                class="grid grid-cols-[auto,87px,1fr] items-center border border-black"
+            >
+                <p class="py-6 px-4 text-[1.5rem] leading-none">6</p>
+                <img
+                    src="./assets/images/art08.jpg"
+                    alt="人生中的貓咪們"
+                    class="h-full border-l border-r border-black object-cover"
+                />
+                <div class="grid">
+                    <p class="border-b border-black p-4">人生中的貓咪們</p>
+                    <div class="flex justify-between py-2 px-4">
+                        <p>Even Lai</p>
+                        <p>
+                            <i class="fa-brands fa-ethereum mr-2"></i>
+                            <span>300</span>
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section class="container mb-2 mt-10 lg:mt-20 lg:mb-12">
+        <div
+            class="mb-6 flex items-end justify-between border-b border-black lg:mb-12"
+        >
+            <h2
+                class="mb-2 text-[2rem] font-bold leading-none lg:mb-4 lg:text-[3rem]"
+            >
+                Artist
+                <span
+                    class="hidden text-[1.25rem] leading-normal lg:ml-4 lg:inline-block"
+                >
+                    市價排行榜
+                </span>
+            </h2>
+            <button type="button" class="btn btn-primary group relative">
+                MORE<span class="decoration"></span>
+            </button>
+        </div>
+
+        <div class="swiper lg:pb-14">
+            <div class="swiper-wrapper items-center">
+                <div class="swiper-slide">
+                    <div class="relative">
+                        <img
+                            src="./assets/images/artist01.jpg"
+                            class="artist-img w-full object-cover"
+                            alt="Christopher Robinson is painting"
+                        />
+                        <h4
+                            class="artist-name absolute top-6 left-6 text-[2rem] font-bold leading-none text-white"
+                        >
+                            Christopher Robinson
+                        </h4>
+                        <button
+                            type="button"
+                            class="artist-more-btn btn-primary btn-outline group absolute bottom-2 right-2 lg:bottom-6"
+                        >
+                            MORE <span class="decoration"></span>
+                        </button>
+                    </div>
+                    <!-- bottom -->
+                    <p
+                        class="artist-description mt-4 bg-white p-6 lg:absolute lg:left-6 lg:bottom-6 lg:mt-0"
+                    >
+                        ​喜愛大自然，創作題材常見大山、<br
+                            class="xl:hidden"
+                        />大<br class="hidden xl:block" />水、花草與樹木。
+                    </p>
+                </div>
+                <div class="swiper-slide">
+                    <div class="relative">
+                        <img
+                            src="./assets/images/artist02.jpg"
+                            class="artist-img w-full object-cover"
+                            alt="Antony Wu shows his paint project"
+                        />
+                        <h4
+                            class="artist-name absolute top-6 left-6 text-[2rem] font-bold leading-none text-white"
+                        >
+                            Antony Wu
+                        </h4>
+                        <button
+                            type="button"
+                            class="artist-more-btn btn-primary btn-outline group absolute bottom-2 right-2 lg:bottom-6"
+                        >
+                            MORE <span class="decoration"></span>
+                        </button>
+                    </div>
+                    <!-- bottom -->
+                    <p
+                        class="artist-description mt-4 bg-white p-6 lg:absolute lg:left-6 lg:bottom-6 lg:mt-0"
+                    >
+                        ​喜愛大自然，創作題材常見大山、<br
+                            class="xl:hidden"
+                        />大<br class="hidden xl:block" />水、花草與樹木。
+                    </p>
+                </div>
+                <div class="swiper-slide">
+                    <div class="relative">
+                        <img
+                            src="./assets/images/artist03.jpg"
+                            class="artist-img w-full object-cover"
+                            alt="John Wick is looking at the sky"
+                        />
+                        <h4
+                            class="artist-name absolute top-6 left-6 text-[2rem] font-bold leading-none text-white"
+                        >
+                            John Wick
+                        </h4>
+                        <button
+                            type="button"
+                            class="artist-more-btn btn-primary btn-outline group absolute bottom-2 right-2 lg:bottom-6"
+                        >
+                            MORE <span class="decoration"></span>
+                        </button>
+                    </div>
+                    <!-- bottom -->
+                    <p
+                        class="artist-description mt-4 bg-white p-6 lg:absolute lg:left-6 lg:bottom-6 lg:mt-0"
+                    >
+                        ​喜愛大自然，創作題材常見大山、<br
+                            class="xl:hidden"
+                        />大<br class="hidden xl:block" />水、花草與樹木。
+                    </p>
+                </div>
+                <div class="swiper-slide">
+                    <div class="relative">
+                        <img
+                            src="./assets/images/artist04.jpg"
+                            class="artist-img w-full object-cover"
+                            alt="Sharon Ng is painting"
+                        />
+                        <h4
+                            class="artist-name absolute top-6 left-6 text-[2rem] font-bold leading-none text-white"
+                        >
+                            Sharon Ng
+                        </h4>
+                        <button
+                            type="button"
+                            class="artist-more-btn btn-primary btn-outline group absolute bottom-2 right-2 lg:bottom-6"
+                        >
+                            MORE <span class="decoration"></span>
+                        </button>
+                    </div>
+                    <!-- bottom -->
+                    <p
+                        class="artist-description mt-4 bg-white p-6 lg:absolute lg:left-6 lg:bottom-6 lg:mt-0"
+                    >
+                        ​喜愛大自然，創作題材常見大山、<br
+                            class="xl:hidden"
+                        />大<br class="hidden xl:block" />水、花草與樹木。
+                    </p>
+                </div>
+                
+            </div>
+            <div class="artists-pagination lg:absolute bottom-0 "></div>
+    </section>
+
+    <section class="container mb-2 mt-10 lg:mt-20 lg:mb-12">
+        <div
+            class="mb-6 flex items-end justify-between border-b border-black lg:mb-12"
+        >
+            <h2
+                class="mb-2 text-[2rem] font-bold leading-none lg:mb-4 lg:text-[3rem]"
+            >
+                Artwork
+                <span
+                    class="hidden text-[1.25rem] leading-normal lg:ml-4 lg:inline-block"
+                >
+                    市價排行榜
+                </span>
+            </h2>
+            <button type="button" class="btn btn-primary group relative">
+                MORE<span class="decoration"></span>
+            </button>
+        </div>
+
+        <ul class="artwork-grid">
+            <!-- data-masonry='{ "itemSelector": ".artwork-item", "columnWidth": ".artwork-sizer", "gutter": ".artwork-gutter", "percentPosition": true, "horizontalOrder": true }' -->
+            <li
+                class="artwork-sizer w-[calc(50%-.75rem)] lg:w-[calc(25%-18px)]"
+            ></li>
+            <li class="artwork-gutter w-6"></li>
+            <li
+                class="artwork-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:w-[calc(25%-18px)] lg:border-b"
+            >
+                <div class="group relative bg-white p-2 lg:p-6">
+                    <img
+                        src="./assets/images/art09.jpg"
+                        alt="區塊戀-他的私生活"
+                        class="h-[139px] w-full object-cover lg:h-[254px]"
+                    />
+                    <div
+                        class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                    >
+                        <div
+                            class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                        >
+                            <div class="text-white">
+                                <p class="mb-4">
+                                    唯一想擁有的人，唯一不可以擁有的
+                                </p>
+                                <p>
+                                    <i class="fa-brands fa-ethereum mr-2"></i
+                                    >300
+                                </p>
+                            </div>
+                            <button
+                                type="button"
+                                class="btn-primary btn-outline relative justify-self-end"
+                            >
+                                MORE<span class="decoration"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <h3
+                    class="p-2 text-[14px] font-bold lg:py-4 lg:px-0 lg:text-base"
+                >
+                    區塊戀-他的私生活
+                </h3>
+            </li>
+            <li
+                class="artwork-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:w-[calc(25%-18px)] lg:border-b"
+            >
+                <div class="group relative bg-white p-2 lg:p-6">
+                    <img
+                        src="./assets/images/art10.jpg"
+                        alt="夏娃的醜聞"
+                        class="h-[151px] w-full object-cover xl:h-[327px]"
+                    />
+                    <div
+                        class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                    >
+                        <div
+                            class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                        >
+                            <div class="text-white">
+                                <p class="mb-4">
+                                    唯一想擁有的人，唯一不可以擁有的
+                                </p>
+                                <p>
+                                    <i class="fa-brands fa-ethereum mr-2"></i
+                                    >300
+                                </p>
+                            </div>
+                            <button
+                                type="button"
+                                class="btn-primary btn-outline relative justify-self-end"
+                            >
+                                MORE<span class="decoration"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <h3
+                    class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
+                >
+                    夏娃的醜聞
+                </h3>
+            </li>
+            <li
+                class="artwork-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
+            >
+                <div class="group relative bg-white p-2 xl:p-6">
+                    <img
+                        src="./assets/images/art02.jpg"
+                        alt="藍色啤酒海"
+                        class="h-[93px] w-full object-cover xl:h-[254px]"
+                    />
+                    <div
+                        class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                    >
+                        <div
+                            class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                        >
+                            <div class="text-white">
+                                <p class="mb-4">
+                                    唯一想擁有的人，唯一不可以擁有的
+                                </p>
+                                <p>
+                                    <i class="fa-brands fa-ethereum mr-2"></i
+                                    >300
+                                </p>
+                            </div>
+                            <button
+                                type="button"
+                                class="btn-primary btn-outline relative justify-self-end"
+                            >
+                                MORE<span class="decoration"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="p-2 text-[14px]">藍色啤酒海</h3>
+            </li>
+            <li
+                class="artwork-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
+            >
+                <div class="group relative bg-white p-2">
+                    <img
+                        src="./assets/images/art11.jpg"
+                        alt="沒有人愛我"
+                        class="min-h-[169px] w-full object-cover"
+                    />
+                    <div
+                        class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                    >
+                        <div
+                            class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                        >
+                            <div class="text-white">
+                                <p class="mb-4">
+                                    唯一想擁有的人，唯一不可以擁有的
+                                </p>
+                                <p>
+                                    <i class="fa-brands fa-ethereum mr-2"></i
+                                    >300
+                                </p>
+                            </div>
+                            <button
+                                type="button"
+                                class="btn-primary btn-outline relative justify-self-end"
+                            >
+                                MORE<span class="decoration"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <h3
+                    class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
+                >
+                    沒有人愛我
+                </h3>
+            </li>
+            <li
+                class="artwork-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
+            >
+                <div class="group relative bg-white p-2">
+                    <img
+                        src="./assets/images/art12.jpg"
+                        alt="不哭不哭眼淚是珍珠"
+                        class="min-h-[169px] w-full object-cover"
+                    />
+                    <div
+                        class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                    >
+                        <div
+                            class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                        >
+                            <div class="text-white">
+                                <p class="mb-4">
+                                    唯一想擁有的人，唯一不可以擁有的
+                                </p>
+                                <p>
+                                    <i class="fa-brands fa-ethereum mr-2"></i
+                                    >300
+                                </p>
+                            </div>
+                            <button
+                                type="button"
+                                class="btn-primary btn-outline relative justify-self-end"
+                            >
+                                MORE<span class="decoration"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <h3
+                    class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
+                >
+                    不哭不哭眼淚是珍珠
+                </h3>
+            </li>
+            <li
+                class="artwork-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
+            >
+                <div class="group relative bg-white p-2">
+                    <img
+                        src="./assets/images/art03.jpg"
+                        alt="十分鐘就到"
+                        class="min-h-[254px] w-full object-cover"
+                    />
+                    <div
+                        class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                    >
+                        <div
+                            class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                        >
+                            <div class="text-white">
+                                <p class="mb-4">
+                                    唯一想擁有的人，唯一不可以擁有的
+                                </p>
+                                <p>
+                                    <i class="fa-brands fa-ethereum mr-2"></i
+                                    >300
+                                </p>
+                            </div>
+                            <button
+                                type="button"
+                                class="btn-primary btn-outline relative justify-self-end"
+                            >
+                                MORE<span class="decoration"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <h3
+                    class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
+                >
+                    十分鐘就到
+                </h3>
+            </li>
+            <li
+                class="artwork-item mb-4 hidden w-[calc(50%-.75rem)] border-black xl:mb-12 xl:block xl:w-[calc(25%-18px)] xl:border-b"
+            >
+                <div class="group relative bg-white p-2">
+                    <img
+                        src="./assets/images/art04.jpg"
+                        alt="我這樣有美嗎"
+                        class="h-[395px] w-full object-cover"
+                    />
+                    <div
+                        class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                    >
+                        <div
+                            class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                        >
+                            <div class="text-white">
+                                <p class="mb-4">
+                                    唯一想擁有的人，唯一不可以擁有的
+                                </p>
+                                <p>
+                                    <i class="fa-brands fa-ethereum mr-2"></i
+                                    >300
+                                </p>
+                            </div>
+                            <button
+                                type="button"
+                                class="btn-primary btn-outline relative justify-self-end"
+                            >
+                                MORE<span class="decoration"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <h3
+                    class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
+                >
+                    我這樣有美嗎
+                </h3>
+            </li>
+            <li
+                class="artwork-item mb-4 hidden w-[calc(50%-.75rem)] border-black xl:mb-12 xl:block xl:w-[calc(25%-18px)] xl:border-b"
+            >
+                <div class="group relative bg-white p-2">
+                    <img
+                        src="./assets/images/art27.jpg"
+                        alt="我真的受傷了"
+                        class="min-h-[254px] w-full object-cover"
+                    />
+                    <div
+                        class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                    >
+                        <div
+                            class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                        >
+                            <div class="text-white">
+                                <p class="mb-4">
+                                    唯一想擁有的人，唯一不可以擁有的
+                                </p>
+                                <p>
+                                    <i class="fa-brands fa-ethereum mr-2"></i
+                                    >300
+                                </p>
+                            </div>
+                            <button
+                                type="button"
+                                class="btn-primary btn-outline relative justify-self-end"
+                            >
+                                MORE<span class="decoration"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <h3
+                    class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
+                >
+                    我真的受傷了
+                </h3>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <div class="border-b-4 border-black pb-8 text-center">
+            <h2 class="mb-4 text-[2rem] font-bold leading-none">Join Us</h2>
+            <h3 class="text-[1.25rem] font-bold">創建並出售你的藝術品</h3>
+        </div>
+        <div class="mt-2 border-t border-black py-12 md:py-16 xl:py-20">
+            <div class="container">
+                <ul
+                    class="grid gap-12 md:grid-cols-2 md:gap-8 xl:grid-cols-4 xl:gap-6"
+                >
+                    <li class="text-center">
+                        <i
+                            class="fa-solid fa-wallet text-[2.5rem] text-primary"
+                        ></i>
+                        <h3 class="mt-4 font-bold">設置你的錢包</h3>
+                        <p class="mt-6">
+                            設置好您選擇的錢包後<br />點擊右上角的錢包圖標進行連接
+                        </p>
+                    </li>
+                    <li class="text-center">
+                        <i
+                            class="fa-solid fa-pen-ruler text-[2.5rem] text-primary"
+                        ></i>
+                        <h3 class="mt-4 font-bold">創建您的主頁</h3>
+                        <p class="mt-6">
+                            註冊成為會員，編輯您的資料<br />讓大家了解你
+                        </p>
+                    </li>
+                    <li class="text-center">
+                        <i
+                            class="fa-solid fa-icons text-[2.5rem] text-primary"
+                        ></i>
+                        <h3 class="mt-4 font-bold">添加你的 NFT</h3>
+                        <p class="mt-6">上傳你的作品<br />添加標題和描述</p>
+                    </li>
+                    <li class="text-center">
+                        <i
+                            class="fa-solid fa-tags text-[2.5rem] text-primary"
+                        ></i>
+                        <h3 class="mt-4 font-bold">列出它們出售</h3>
+
+                        <p class="mt-6">
+                            選擇出售 NFT 的方式<br />並設定價格，等待有緣人
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
