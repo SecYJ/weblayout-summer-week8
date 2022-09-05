@@ -19,10 +19,10 @@ window.addEventListener("DOMContentLoaded", function () {
     loop: true,
     slidesPerView: 1,
     freeMode: true,
-    // autoplay: {
-    //     delay: 3000,
-    //     disabledOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 3000,
+      disabledOnInteraction: false
+    },
     initialSlide: 1,
     breakpoints: {
       // 768: {
