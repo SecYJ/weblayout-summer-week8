@@ -1114,6 +1114,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-top: 3.75rem;
   }
 
+  .md\:mt-10 {
+    margin-top: 2.5rem;
+  }
+
   .md\:block {
     display: block;
   }
