@@ -1,0 +1,519 @@
+---
+title: Products
+engine: ejs
+layout: ./app/layout.ejs
+---
+
+<div class="container mt-6 xl:mt-10">
+    <div class="xl:grid xl:grid-cols-[25%,1fr] xl:gap-6">
+        <aside
+            class="fixed inset-0 z-10 -translate-x-full overflow-y-auto bg-white transition-transform xl:static xl:block xl:translate-x-0 xl:bg-transparent"
+            id="product-navbar"
+        >
+            <form
+                class="border-black bg-white px-3 xl:border xl:border-t xl:border-b xl:px-0"
+            >
+                <div
+                    class="-mx-3 flex border-b border-gray-dark py-4 px-3 xl:hidden"
+                >
+                    <h3 class="ml-auto text-[1.25rem]">篩選條件</h3>
+                    <button
+                        type="button"
+                        class="ml-auto"
+                        id="product-navbar-close-btn"
+                    >
+                        <i class="fa-solid fa-xmark text-[18px]"></i>
+                    </button>
+                </div>
+                <div class="border-b border-gray-dark py-6 xl:p-6">
+                    <div class="mb-4 flex items-center justify-between">
+                        <h3 class="font-bold">網路</h3>
+                        <button type="button">
+                            <i class="fa-solid fa-angle-up text-base"></i>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-[1fr,auto] items-center gap-y-2">
+                        <label for="ethereum">以太坊</label>
+                        <input
+                            type="checkbox"
+                            name="network"
+                            id="ethereum"
+                            class="h-4 w-4 border border-black accent-black"
+                        />
+                        <label for="BNB">BNB 智能鏈</label>
+                        <input
+                            type="checkbox"
+                            name="network"
+                            id="BNB"
+                            class="h-4 w-4 border border-black accent-black"
+                        />
+                    </div>
+                </div>
+                <div class="border-b border-gray-dark py-6 xl:p-6">
+                    <div class="mb-4 flex items-center justify-between">
+                        <h3 class="font-bold">狀態</h3>
+                        <button type="button">
+                            <i class="fa-solid fa-angle-up text-base"></i>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-[1fr,auto] items-center gap-y-2">
+                        <label for="show-only">僅展示</label>
+                        <input
+                            type="checkbox"
+                            name="network"
+                            id="show-only"
+                            class="h-4 w-4 border border-black accent-black"
+                        />
+                        <label for="in-auction">拍賣中</label>
+                        <input
+                            type="checkbox"
+                            name="network"
+                            id="in-auction"
+                            class="h-4 w-4 border border-black accent-black"
+                        />
+                    </div>
+                </div>
+                <div class="border-b border-gray-dark py-6 xl:p-6">
+                    <div class="mb-4 flex items-center justify-between">
+                        <h3 class="font-bold">價格</h3>
+                        <button type="button">
+                            <i class="fa-solid fa-angle-up text-base"></i>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-[1fr,1fr,auto,1fr] gap-2">
+                        <select
+                            name="currency"
+                            id="currency"
+                            class="border border-gray-dark bg-white p-2"
+                        >
+                            <option value="ETH">ETH</option>
+                            <option value="BITCOIN">BITCOIN</option>
+                            <option value="DOGCOIN">DOGCOIN</option>
+                        </select>
+                        <input
+                            type="text"
+                            class="w-full border border-gray-dark p-2 outline-none"
+                        />
+                        <p class="self-center">－</p>
+                        <input
+                            type="text"
+                            class="w-full border border-gray-dark p-2 outline-none"
+                        />
+                    </div>
+                </div>
+                <div class="py-6 xl:p-6">
+                    <h3 class="mb-6 text-gray-dark">屬性</h3>
+                    <div class="mb-4 flex items-center justify-between">
+                        <h3 class="font-bold">品種</h3>
+                        <button type="button">
+                            <i class="fa-solid fa-angle-up text-base"></i>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-[1fr,auto] items-center gap-y-2">
+                        <label for="eight-brother">八哥</label>
+                        <input
+                            type="checkbox"
+                            name="bird-types"
+                            id="eight-brother"
+                            class="h-4 w-4 border border-black accent-black"
+                        />
+                        <label for="tiger-skin-bird">虎皮鸚鵡</label>
+                        <input
+                            type="checkbox"
+                            name="bird-types"
+                            id="tiger-skin-bird"
+                            class="h-4 w-4 border border-black accent-black"
+                        />
+                        <label for="peace-bird">太平鳥</label>
+                        <input
+                            type="checkbox"
+                            name="bird-types"
+                            id="peace-bird"
+                            class="h-4 w-4 border border-black accent-black"
+                        />
+                        <label for="brow-bird">畫眉鳥</label>
+                        <input
+                            type="checkbox"
+                            name="bird-types"
+                            id="brow-bird"
+                            class="h-4 w-4 border border-black accent-black"
+                        />
+                    </div>
+
+                    <div
+                        class="mt-4 hidden items-center justify-between xl:flex"
+                    >
+                        <h3 class="font-bold">鳥的數量</h3>
+                        <button type="button">
+                            <i class="fa-solid fa-angle-up text-base"></i>
+                        </button>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="-mx-3 mt-1 w-[calc(100%+1.5rem)] border border-black bg-primary py-3 px-6 text-white xl:hidden"
+                    >
+                        確認
+                    </button>
+
+                    <div class="mt-5 flex items-center justify-between xl:mt-6">
+                        <h3 class="font-bold">是否有花草</h3>
+                        <button type="button">
+                            <i class="fa-solid fa-angle-up text-base"></i>
+                        </button>
+                    </div>
+                    <div
+                        class="mt-4 flex items-center justify-between xl:hidden"
+                    >
+                        <h3 class="font-bold">鳥的顏色</h3>
+                        <button type="button">
+                            <i class="fa-solid fa-angle-up text-base"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </aside>
+        <div>
+            <div class="grid xl:grid-cols-9 xl:gap-6">
+                <div class="mb-1 flex items-center gap-4 xl:col-span-full">
+                    <img
+                        src="./assets/images/artist01.jpg"
+                        class="h-8 w-8 rounded-full"
+                    />
+                    <p class="font-squareOne leading-none">Michael</p>
+                </div>
+                <div class="xl:col-span-5">
+                    <h1 class="mb-2 text-[2rem] font-bold">我家外面的鳥</h1>
+                    <p>
+                        家門前每天都有不同的小鳥，大多數的小鳥都有特殊能力，特殊能力是什麼我就不說了，希望大家能從作品感受到小鳥的快樂。
+                    </p>
+                </div>
+                <ul
+                    class="mt-4 grid grid-cols-4 border border-black text-center xl:col-span-4 xl:mt-0"
+                >
+                    <li class="relative grid content-between px-2 py-4">
+                        <p class="text-[14px] xl:text-base">項目</p>
+                        <p
+                            class="font-squareOne text-[1.25rem] xl:text-[1.5rem]"
+                        >
+                            6.4 k
+                        </p>
+                        <div
+                            class="absolute right-0 top-0 h-5 w-px bg-gray-dark"
+                        ></div>
+                        <div
+                            class="absolute right-0 bottom-0 h-5 w-px bg-gray-dark"
+                        ></div>
+                    </li>
+                    <li class="relative grid content-between px-2 py-4">
+                        <p class="text-[14px] xl:text-base">擁有者</p>
+                        <p
+                            class="font-squareOne text-[1.25rem] xl:text-[1.5rem]"
+                        >
+                            2.5 k
+                        </p>
+                        <div
+                            class="absolute right-0 top-0 h-5 w-px bg-gray-dark"
+                        ></div>
+                        <div
+                            class="absolute right-0 bottom-0 h-5 w-px bg-gray-dark"
+                        ></div>
+                    </li>
+                    <li class="relative grid content-between py-4 px-2">
+                        <p class="text-[14px] xl:text-base">底價</p>
+                        <p
+                            class="font-squareOne text-[1.25rem] xl:text-[1.5rem]"
+                        >
+                            <i
+                                class="fa-brands fa-ethereum mr-1 text-[15px]"
+                            ></i>
+                            1.38 k
+                        </p>
+                        <div
+                            class="absolute right-0 top-0 h-5 w-px bg-gray-dark"
+                        ></div>
+                        <div
+                            class="absolute right-0 bottom-0 h-5 w-px bg-gray-dark"
+                        ></div>
+                    </li>
+                    <li class="grid content-between py-4 px-2">
+                        <p class="text-[14px] xl:text-base">總額</p>
+                        <p
+                            class="font-squareOne text-[1.25rem] xl:text-[1.5rem]"
+                        >
+                            2.8 k
+                        </p>
+                    </li>
+                </ul>
+                <button
+                    type="button"
+                    class="mt-10 justify-self-end border border-black py-2 px-10 text-center xl:col-span-full"
+                >
+                    最新上架
+                    <i class="fa-solid fa-sort ml-2 text-[.75rem]"></i>
+                </button>
+            </div>
+
+            <ul class="product-grid mt-6 md:mt-10" id="product-items">
+                <li
+                    class="product-sizer w-[calc(50%-.75rem)] xl:w-[calc(33.33%-1rem)]"
+                ></li>
+                <li class="product-gutter w-6"></li>
+                <li
+                    class="product-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:border-b xl:w-[calc(33.33%-1rem)]"
+                >
+                    <div class="group relative bg-white p-2 lg:p-6">
+                        <img
+                            src="./assets/images/art20.jpg"
+                            alt="這兩隻也太像企鵝了吧"
+                            class="h-[139px] w-full object-cover lg:h-[254px]"
+                        />
+                        <div
+                            class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                        >
+                            <div
+                                class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                            >
+                                <div class="text-white">
+                                    <p class="mb-4">
+                                        3/14情人節外面剛好有兩隻鳥, 也在過情人節
+                                    </p>
+                                    <p>
+                                        <i
+                                            class="fa-brands fa-ethereum mr-2"
+                                        ></i
+                                        >300
+                                    </p>
+                                </div>
+                                <button
+                                    type="button"
+                                    class="btn-primary btn-outline relative justify-self-end"
+                                >
+                                    MORE<span class="decoration"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <h3
+                        class="p-2 text-[14px] font-bold lg:py-4 lg:px-0 lg:text-base"
+                    >
+                        這兩隻也太像企鵝了吧
+                    </h3>
+                </li>
+                <li
+                    class="product-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:border-b xl:w-[calc(33.33%-1rem)]"
+                >
+                    <div class="group relative bg-white p-2 lg:p-6">
+                        <img
+                            src="./assets/images/art21.jpg"
+                            alt="兩情相悅"
+                            class="h-[151px] w-full object-cover lg:h-[327px]"
+                        />
+                        <div
+                            class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                        >
+                            <div
+                                class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                            >
+                                <div class="text-white">
+                                    <p class="mb-4">
+                                        3/14情人節外面剛好有兩隻鳥, 也在過情人節
+                                    </p>
+                                    <p>
+                                        <i
+                                            class="fa-brands fa-ethereum mr-2"
+                                        ></i
+                                        >300
+                                    </p>
+                                </div>
+                                <button
+                                    type="button"
+                                    class="btn-primary btn-outline relative justify-self-end"
+                                >
+                                    MORE<span class="decoration"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <h3
+                        class="p-2 text-[14px] font-bold lg:py-4 lg:px-0 lg:text-base"
+                    >
+                        兩情相悅
+                    </h3>
+                </li>
+                <li
+                    class="product-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:border-b xl:w-[calc(33.33%-1rem)]"
+                >
+                    <div class="group relative bg-white p-2 lg:p-6">
+                        <img
+                            src="./assets/images/art22.jpg"
+                            alt="群聚的小鳥們"
+                            class="h-[93px] w-full object-cover lg:h-[254px]"
+                        />
+                        <div
+                            class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                        >
+                            <div
+                                class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                            >
+                                <div class="text-white">
+                                    <p class="mb-4">
+                                        3/14情人節外面剛好有兩隻鳥, 也在過情人節
+                                    </p>
+                                    <p>
+                                        <i
+                                            class="fa-brands fa-ethereum mr-2"
+                                        ></i
+                                        >300
+                                    </p>
+                                </div>
+                                <button
+                                    type="button"
+                                    class="btn-primary btn-outline relative justify-self-end"
+                                >
+                                    MORE<span class="decoration"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <h3
+                        class="p-2 text-[14px] font-bold lg:py-4 lg:px-0 lg:text-base"
+                    >
+                        群聚的小鳥們
+                    </h3>
+                </li>
+                <li
+                    class="product-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:border-b xl:w-[calc(33.33%-1rem)]"
+                >
+                    <div class="group relative bg-white p-2 lg:p-6">
+                        <img
+                            src="./assets/images/art23.jpg"
+                            alt="與你分享的快樂勝過獨自擁有"
+                            class="h-[173px] w-full object-cover lg:h-[254px]"
+                        />
+                        <div
+                            class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                        >
+                            <div
+                                class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                            >
+                                <div class="text-white">
+                                    <p class="mb-4">
+                                        3/14情人節外面剛好有兩隻鳥, 也在過情人節
+                                    </p>
+                                    <p>
+                                        <i
+                                            class="fa-brands fa-ethereum mr-2"
+                                        ></i
+                                        >300
+                                    </p>
+                                </div>
+                                <button
+                                    type="button"
+                                    class="btn-primary btn-outline relative justify-self-end"
+                                >
+                                    MORE<span class="decoration"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <h3
+                        class="p-2 text-[14px] font-bold lg:py-4 lg:px-0 lg:text-base"
+                    >
+                        與你分享的快樂勝過獨自擁有
+                    </h3>
+                </li>
+                <li
+                    class="product-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:border-b xl:w-[calc(33.33%-1rem)]"
+                >
+                    <div class="group relative bg-white p-2 lg:p-6">
+                        <img
+                            src="./assets/images/art24.jpg"
+                            alt="會唱metal的鳥"
+                            class="h-[192px] w-full object-cover lg:h-[368px]"
+                        />
+                        <div
+                            class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                        >
+                            <div
+                                class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                            >
+                                <div class="text-white">
+                                    <p class="mb-4">
+                                        3/14情人節外面剛好有兩隻鳥, 也在過情人節
+                                    </p>
+                                    <p>
+                                        <i
+                                            class="fa-brands fa-ethereum mr-2"
+                                        ></i
+                                        >300
+                                    </p>
+                                </div>
+                                <button
+                                    type="button"
+                                    class="btn-primary btn-outline relative justify-self-end"
+                                >
+                                    MORE<span class="decoration"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <h3
+                        class="p-2 text-[14px] font-bold lg:py-4 lg:px-0 lg:text-base"
+                    >
+                        會唱metal的鳥
+                    </h3>
+                </li>
+                <li
+                    class="product-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:border-b xl:w-[calc(33.33%-1rem)]"
+                >
+                    <div class="group relative bg-white p-2 lg:p-6">
+                        <img
+                            src="./assets/images/art25.jpg"
+                            alt="一大一小兩個恰恰好"
+                            class="h-[99px] w-full object-cover lg:h-[395px]"
+                        />
+                        <div
+                            class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                        >
+                            <div
+                                class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                            >
+                                <div class="text-white">
+                                    <p class="mb-4">
+                                        3/14情人節外面剛好有兩隻鳥, 也在過情人節
+                                    </p>
+                                    <p>
+                                        <i
+                                            class="fa-brands fa-ethereum mr-2"
+                                        ></i
+                                        >300
+                                    </p>
+                                </div>
+                                <button
+                                    type="button"
+                                    class="btn-primary btn-outline relative justify-self-end"
+                                >
+                                    MORE<span class="decoration"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <h3
+                        class="p-2 text-[14px] font-bold lg:py-4 lg:px-0 lg:text-base"
+                    >
+                        一大一小兩個恰恰好
+                    </h3>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<button
+    type="button"
+    class="fixed bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap bg-black py-2 px-12 text-white xl:hidden"
+    id="product-filter-btn"
+>
+    篩選條件 <span class="ml-1">2</span>
+</button>

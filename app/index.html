@@ -287,7 +287,7 @@ current: index
         </ul>
     </section>
 
-    <section class="container mb-2 mt-10 lg:mt-20 lg:mb-12">
+    <section class="container mt-10 lg:mt-20 lg:mb-12">
         <div
             class="mb-6 flex items-end justify-between border-b border-black lg:mb-12"
         >
@@ -306,9 +306,9 @@ current: index
             </button>
         </div>
 
-        <div class="swiper lg:pb-14">
+        <div class="swiper lg:pb-14" id="artists-swiper">
             <div class="swiper-wrapper items-center">
-                <div class="swiper-slide">
+                <div class="artist-slide">
                     <div class="relative">
                         <img
                             src="./assets/images/artist01.jpg"
@@ -336,7 +336,7 @@ current: index
                         />大<br class="hidden xl:block" />水、花草與樹木。
                     </p>
                 </div>
-                <div class="swiper-slide">
+                <div class="artist-slide">
                     <div class="relative">
                         <img
                             src="./assets/images/artist02.jpg"
@@ -364,7 +364,7 @@ current: index
                         />大<br class="hidden xl:block" />水、花草與樹木。
                     </p>
                 </div>
-                <div class="swiper-slide">
+                <div class="artist-slide">
                     <div class="relative">
                         <img
                             src="./assets/images/artist03.jpg"
@@ -392,7 +392,7 @@ current: index
                         />大<br class="hidden xl:block" />水、花草與樹木。
                     </p>
                 </div>
-                <div class="swiper-slide">
+                <div class="artist-slide">
                     <div class="relative">
                         <img
                             src="./assets/images/artist04.jpg"
@@ -420,9 +420,9 @@ current: index
                         />大<br class="hidden xl:block" />水、花草與樹木。
                     </p>
                 </div>
-                
             </div>
-            <div class="artists-pagination lg:absolute bottom-0 "></div>
+            <div class="artists-pagination"></div>
+        </div>
     </section>
 
     <section class="container mb-2 mt-10 lg:mt-20 lg:mb-12">
@@ -445,7 +445,6 @@ current: index
         </div>
 
         <ul class="artwork-grid" id="artwork-grid">
-            <!-- data-masonry='{ "itemSelector": ".artwork-item", "columnWidth": ".artwork-sizer", "gutter": ".artwork-gutter", "percentPosition": true, "horizontalOrder": true }' -->
             <li
                 class="artwork-sizer w-[calc(50%-.75rem)] lg:w-[calc(25%-18px)]"
             ></li>

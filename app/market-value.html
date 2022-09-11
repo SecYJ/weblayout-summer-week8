@@ -1,0 +1,503 @@
+---
+title: Ranking
+engine: ejs
+layout: ./app/layout.ejs
+---
+
+<!-- <table class="mt-8 table-fixed border-collapse xl:mt-12">
+        <thead class="hidden xl:table-header-group"
+            <tr>
+                <th></th>
+                <th class="font-normal">系列作品名稱</th>
+                <th class="font-normal">價值</th>
+                <th class="font-normal">24h%</th>
+                <th class="font-normal">7d%</th>
+                <th class="font-normal">地板價</th>
+                <th class="font-normal">擁有者</th>
+                <th class="font-normal">作品數量</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="py-4">
+                <td class="border border-black px-2 xl:px-4">1</td>
+                <td
+                    class="inline-flex items-center gap-2 border border-black py-4 pl-2 xl:gap-4 xl:pl-4"
+                >
+                    <img
+                        src="./assets/images/art13.jpg"
+                        class="h-12 w-12 rounded-full object-cover"
+                    />
+                    <p class="text-sm">系列作品的名稱</p>
+                </td>
+                <td class="inline-flex items-center gap-2">
+                    <i class="fa-brands fa-ethereum"></i>
+                    <p class="font-squareOne text-[1.25rem]">1,774.19</p>
+                </td>
+            </tr>
+        </tbody>
+    </table> -->
+
+<main class="container mt-6 mb-10 xl:mt-10 xl:mb-24">
+    <div class="text-center">
+        <h1 class="text-[2rem] font-bold xl:text-[3rem]">市價排行榜</h1>
+        <p class="mt-4 xl:mt-6">NFT系列藝術作品排行榜！全球注目指標</p>
+    </div>
+
+    <ul class="mt-8 xl:mt-12">
+        <li
+            class="hidden grid-cols-[1fr,repeat(6,138px)] pl-16 pr-6 text-right xl:mb-4 xl:grid"
+        >
+            <p class="text-left">系列作品名稱</p>
+            <p>價值</p>
+            <p>24h%</p>
+            <p>7d%</p>
+            <p>地板價</p>
+            <p>擁有者</p>
+            <p>作品數量</p>
+        </li>
+        <li
+            class="relative grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 text-center xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
+        >
+            <p class="px-2">1</p>
+            <div
+                class="flex items-center gap-2 border-l border-gray-dark py-4 pl-2 xl:gap-4 xl:justify-self-start"
+            >
+                <img
+                    src="./assets/images/art13.jpg"
+                    class="h-12 w-12 rounded-full object-cover"
+                />
+                <p class="text-sm font-bold">追求者送我的花</p>
+            </div>
+            <p class="flex items-center gap-2 pr-2 xl:pr-0">
+                <i class="fa-brands fa-ethereum"></i>
+                <span class="font-squareOne text-[1.25rem]">1,774.19</span>
+            </p>
+            <p
+                class="hidden font-squareOne text-[1.25rem] text-success xl:block"
+            >
+                +220.49%
+            </p>
+            <p
+                class="hidden font-squareOne text-[1.25rem] text-primary xl:block"
+            >
+                -2.43%
+            </p>
+            <p class="hidden items-center gap-2 xl:flex">
+                <i class="fa-brands fa-ethereum"></i>
+                <span class="font-squareOne text-[1.25rem]">2.90</span>
+            </p>
+            <p class="hidden font-squareOne text-[1.25rem] xl:block">32.1K</p>
+            <p class="hidden font-squareOne text-[1.25rem] xl:block">1000</p>
+            <div
+                class="decoration absolute bottom-0 right-0 grid h-8 w-8 place-items-center bg-black"
+            >
+                <i
+                    class="fa-solid fa-plus absolute bottom-1 right-0 -translate-x-1/4 -translate-y-1/4 text-[10px] text-white"
+                ></i>
+            </div>
+        </li>
+        <li
+            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 text-center xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
+        >
+            <p class="px-2">2</p>
+            <div
+                class="flex items-center gap-2 border-l border-gray-dark py-4 pl-2 xl:gap-4 xl:justify-self-start"
+            >
+                <img
+                    src="./assets/images/art06.jpg"
+                    class="h-12 w-12 rounded-full object-cover"
+                />
+                <p class="text-sm font-bold">夏天的時候</p>
+            </div>
+            <p class="flex items-center gap-2 pr-2 xl:pr-0">
+                <i class="fa-brands fa-ethereum"></i>
+                <span class="font-squareOne text-[1.25rem]">1,524.89</span>
+            </p>
+            <p
+                class="hidden font-squareOne text-[1.25rem] text-success xl:block"
+            >
+                +80.49%
+            </p>
+            <p
+                class="hidden font-squareOne text-[1.25rem] text-primary xl:block"
+            >
+                -2.43%
+            </p>
+            <p class="hidden items-center gap-2 xl:flex">
+                <i class="fa-brands fa-ethereum"></i>
+                <span class="font-squareOne text-[1.25rem]">90.23</span>
+            </p>
+            <p class="hidden font-squareOne text-[1.25rem] xl:block">32.1K</p>
+            <p class="hidden font-squareOne text-[1.25rem] xl:block">1000</p>
+            <div
+                class="decoration absolute bottom-0 right-0 grid h-8 w-8 place-items-center bg-black"
+            >
+                <i
+                    class="fa-solid fa-plus absolute bottom-1 right-0 -translate-x-1/4 -translate-y-1/4 text-[10px] text-white"
+                ></i>
+            </div>
+        </li>
+        <li
+            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 text-center xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
+        >
+            <p class="px-2">3</p>
+            <div
+                class="flex items-center gap-2 border-l border-gray-dark py-4 pl-2 xl:gap-4 xl:justify-self-start"
+            >
+                <img
+                    src="./assets/images/art02.jpg"
+                    class="h-12 w-12 rounded-full object-cover"
+                />
+                <p class="text-sm font-bold">海洋波度</p>
+            </div>
+            <p class="flex items-center gap-2 pr-2 xl:pr-0">
+                <i class="fa-brands fa-ethereum"></i>
+                <span class="font-squareOne text-[1.25rem]">1,400.59</span>
+            </p>
+            <p
+                class="hidden font-squareOne text-[1.25rem] text-primary xl:block"
+            >
+                -3.92%
+            </p>
+            <p
+                class="hidden font-squareOne text-[1.25rem] text-primary xl:block"
+            >
+                -13.43%
+            </p>
+            <p class="hidden items-center gap-2 xl:flex">
+                <i class="fa-brands fa-ethereum"></i>
+                <span class="font-squareOne text-[1.25rem]">2.90</span>
+            </p>
+            <p class="hidden font-squareOne text-[1.25rem] xl:block">32.1K</p>
+            <p class="hidden font-squareOne text-[1.25rem] xl:block">1000</p>
+            <div
+                class="decoration absolute bottom-0 right-0 grid h-8 w-8 place-items-center bg-black"
+            >
+                <i
+                    class="fa-solid fa-plus absolute bottom-1 right-0 -translate-x-1/4 -translate-y-1/4 text-[10px] text-white"
+                ></i>
+            </div>
+        </li>
+        <li
+            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 text-center xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
+        >
+            <p class="px-2">4</p>
+            <div
+                class="flex items-center gap-2 border-l border-gray-dark py-4 pl-2 xl:gap-4 xl:justify-self-start"
+            >
+                <img
+                    src="./assets/images/art03.jpg"
+                    class="h-12 w-12 rounded-full object-cover"
+                />
+                <p class="text-sm font-bold">賴床真的很不好</p>
+            </div>
+            <p class="flex items-center gap-2 pr-2 xl:pr-0">
+                <i class="fa-brands fa-ethereum"></i>
+                <span class="font-squareOne text-[1.25rem]">1,224.88</span>
+            </p>
+            <p
+                class="hidden font-squareOne text-[1.25rem] text-primary xl:block"
+            >
+                -9.23%
+            </p>
+            <p
+                class="hidden font-squareOne text-[1.25rem] text-primary xl:block"
+            >
+                -20.43%
+            </p>
+            <p class="hidden items-center gap-2 xl:flex">
+                <i class="fa-brands fa-ethereum"></i>
+                <span class="font-squareOne text-[1.25rem]">2.90</span>
+            </p>
+            <p class="hidden font-squareOne text-[1.25rem] xl:block">32.1K</p>
+            <p class="hidden font-squareOne text-[1.25rem] xl:block">1000</p>
+            <div
+                class="decoration absolute bottom-0 right-0 grid h-8 w-8 place-items-center bg-black"
+            >
+                <i
+                    class="fa-solid fa-plus absolute bottom-1 right-0 -translate-x-1/4 -translate-y-1/4 text-[10px] text-white"
+                ></i>
+            </div>
+        </li>
+        <li
+            class="-mt-px flex flex-wrap justify-center border border-black p-4 text-center xl:hidden"
+        >
+            <div class="w-1/3 md:w-1/5">
+                <p class="mb-2 text-[14px] leading-8">24h%</p>
+                <p class="font-squareOne text-[1.25rem] text-success">
+                    +220.49%
+                </p>
+            </div>
+            <div class="w-1/3 md:w-1/5">
+                <p class="mb-2 text-[14px] leading-8">7d%</p>
+                <p class="font-squareOne text-[1.25rem] text-primary">-2.43%</p>
+            </div>
+            <div class="w-1/3 md:w-1/5">
+                <p class="mb-2 text-[14px] leading-8">地板價</p>
+                <p class="font-squareOne text-[1.25rem]">
+                    <i class="fa-brands fa-ethereum"></i>2.90
+                </p>
+            </div>
+            <div class="w-1/3 md:w-1/5">
+                <p class="mb-2 text-[14px] leading-8">擁有者</p>
+                <p class="font-squareOne text-[1.25rem]">32.1K</p>
+            </div>
+            <div class="w-1/3 md:w-1/5">
+                <p class="mb-2 text-[14px] leading-8">作品數量</p>
+                <p class="font-squareOne text-[1.25rem]">1000</p>
+            </div>
+        </li>
+        <li
+            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 text-center xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
+        >
+            <p class="px-2">5</p>
+            <div
+                class="flex items-center gap-2 border-l border-gray-dark py-4 pl-2 xl:gap-4 xl:justify-self-start"
+            >
+                <img
+                    src="./assets/images/art01.jpg"
+                    class="h-12 w-12 rounded-full object-cover"
+                />
+                <p class="text-sm font-bold">瞳孔:流動的脈絡</p>
+            </div>
+            <p class="flex items-center gap-2 pr-2 xl:pr-0">
+                <i class="fa-brands fa-ethereum"></i>
+                <span class="font-squareOne text-[1.25rem]">1,021.09</span>
+            </p>
+            <p
+                class="hidden font-squareOne text-[1.25rem] text-success xl:block"
+            >
+                +83.49%
+            </p>
+            <p
+                class="hidden font-squareOne text-[1.25rem] text-primary xl:block"
+            >
+                -1.43%
+            </p>
+            <p class="hidden items-center gap-2 xl:flex">
+                <i class="fa-brands fa-ethereum"></i>
+                <span class="font-squareOne text-[1.25rem]">2.90</span>
+            </p>
+            <p class="hidden font-squareOne text-[1.25rem] xl:block">32.1K</p>
+            <p class="hidden font-squareOne text-[1.25rem] xl:block">1000</p>
+
+            <div
+                class="decoration absolute bottom-0 right-0 grid h-8 w-8 place-items-center bg-black"
+            >
+                <i
+                    class="fa-solid fa-plus absolute bottom-1 right-0 -translate-x-1/4 -translate-y-1/4 text-[10px] text-white"
+                ></i>
+            </div>
+        </li>
+        <li
+            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 text-center xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
+        >
+            <p class="px-2">6</p>
+            <div
+                class="flex items-center gap-2 border-l border-gray-dark py-4 pl-2 xl:gap-4 xl:justify-self-start"
+            >
+                <img
+                    src="./assets/images/art12.jpg"
+                    class="h-12 w-12 rounded-full object-cover"
+                />
+                <p class="text-sm font-bold">哭泣的時候</p>
+            </div>
+            <p class="flex items-center gap-2 pr-2 xl:pr-0">
+                <i class="fa-brands fa-ethereum"></i>
+                <span class="font-squareOne text-[1.25rem]">921.42</span>
+            </p>
+            <p
+                class="hidden font-squareOne text-[1.25rem] text-primary xl:block"
+            >
+                -9.43%
+            </p>
+            <p
+                class="hidden font-squareOne text-[1.25rem] text-success xl:block"
+            >
+                +183.49%
+            </p>
+            <p class="hidden items-center gap-2 xl:flex">
+                <i class="fa-brands fa-ethereum"></i>
+                <span class="font-squareOne text-[1.25rem]">2.90</span>
+            </p>
+            <p class="hidden font-squareOne text-[1.25rem] xl:block">32.1K</p>
+            <p class="hidden font-squareOne text-[1.25rem] xl:block">1000</p>
+
+            <div
+                class="decoration absolute bottom-0 right-0 grid h-8 w-8 place-items-center bg-black"
+            >
+                <i
+                    class="fa-solid fa-plus absolute bottom-1 right-0 -translate-x-1/4 -translate-y-1/4 text-[10px] text-white"
+                ></i>
+            </div>
+        </li>
+        <li
+            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 text-center xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
+        >
+            <p class="px-2">7</p>
+            <div
+                class="flex items-center gap-2 border-l border-gray-dark py-4 pl-2 xl:gap-4 xl:justify-self-start"
+            >
+                <img
+                    src="./assets/images/art14.jpg"
+                    class="h-12 w-12 rounded-full object-cover"
+                />
+                <p class="text-sm font-bold">破碎的菠蘿麵包</p>
+            </div>
+            <p class="flex items-center gap-2 pr-2 xl:pr-0">
+                <i class="fa-brands fa-ethereum"></i>
+                <span class="font-squareOne text-[1.25rem]">888.88</span>
+            </p>
+            <p
+                class="hidden font-squareOne text-[1.25rem] text-success xl:block"
+            >
+                +20.49%
+            </p>
+            <p
+                class="hidden font-squareOne text-[1.25rem] text-primary xl:block"
+            >
+                -0.43%
+            </p>
+            <p class="hidden items-center gap-2 xl:flex">
+                <i class="fa-brands fa-ethereum"></i>
+                <span class="font-squareOne text-[1.25rem]">2.90</span>
+            </p>
+            <p class="hidden font-squareOne text-[1.25rem] xl:block">32.1K</p>
+            <p class="hidden font-squareOne text-[1.25rem] xl:block">1000</p>
+
+            <div
+                class="decoration absolute bottom-0 right-0 grid h-8 w-8 place-items-center bg-black"
+            >
+                <i
+                    class="fa-solid fa-plus absolute bottom-1 right-0 -translate-x-1/4 -translate-y-1/4 text-[10px] text-white"
+                ></i>
+            </div>
+        </li>
+        <li
+            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 text-center xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
+        >
+            <p class="px-2">8</p>
+            <div
+                class="flex items-center gap-2 border-l border-gray-dark py-4 pl-2 xl:gap-4 xl:justify-self-start"
+            >
+                <img
+                    src="./assets/images/art08.jpg"
+                    class="h-12 w-12 rounded-full object-cover"
+                />
+                <p class="text-sm font-bold">人生中的貓咪們</p>
+            </div>
+            <p class="flex items-center gap-2 pr-2 xl:pr-0">
+                <i class="fa-brands fa-ethereum"></i>
+                <span class="font-squareOne text-[1.25rem]">770.23</span>
+            </p>
+            <p
+                class="hidden font-squareOne text-[1.25rem] text-success xl:block"
+            >
+                +32.49%
+            </p>
+            <p
+                class="hidden font-squareOne text-[1.25rem] text-success xl:block"
+            >
+                +30.23
+            </p>
+            <p class="hidden items-center gap-2 xl:flex">
+                <i class="fa-brands fa-ethereum"></i>
+                <span class="font-squareOne text-[1.25rem]">2.90</span>
+            </p>
+            <p class="hidden font-squareOne text-[1.25rem] xl:block">32.1K</p>
+            <p class="hidden font-squareOne text-[1.25rem] xl:block">1000</p>
+
+            <div
+                class="decoration absolute bottom-0 right-0 grid h-8 w-8 place-items-center bg-black"
+            >
+                <i
+                    class="fa-solid fa-plus absolute bottom-1 right-0 -translate-x-1/4 -translate-y-1/4 text-[10px] text-white"
+                ></i>
+            </div>
+        </li>
+        <li
+            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 text-center xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
+        >
+            <p class="px-2">9</p>
+            <div
+                class="flex items-center gap-2 border-l border-gray-dark py-4 pl-2 xl:gap-4 xl:justify-self-start"
+            >
+                <img
+                    src="./assets/images/art28.jpg"
+                    class="h-12 w-12 rounded-full object-cover"
+                />
+                <p class="text-sm font-bold">髒兮兮的家</p>
+            </div>
+            <p class="flex items-center gap-2 pr-2 xl:pr-0">
+                <i class="fa-brands fa-ethereum"></i>
+                <span class="font-squareOne text-[1.25rem]">502.31</span>
+            </p>
+            <p
+                class="hidden font-squareOne text-[1.25rem] text-success xl:block"
+            >
+                +13.49%
+            </p>
+            <p
+                class="hidden font-squareOne text-[1.25rem] text-success xl:block"
+            >
+                +30.23
+            </p>
+            <p class="hidden items-center gap-2 xl:flex">
+                <i class="fa-brands fa-ethereum"></i>
+                <span class="font-squareOne text-[1.25rem]">2.90</span>
+            </p>
+            <p class="hidden font-squareOne text-[1.25rem] xl:block">32.1K</p>
+            <p class="hidden font-squareOne text-[1.25rem] xl:block">1000</p>
+
+            <div
+                class="decoration absolute bottom-0 right-0 grid h-8 w-8 place-items-center bg-black"
+            >
+                <i
+                    class="fa-solid fa-plus absolute bottom-1 right-0 -translate-x-1/4 -translate-y-1/4 text-[10px] text-white"
+                ></i>
+            </div>
+        </li>
+        <li
+            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 text-center xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
+        >
+            <p class="px-2">10</p>
+            <div
+                class="flex items-center gap-2 border-l border-gray-dark py-4 pl-2 xl:gap-4 xl:justify-self-start"
+            >
+                <img
+                    src="./assets/images/art16.jpg"
+                    class="h-12 w-12 rounded-full object-cover"
+                />
+                <p class="text-sm font-bold">細胞小將</p>
+            </div>
+            <p class="flex items-center gap-2 pr-2 xl:pr-0">
+                <i class="fa-brands fa-ethereum"></i>
+                <span class="font-squareOne text-[1.25rem]">420.20</span>
+            </p>
+            <p
+                class="hidden font-squareOne text-[1.25rem] text-success xl:block"
+            >
+                +54.49%
+            </p>
+            <p
+                class="hidden font-squareOne text-[1.25rem] text-primary xl:block"
+            >
+                -12.43%
+            </p>
+            <p class="hidden items-center gap-2 xl:flex">
+                <i class="fa-brands fa-ethereum"></i>
+                <span class="font-squareOne text-[1.25rem]">2.90</span>
+            </p>
+            <p class="hidden font-squareOne text-[1.25rem] xl:block">32.1K</p>
+            <p class="hidden font-squareOne text-[1.25rem] xl:block">1000</p>
+
+            <div
+                class="decoration absolute bottom-0 right-0 grid h-8 w-8 place-items-center bg-black"
+            >
+                <i
+                    class="fa-solid fa-plus absolute bottom-1 right-0 -translate-x-1/4 -translate-y-1/4 text-[10px] text-white"
+                ></i>
+            </div>
+        </li>
+    </ul>
+</main>

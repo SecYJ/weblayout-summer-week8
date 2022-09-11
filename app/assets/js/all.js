@@ -15,7 +15,6 @@ window.addEventListener("DOMContentLoaded", () => {
     };
 
     const artworkGrid = document.querySelector("#artwork-grid");
-    console.log(artworkGrid);
     if (artworkGrid) {
         const options = {
             itemSelector: ".artwork-item",
@@ -25,21 +24,19 @@ window.addEventListener("DOMContentLoaded", () => {
         masonryInit(artworkGrid, options);
     }
 
-    const swiper = new Swiper(".swiper", {
+    new Swiper("#artists-swiper", {
+        slideClass: "artist-slide",
+        slideActiveClass: "artist-slide-active",
+        slidePrevClass: "artist-slide-prev",
+        slideNextClass: "artist-slide-next",
         loop: true,
         slidesPerView: 1,
-        freeMode: true,
-        resizeObserver: true,
         autoplay: {
             delay: 3000,
-            disabledOnInteraction: false,
+            disableOnInteraction: false,
         },
         initialSlide: 1,
         breakpoints: {
-            // 768: {
-            //     slidesPerView: 2,
-            //     spaceBetween: 24,
-            // },
             1024: {
                 slidesPerView: 3,
                 spaceBetween: 24,
@@ -48,6 +45,7 @@ window.addEventListener("DOMContentLoaded", () => {
         },
         pagination: {
             el: ".artists-pagination",
+            clickable: true,
         },
     });
 
@@ -82,52 +80,128 @@ window.addEventListener("DOMContentLoaded", () => {
     const artworkBtn = document.querySelector("#artwork-btn");
     const collectionBtn = document.querySelector("#collection-btn");
 
-    const showcaseTabSwitch = (e) => {
-        const targetString =
-            e.target.dataset?.targetEl ||
-            e.target.parentElement.dataset.targetEl;
-        const closeEl =
-            targetString === "#collection-items"
-                ? "#artwork-items"
-                : "#collection-items";
+    if (artworkBtn && collectionBtn) {
+        const showcaseTabSwitch = (e) => {
+            const targetString =
+                e.target.dataset?.targetEl ||
+                e.target.parentElement.dataset.targetEl;
+            const closeEl =
+                targetString === "#collection-items"
+                    ? "#artwork-items"
+                    : "#collection-items";
 
-        document.querySelector(closeEl).classList.add("hidden");
-        document.querySelector(targetString).classList.remove("hidden");
-        document.querySelector(targetString).classList.add("border-black");
+            document.querySelector(closeEl).classList.add("hidden");
+            document.querySelector(targetString).classList.remove("hidden");
+            document.querySelector(targetString).classList.add("border-black");
 
-        if (targetString === "#collection-items") {
-            const options = {
-                itemSelector: ".collection-item",
-                gutter: ".collection-gutter",
-                columnWidth: ".collection-sizer",
-            };
+            if (targetString === "#collection-items") {
+                const options = {
+                    itemSelector: ".collection-item",
+                    gutter: ".collection-gutter",
+                    columnWidth: ".collection-sizer",
+                };
 
-            masonryInit("#collection-items", options);
+                masonryInit("#collection-items", options);
 
-            artworkBtn.classList.remove("border-gray-dark");
-            artworkBtn.classList.remove("border-b-gray-light");
-            artworkBtn.classList.add("border-transparent");
-            artworkBtn.classList.add("border-b-gray-dark");
-            artworkBtn.classList.add("text-gray-dark");
-            collectionBtn.classList.remove("border-transparent");
-            collectionBtn.classList.add("border-gray-dark");
-            collectionBtn.classList.add("border-b-gray-light");
-            collectionBtn.classList.remove("text-gray-dark");
-            return;
+                artworkBtn.classList.remove("border-gray-dark");
+                artworkBtn.classList.remove("border-b-gray-light");
+                artworkBtn.classList.add("border-transparent");
+                artworkBtn.classList.add("border-b-gray-dark");
+                artworkBtn.classList.add("text-gray-dark");
+                collectionBtn.classList.remove("border-transparent");
+                collectionBtn.classList.add("border-gray-dark");
+                collectionBtn.classList.add("border-b-gray-light");
+                collectionBtn.classList.remove("text-gray-dark");
+                return;
+            }
+
+            collectionBtn.classList.remove("border-gray-dark");
+            collectionBtn.classList.remove("border-b-gray-light");
+            collectionBtn.classList.add("border-transparent");
+            collectionBtn.classList.add("border-b-gray-dark");
+            collectionBtn.classList.add("text-gray-dark");
+            artworkBtn.classList.add("border-gray-dark");
+            artworkBtn.classList.add("border-b-gray-light");
+            artworkBtn.classList.remove("border-transparent");
+            artworkBtn.classList.remove("border-b-gray-dark");
+            artworkBtn.classList.remove("text-gray-dark");
+        };
+
+        collectionBtn.addEventListener("click", showcaseTabSwitch);
+        artworkBtn.addEventListener("click", showcaseTabSwitch);
+    }
+
+    const productItems = document.querySelector("#product-items");
+    if (productItems) {
+        const options = {
+            gutter: ".product-gutter",
+            columnWidth: ".product-sizer",
+            itemSelector: ".product-item",
+        };
+        masonryInit(productItems, options);
+    }
+
+    const productFilterBtn = document.querySelector("#product-filter-btn");
+    let productNavState = false;
+
+    const toggleProductNav = () => {
+        const productNavbar = document.querySelector("#product-navbar");
+        const navbarCloseBtn = document.querySelector(
+            "#product-navbar-close-btn"
+        );
+
+        if (!productNavState) {
+            productNavbar.classList.remove("-translate-x-full");
+            navbarCloseBtn.addEventListener("click", toggleProductNav);
+        } else {
+            productNavbar.classList.add("-translate-x-full");
+            navbarCloseBtn.removeEventListener("click", toggleProductNav);
         }
-
-        collectionBtn.classList.remove("border-gray-dark");
-        collectionBtn.classList.remove("border-b-gray-light");
-        collectionBtn.classList.add("border-transparent");
-        collectionBtn.classList.add("border-b-gray-dark");
-        collectionBtn.classList.add("text-gray-dark");
-        artworkBtn.classList.add("border-gray-dark");
-        artworkBtn.classList.add("border-b-gray-light");
-        artworkBtn.classList.remove("border-transparent");
-        artworkBtn.classList.remove("border-b-gray-dark");
-        artworkBtn.classList.remove("text-gray-dark");
+        productNavState = !productNavState;
     };
 
-    collectionBtn.addEventListener("click", showcaseTabSwitch);
-    artworkBtn.addEventListener("click", showcaseTabSwitch);
+    if (productFilterBtn) {
+        productFilterBtn.addEventListener("click", toggleProductNav);
+    }
+
+    const artIntro = document.querySelector("#art-introduction");
+    if (artIntro) {
+        const options = {
+            gutter: ".art-intro-gutter",
+            columnWidth: ".art-intro-sizer",
+            itemSelector: ".art-intro-item",
+        };
+        masonryInit(artIntro, options);
+    }
+
+    new Swiper("#other-works-swiper", {
+        loop: true,
+        slideClass: "other-works-slide",
+        slidesPerView: 2,
+        spaceBetween: 24,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 24,
+            },
+        },
+        pagination: {
+            clickable: true,
+            el: ".other-works-pagination",
+        },
+    });
+
+    const exploreItems = document.querySelector("#explore-items");
+    if (exploreItems) {
+        const options = {
+            gutter: ".explore-gutter",
+            columnWidth: ".explore-sizer",
+            itemSelector: ".explore-item",
+        };
+        masonryInit(exploreItems, options);
+    }
 });

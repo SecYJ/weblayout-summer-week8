@@ -8,6 +8,7 @@ module.exports = {
                     light: "#F0F0F0",
                     dark: "#808080",
                 },
+                success: "#53C139",
             },
         },
         container: {
