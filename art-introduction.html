@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Art Introduction</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+            integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Squada+One&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+        />
+        <link rel="stylesheet" href="./assets/style/all.css" />
+    </head>
+
+    <body class="bg-gray-light leading-normal">
+        <header class="sticky top-0 z-10 border-b border-black bg-gray-light">
+            <div class="container">
+                <div class="flex items-center justify-between">
+                    <!-- left -->
+                    <a href="./index.html" class="grow py-4 xl:py-8" id="logo">
+                        <img
+                            src="./assets/images/logo.svg"
+                            alt="Art NFT"
+                            class="h-[18px] xl:h-10"
+                        />
+                    </a>
+                    <!-- right -->
+                    <div class="xl:hidden" id="header-right-items">
+                        <div class="flex bg-gray-light py-4">
+                            <button
+                                type="button"
+                                class="hidden"
+                                id="return-to-header-btn"
+                            >
+                                <i
+                                    class="fa-solid fa-angle-left text-[.75rem]"
+                                ></i>
+                            </button>
+                            <input
+                                type="text"
+                                name="search"
+                                id="search"
+                                class="mx-4 hidden w-full grow border-0 bg-transparent text-[14px] text-gray-dark outline-none"
+                                placeholder="搜尋作品名稱、藝術家名稱"
+                            />
+                            <button
+                                type="button"
+                                class=""
+                                id="mobile-search-btn"
+                            >
+                                <i
+                                    class="fa-solid fa-magnifying-glass block"
+                                ></i>
+                            </button>
+                            <button
+                                type="button"
+                                id="mobile-menu-btn"
+                                class="ml-6"
+                            >
+                                <i class="fa-solid fa-bars block"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- right for desktop -->
+                    <nav class="hidden xl:flex xl:divide-x xl:divide-black">
+                        <label
+                            class="xl:border-l xl:border-black xl:px-12 xl:py-10"
+                            for="search-item"
+                        >
+                            <input
+                                type="search"
+                                id="search-item"
+                                name="search-item"
+                                placeholder="搜尋作品名稱、藝術家名稱"
+                                class="xl:mr-6 xl:min-w-[288px] xl:border-0 xl:bg-gray-light xl:text-gray-dark xl:outline-none"
+                            />
+                            <button type="button">
+                                <i
+                                    class="fa-solid fa-magnifying-glass block xl:text-[1.5rem]"
+                                ></i>
+                            </button>
+                        </label>
+                        <a
+                            href="./explore.html"
+                            class="xl:px-12 xl:py-10 xl:font-bold xl:hover:text-primary"
+                        >
+                            探索
+                        </a>
+                        <a
+                            href="./market-value.html"
+                            class="xl:px-12 xl:py-10 xl:font-bold xl:hover:text-primary"
+                        >
+                            市值
+                        </a>
+                        <a href="./wallet.html" class="group xl:py-10 xl:px-12">
+                            <i
+                                class="fa-solid fa-wallet text-[1.5rem] xl:font-bold xl:group-hover:text-primary"
+                            >
+                            </i>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <nav
+                class="absolute top-[calc(100%+1px)] left-0 right-0 hidden bg-white py-6 text-center"
+                id="mobile-nav-menu"
+            >
+                <div class="container">
+                    <a
+                        href="#"
+                        class="block border-b border-black pb-6 font-bold"
+                        >探索</a
+                    >
+                    <a href="#" class="my-6 block font-bold">市值</a>
+                    <a
+                        href="#"
+                        class="block border border-black bg-primary py-3 text-white"
+                        >連結錢包</a
+                    >
+                </div>
+            </nav>
+        </header>
+
+        
+<main class="container">
+    <section class="mt-6 grid gap-6 xl:grid-cols-2">
+        <img
+            src="./assets/images/art21.jpg"
+            class="h-[288px] w-full object-cover xl:h-[546px]"
+        />
+        <div class="border border-black bg-white">
+            <figure class="border-b border-black p-4 xl:px-10 xl:pb-8">
+                <div
+                    class="flex flex-col gap-2 xl:flex-row-reverse xl:justify-between"
+                >
+                    <div class="flex items-center gap-2">
+                        <img
+                            src="./assets/images/artist01.jpg"
+                            class="h-8 w-8 rounded-full object-cover"
+                        />
+                        <p class="font-squareOne leading-none">Michael</p>
+                    </div>
+                    <h1 class="text-[2rem] font-bold xl:text-[3rem]">
+                        兩情相悅
+                    </h1>
+                </div>
+                <div class="mt-4 flex items-end justify-between">
+                    <div>
+                        <p class="text-sm text-gray-dark">最高出價</p>
+                        <div class="mt-2 flex items-center gap-2">
+                            <img
+                                src="./assets/images/user01.jpg"
+                                class="h-8 w-8 rounded-full object-cover"
+                            />
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <p class="ml-2 font-squareOne leading-none">
+                                0.044Eth
+                            </p>
+                        </div>
+                    </div>
+                    <button
+                        type="button"
+                        class="border border-black bg-primary py-2 px-12 text-white"
+                    >
+                        出價
+                    </button>
+                </div>
+            </figure>
+            <article class="space-y-4 py-6 px-4 xl:py-8 xl:px-10">
+                <p>3/14情人節外面剛好有兩隻鳥，也在過情人節。</p>
+                <p>
+                    而且其中一隻竟然有梳油頭，不知道是不是有用定型液，他們感情真好，出門還會特別打扮，看著看著不禁思考，我怎麼會變這樣？
+                </p>
+                <p>好羨慕啊，我也要有這樣兩情相悅的另一半。</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- for masonry layout -->
+    <section class="mt-6">
+        <ul id="art-introduction">
+            <li class="art-intro-sizer w-full xl:w-[calc(50%-.75rem)]"></li>
+            <li class="art-intro-gutter xl:w-6"></li>
+            <li
+                class="art-intro-item mb-6 w-full border border-black bg-white xl:w-[calc(50%-.75rem)]"
+            >
+                <div
+                    class="flex items-center justify-between border-b border-black p-4 xl:p-6"
+                >
+                    <p class="font-bold">屬性</p>
+                    <button type="button">
+                        <i class="fa-solid fa-angle-up text-base"></i>
+                    </button>
+                </div>
+                <ul class="space-y-2 divide-y divide-gray-light py-6 px-4">
+                    <li class="flex justify-between">
+                        <p>品種</p>
+                        <p class="text-gray-dark">青藍金剛鸚鵡</p>
+                    </li>
+                    <li class="flex justify-between pt-2">
+                        <p>鳥的數量</p>
+                        <p class="text-gray-dark">2隻</p>
+                    </li>
+                    <li class="flex justify-between pt-2">
+                        <p>是否有花草</p>
+                        <p class="text-gray-dark">是</p>
+                    </li>
+                    <li class="flex justify-between pt-2">
+                        <p>鳥的顏色</p>
+                        <p class="text-gray-dark">藍色</p>
+                    </li>
+                </ul>
+            </li>
+            <li
+                class="art-intro-item mb-6 w-full border border-black bg-white xl:w-[calc(50%-.75rem)]"
+            >
+                <div
+                    class="flex items-center justify-between border-b border-black p-4 xl:p-6"
+                >
+                    <p class="font-bold">出價</p>
+                    <button type="button">
+                        <i class="fa-solid fa-angle-up text-base"></i>
+                    </button>
+                </div>
+                <div class="py-6 px-4">
+                    <div class="grid grid-cols-2 bg-gray-light text-center">
+                        <p class="py-2 px-4 text-sm">價格</p>
+                        <p class="py-2 px-4 text-sm">期限</p>
+                    </div>
+                    <ul class="mt-2 space-y-2 divide-y divide-gray-light">
+                        <li class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <img
+                                    src="./assets/images/artist03.jpg"
+                                    class="h-8 w-8 rounded-full object-cover"
+                                />
+                                <i
+                                    class="fa-solid fa-arrow-right text-base"
+                                ></i>
+                                <p class="font-squareOne leading-none">
+                                    0.044Eth
+                                </p>
+                            </div>
+                            <p class="text-gray-dark">3個月後</p>
+                        </li>
+                        <li class="flex justify-between pt-2">
+                            <div class="flex items-center gap-2">
+                                <img
+                                    src="./assets/images/user02.jpg"
+                                    class="h-8 w-8 rounded-full object-cover"
+                                />
+                                <i
+                                    class="fa-solid fa-arrow-right text-base"
+                                ></i>
+                                <p class="font-squareOne leading-none">
+                                    0.054Eth
+                                </p>
+                            </div>
+                            <p class="text-gray-dark">1個月後</p>
+                        </li>
+                        <li class="flex justify-between pt-2">
+                            <div class="flex items-center gap-2">
+                                <img
+                                    src="./assets/images/user03.jpg"
+                                    class="h-8 w-8 rounded-full object-cover"
+                                />
+                                <i
+                                    class="fa-solid fa-arrow-right text-base"
+                                ></i>
+                                <p class="font-squareOne leading-none">
+                                    0.044Eth
+                                </p>
+                            </div>
+                            <p class="text-gray-dark">2週後</p>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li
+                class="art-intro-item mb-6 w-full border border-black bg-white xl:mb-0 xl:w-[calc(50%-.75rem)]"
+            >
+                <div
+                    class="flex items-center justify-between border-b border-black p-4 xl:p-6"
+                >
+                    <p class="font-bold">基本資訊</p>
+                    <button type="button">
+                        <i class="fa-solid fa-angle-up text-base"></i>
+                    </button>
+                </div>
+                <ul class="space-y-2 divide-y divide-gray-light py-6 px-4">
+                    <li class="flex justify-between">
+                        <p>擁有者</p>
+                        <p class="text-gray-dark">0xa543x…1283</p>
+                    </li>
+                    <li class="flex justify-between pt-2">
+                        <p>代幣ID</p>
+                        <p class="text-gray-dark">#1234</p>
+                    </li>
+                    <li class="flex justify-between pt-2">
+                        <p>合約地址</p>
+                        <p class="text-gray-dark">青藍金剛鸚鵡</p>
+                    </li>
+                </ul>
+            </li>
+            <li
+                class="art-intro-item mb-6 w-full border border-black bg-white xl:mb-0 xl:w-[calc(50%-.75rem)]"
+            >
+                <div
+                    class="flex items-center justify-between border-b border-black p-4 xl:p-6"
+                >
+                    <p class="font-bold">交易歷史</p>
+                    <button type="button">
+                        <i class="fa-solid fa-angle-up text-base"></i>
+                    </button>
+                </div>
+                <ul class="py-6 px-4">
+                    <li
+                        class="grid grid-cols-[repeat(3,auto),1fr] gap-8 bg-gray-light py-2 px-4 xl:grid-cols-[repeat(2,auto),1fr,136px]"
+                    >
+                        <p>事件</p>
+                        <p>價格</p>
+                        <p>從</p>
+                        <p>時間</p>
+                    </li>
+                    <li
+                        class="grid grid-cols-[repeat(3,auto),1fr] gap-8 py-2 px-4 xl:grid-cols-[repeat(2,auto),1fr,136px]"
+                    >
+                        <p>上架</p>
+                        <p>2nb</p>
+                        <div class="xl:flex xl:items-center xl:gap-2">
+                            <img
+                                src="./assets/images/artist02.jpg"
+                                class="h-6 w-6 rounded-full object-cover"
+                            />
+                            <p
+                                class="hidden font-squareOne leading-none xl:block"
+                            >
+                                Antony WU
+                            </p>
+                        </div>
+                        <p>14小時前</p>
+                    </li>
+                    <li
+                        class="grid grid-cols-[repeat(3,auto),1fr] gap-8 border-t border-gray-light px-4 pt-2 xl:grid-cols-[repeat(2,auto),1fr,136px]"
+                    >
+                        <p>上架</p>
+                        <p>2nb</p>
+                        <div class="xl:flex xl:items-center xl:gap-2">
+                            <img
+                                src="./assets/images/artist01.jpg"
+                                class="h-6 w-6 rounded-full object-cover"
+                            />
+                            <p
+                                class="hidden font-squareOne leading-none xl:block"
+                            >
+                                Antony WU
+                            </p>
+                        </div>
+                        <p>2天前</p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section class="my-10 lg:mb-20">
+        <div
+            class="mb-6 flex items-end justify-between border-b border-black lg:mb-12"
+        >
+            <h2
+                class="mb-2 font-squareOne text-[2rem] font-bold leading-none xl:mb-4 xl:text-[3rem]"
+            >
+                Other
+                <span
+                    class="hidden text-[1.25rem] leading-normal lg:ml-4 lg:inline-block"
+                >
+                    其餘作品
+                </span>
+            </h2>
+            <button type="button" class="btn btn-primary group relative">
+                MORE<span class="decoration"></span>
+            </button>
+        </div>
+
+        <div class="swiper pb-8 lg:pb-14" id="other-works-swiper">
+            <div class="swiper-wrapper">
+                <div class="other-works-slide border-b border-gray-dark">
+                    <div class="bg-white p-2 xl:p-6">
+                        <img
+                            src="./assets/images/art22.jpg"
+                            class="h-[164px] w-full object-cover lg:h-[327px]"
+                        />
+                    </div>
+                    <p class="py-4 font-bold">群聚的小鳥們</p>
+                </div>
+                <div class="other-works-slide border-b border-gray-dark">
+                    <div class="bg-white p-2 xl:p-6">
+                        <img
+                            src="./assets/images/art27.jpg"
+                            class="h-[164px] w-full object-cover lg:h-[327px]"
+                        />
+                    </div>
+                    <p class="py-4 font-bold">我真的受傷了</p>
+                </div>
+                <div class="other-works-slide border-b border-gray-dark">
+                    <div class="bg-white p-2 xl:p-6">
+                        <img
+                            src="./assets/images/art20.jpg"
+                            class="h-[164px] w-full object-cover lg:h-[327px]"
+                        />
+                    </div>
+                    <p class="py-4 font-bold">這兩隻也太像企鵝了吧</p>
+                </div>
+                <div class="other-works-slide border-b border-gray-dark">
+                    <div class="bg-white p-2 xl:p-6">
+                        <img
+                            src="./assets/images/art23.jpg"
+                            class="h-[164px] w-full object-cover lg:h-[327px]"
+                        />
+                    </div>
+                    <p class="py-4 font-bold">群聚囉～小鳥</p>
+                </div>
+                <div class="other-works-slide border-b border-gray-dark">
+                    <div class="bg-white p-2 xl:p-6">
+                        <img
+                            src="./assets/images/art22.jpg"
+                            class="h-[164px] w-full object-cover lg:h-[327px]"
+                        />
+                    </div>
+                    <p class="py-4 font-bold">群聚囉～小鳥</p>
+                </div>
+                <div class="other-works-slide border-b border-gray-dark">
+                    <div class="bg-white p-2 xl:p-6">
+                        <img
+                            src="./assets/images/art24.jpg"
+                            class="h-[164px] w-full object-cover lg:h-[327px]"
+                        />
+                    </div>
+                    <p class="py-4 font-bold">會唱metal的鳥</p>
+                </div>
+                <div class="other-works-slide border-b border-gray-dark">
+                    <div class="bg-white p-2 xl:p-6">
+                        <img
+                            src="./assets/images/art25.jpg"
+                            class="h-[164px] w-full object-cover lg:h-[327px]"
+                        />
+                    </div>
+                    <p class="py-4 font-bold">一大一小兩個恰恰好</p>
+                </div>
+                <div class="other-works-slide border-b border-gray-dark">
+                    <div class="bg-white p-2 xl:p-6">
+                        <img
+                            src="./assets/images/art26.jpg"
+                            class="h-[164px] w-full object-cover lg:h-[327px]"
+                        />
+                    </div>
+                    <p class="py-4 font-bold">與你分享的快樂勝過獨自擁有</p>
+                </div>
+            </div>
+            <div
+                class="other-works-pagination absolute bottom-0 left-1/2 -translate-x-1/2"
+            ></div>
+        </div>
+    </section>
+</main>
+
+
+        <footer class="border-t border-gray-dark text-center">
+            <div class="mt-2 h-1 bg-black"></div>
+            <div class="container py-6">© ART NFT. All Rights Reserved</div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+        <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+        <script src="./assets/js/vendors.js"></script>
+        <script src="./assets/js/all.js"></script>
+    </body>
+</html>

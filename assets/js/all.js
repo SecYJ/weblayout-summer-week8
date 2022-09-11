@@ -19,7 +19,6 @@ window.addEventListener("DOMContentLoaded", function () {
   };
 
   var artworkGrid = document.querySelector("#artwork-grid");
-  console.log(artworkGrid);
 
   if (artworkGrid) {
     var options = {
@@ -30,21 +29,19 @@ window.addEventListener("DOMContentLoaded", function () {
     masonryInit(artworkGrid, options);
   }
 
-  var swiper = new Swiper(".swiper", {
+  new Swiper("#artists-swiper", {
+    slideClass: "artist-slide",
+    slideActiveClass: "artist-slide-active",
+    slidePrevClass: "artist-slide-prev",
+    slideNextClass: "artist-slide-next",
     loop: true,
     slidesPerView: 1,
-    freeMode: true,
-    resizeObserver: true,
     autoplay: {
       delay: 3000,
-      disabledOnInteraction: false
+      disableOnInteraction: false
     },
     initialSlide: 1,
     breakpoints: {
-      // 768: {
-      //     slidesPerView: 2,
-      //     spaceBetween: 24,
-      // },
       1024: {
         slidesPerView: 3,
         spaceBetween: 24,
@@ -52,7 +49,8 @@ window.addEventListener("DOMContentLoaded", function () {
       }
     },
     pagination: {
-      el: ".artists-pagination"
+      el: ".artists-pagination",
+      clickable: true
     }
   });
   var mobileSearchBtn = document.querySelector("#mobile-search-btn");
@@ -82,47 +80,124 @@ window.addEventListener("DOMContentLoaded", function () {
   var artworkBtn = document.querySelector("#artwork-btn");
   var collectionBtn = document.querySelector("#collection-btn");
 
-  var showcaseTabSwitch = function showcaseTabSwitch(e) {
-    var _e$target$dataset;
+  if (artworkBtn && collectionBtn) {
+    var showcaseTabSwitch = function showcaseTabSwitch(e) {
+      var _e$target$dataset;
 
-    var targetString = ((_e$target$dataset = e.target.dataset) === null || _e$target$dataset === void 0 ? void 0 : _e$target$dataset.targetEl) || e.target.parentElement.dataset.targetEl;
-    var closeEl = targetString === "#collection-items" ? "#artwork-items" : "#collection-items";
-    document.querySelector(closeEl).classList.add("hidden");
-    document.querySelector(targetString).classList.remove("hidden");
-    document.querySelector(targetString).classList.add("border-black");
+      var targetString = ((_e$target$dataset = e.target.dataset) === null || _e$target$dataset === void 0 ? void 0 : _e$target$dataset.targetEl) || e.target.parentElement.dataset.targetEl;
+      var closeEl = targetString === "#collection-items" ? "#artwork-items" : "#collection-items";
+      document.querySelector(closeEl).classList.add("hidden");
+      document.querySelector(targetString).classList.remove("hidden");
+      document.querySelector(targetString).classList.add("border-black");
 
-    if (targetString === "#collection-items") {
-      var _options = {
-        itemSelector: ".collection-item",
-        gutter: ".collection-gutter",
-        columnWidth: ".collection-sizer"
-      };
-      masonryInit("#collection-items", _options);
-      artworkBtn.classList.remove("border-gray-dark");
-      artworkBtn.classList.remove("border-b-gray-light");
-      artworkBtn.classList.add("border-transparent");
-      artworkBtn.classList.add("border-b-gray-dark");
-      artworkBtn.classList.add("text-gray-dark");
-      collectionBtn.classList.remove("border-transparent");
-      collectionBtn.classList.add("border-gray-dark");
-      collectionBtn.classList.add("border-b-gray-light");
-      collectionBtn.classList.remove("text-gray-dark");
-      return;
+      if (targetString === "#collection-items") {
+        var _options = {
+          itemSelector: ".collection-item",
+          gutter: ".collection-gutter",
+          columnWidth: ".collection-sizer"
+        };
+        masonryInit("#collection-items", _options);
+        artworkBtn.classList.remove("border-gray-dark");
+        artworkBtn.classList.remove("border-b-gray-light");
+        artworkBtn.classList.add("border-transparent");
+        artworkBtn.classList.add("border-b-gray-dark");
+        artworkBtn.classList.add("text-gray-dark");
+        collectionBtn.classList.remove("border-transparent");
+        collectionBtn.classList.add("border-gray-dark");
+        collectionBtn.classList.add("border-b-gray-light");
+        collectionBtn.classList.remove("text-gray-dark");
+        return;
+      }
+
+      collectionBtn.classList.remove("border-gray-dark");
+      collectionBtn.classList.remove("border-b-gray-light");
+      collectionBtn.classList.add("border-transparent");
+      collectionBtn.classList.add("border-b-gray-dark");
+      collectionBtn.classList.add("text-gray-dark");
+      artworkBtn.classList.add("border-gray-dark");
+      artworkBtn.classList.add("border-b-gray-light");
+      artworkBtn.classList.remove("border-transparent");
+      artworkBtn.classList.remove("border-b-gray-dark");
+      artworkBtn.classList.remove("text-gray-dark");
+    };
+
+    collectionBtn.addEventListener("click", showcaseTabSwitch);
+    artworkBtn.addEventListener("click", showcaseTabSwitch);
+  }
+
+  var productItems = document.querySelector("#product-items");
+
+  if (productItems) {
+    var _options2 = {
+      gutter: ".product-gutter",
+      columnWidth: ".product-sizer",
+      itemSelector: ".product-item"
+    };
+    masonryInit(productItems, _options2);
+  }
+
+  var productFilterBtn = document.querySelector("#product-filter-btn");
+  var productNavState = false;
+
+  var toggleProductNav = function toggleProductNav() {
+    var productNavbar = document.querySelector("#product-navbar");
+    var navbarCloseBtn = document.querySelector("#product-navbar-close-btn");
+
+    if (!productNavState) {
+      productNavbar.classList.remove("-translate-x-full");
+      navbarCloseBtn.addEventListener("click", toggleProductNav);
+    } else {
+      productNavbar.classList.add("-translate-x-full");
+      navbarCloseBtn.removeEventListener("click", toggleProductNav);
     }
 
-    collectionBtn.classList.remove("border-gray-dark");
-    collectionBtn.classList.remove("border-b-gray-light");
-    collectionBtn.classList.add("border-transparent");
-    collectionBtn.classList.add("border-b-gray-dark");
-    collectionBtn.classList.add("text-gray-dark");
-    artworkBtn.classList.add("border-gray-dark");
-    artworkBtn.classList.add("border-b-gray-light");
-    artworkBtn.classList.remove("border-transparent");
-    artworkBtn.classList.remove("border-b-gray-dark");
-    artworkBtn.classList.remove("text-gray-dark");
+    productNavState = !productNavState;
   };
 
-  collectionBtn.addEventListener("click", showcaseTabSwitch);
-  artworkBtn.addEventListener("click", showcaseTabSwitch);
+  if (productFilterBtn) {
+    productFilterBtn.addEventListener("click", toggleProductNav);
+  }
+
+  var artIntro = document.querySelector("#art-introduction");
+
+  if (artIntro) {
+    var _options3 = {
+      gutter: ".art-intro-gutter",
+      columnWidth: ".art-intro-sizer",
+      itemSelector: ".art-intro-item"
+    };
+    masonryInit(artIntro, _options3);
+  }
+
+  new Swiper("#other-works-swiper", {
+    loop: true,
+    slideClass: "other-works-slide",
+    slidesPerView: 2,
+    spaceBetween: 24,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false
+    },
+    breakpoints: {
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 24
+      }
+    },
+    pagination: {
+      clickable: true,
+      el: ".other-works-pagination"
+    }
+  });
+  var exploreItems = document.querySelector("#explore-items");
+
+  if (exploreItems) {
+    var _options4 = {
+      gutter: ".explore-gutter",
+      columnWidth: ".explore-sizer",
+      itemSelector: ".explore-item"
+    };
+    masonryInit(exploreItems, _options4);
+  }
 });
 //# sourceMappingURL=all.js.map
