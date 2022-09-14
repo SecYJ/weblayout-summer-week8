@@ -19,6 +19,10 @@
             rel="stylesheet"
         />
         <link
+            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+            rel="stylesheet"
+        />
+        <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
         />
@@ -29,7 +33,6 @@
         <header class="sticky top-0 z-10 border-b border-black bg-gray-light">
             <div class="container">
                 <div class="flex items-center justify-between">
-                    <!-- left -->
                     <a href="./index.html" class="grow py-4 xl:py-8" id="logo">
                         <img
                             src="./assets/images/logo.svg"
@@ -37,7 +40,6 @@
                             class="h-[18px] xl:h-10"
                         />
                     </a>
-                    <!-- right -->
                     <div class="xl:hidden" id="header-right-items">
                         <div class="flex bg-gray-light py-4">
                             <button
@@ -75,7 +77,6 @@
                         </div>
                     </div>
 
-                    <!-- right for desktop -->
                     <nav class="hidden xl:flex xl:divide-x xl:divide-black">
                         <label
                             class="xl:border-l xl:border-black xl:px-12 xl:py-10"
@@ -106,7 +107,7 @@
                         >
                             市值
                         </a>
-                        <a href="./wallet.html" class="group xl:py-10 xl:px-12">
+                        <a class="group xl:py-10 xl:px-12" id="wallet-btn">
                             <i
                                 class="fa-solid fa-wallet text-[1.5rem] xl:font-bold xl:group-hover:text-primary"
                             >
@@ -117,50 +118,184 @@
             </div>
 
             <nav
-                class="absolute top-[calc(100%+1px)] left-0 right-0 hidden bg-white py-6 text-center"
+                class="absolute top-[calc(100%+1px)] left-0 right-0 hidden bg-white px-3 py-6 text-center xl:hidden"
                 id="mobile-nav-menu"
             >
-                <div class="container">
-                    <a
-                        href="#"
-                        class="block border-b border-black pb-6 font-bold"
-                        >探索</a
-                    >
-                    <a href="#" class="my-6 block font-bold">市值</a>
-                    <a
-                        href="#"
-                        class="block border border-black bg-primary py-3 text-white"
-                        >連結錢包</a
-                    >
-                </div>
+                <a
+                    href="./explore.html"
+                    class="block border-b border-black pb-6 font-bold"
+                    >探索</a
+                >
+                <a href="./market-value.html" class="my-6 block font-bold"
+                    >市值</a
+                >
+                <a
+                    id="mobile-wallet-btn"
+                    class="block border border-black bg-primary py-3 text-white"
+                    >連結錢包</a
+                >
             </nav>
         </header>
 
+        <div
+            id="wallet-modal"
+            class="pointer-events-none fixed inset-0 z-20 bg-black/[.65] opacity-0 md:grid md:place-items-center"
+        >
+            <div
+                class="flex h-full w-full flex-col bg-white md:h-auto md:max-w-[500px]"
+            >
+                <div class="flex border-b border-gray-dark px-3 py-4">
+                    <p class="ml-auto text-[1.25rem] leading-none">
+                        連結你的錢包
+                    </p>
+                    <button
+                        type="button"
+                        class="ml-auto"
+                        id="wallet-modal-close-btn"
+                    >
+                        <i class="fa-solid fa-times"></i>
+                    </button>
+                </div>
+                <div class="flex grow flex-col px-3 pt-6 md:py-6 md:px-4">
+                    <ul class="grid gap-2 md:grid-cols-2">
+                        <li>
+                            <a
+                                href="#"
+                                class="group grid grid-cols-[auto,1fr,auto] gap-4 border-2 border-gray-dark p-4 transition-colors hover:border-primary"
+                            >
+                                <img
+                                    src="./assets/images/logo/connect01.png"
+                                    class="h-4 w-4 object-cover"
+                                />
+                                <span class="font-squareOne leading-none">
+                                    MetaMask
+                                </span>
+                                <i
+                                    class="fa-solid fa-check text-primary opacity-0 transition-opacity group-hover:opacity-100"
+                                ></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="group grid grid-cols-[auto,1fr,auto] gap-4 border-2 border-gray-dark p-4 transition-colors hover:border-primary"
+                            >
+                                <img
+                                    src="./assets/images/logo/connect02.png"
+                                    class="h-4 w-4 object-cover"
+                                />
+                                <span class="font-squareOne leading-none">
+                                    Coinbase Wallet
+                                </span>
+                                <i
+                                    class="fa-solid fa-check text-primary opacity-0 transition-opacity group-hover:opacity-100"
+                                ></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="group grid grid-cols-[auto,1fr,auto] gap-4 border-2 border-gray-dark p-4 transition-colors hover:border-primary"
+                            >
+                                <img
+                                    src="./assets/images/logo/connect03.png"
+                                    class="h-4 w-4 object-cover"
+                                />
+                                <span class="font-squareOne leading-none">
+                                    WalletConnect
+                                </span>
+                                <i
+                                    class="fa-solid fa-check text-primary opacity-0 transition-opacity group-hover:opacity-100"
+                                ></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="group grid grid-cols-[auto,1fr,auto] gap-4 border-2 border-gray-dark p-4 transition-colors hover:border-primary"
+                            >
+                                <img
+                                    src="./assets/images/logo/connect04.png"
+                                    class="h-4 w-4 object-cover"
+                                />
+                                <span class="font-squareOne leading-none">
+                                    Phantom
+                                </span>
+                                <i
+                                    class="fa-solid fa-check text-primary opacity-0 transition-opacity group-hover:opacity-100"
+                                ></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="group grid grid-cols-[auto,1fr,auto] gap-4 border-2 border-gray-dark p-4 transition-colors hover:border-primary"
+                            >
+                                <img
+                                    src="./assets/images/logo/connect05.png"
+                                    class="h-4 w-4 object-cover"
+                                />
+                                <span class="font-squareOne leading-none">
+                                    Glow
+                                </span>
+                                <i
+                                    class="fa-solid fa-check text-primary opacity-0 transition-opacity group-hover:opacity-100"
+                                ></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="group grid grid-cols-[auto,1fr,auto] gap-4 border-2 border-gray-dark p-4 transition-colors hover:border-primary"
+                            >
+                                <img
+                                    src="./assets/images/logo/connect06.png"
+                                    class="h-4 w-4 object-cover"
+                                />
+                                <span class="font-squareOne leading-none">
+                                    Fortmatic
+                                </span>
+                                <i
+                                    class="fa-solid fa-check text-primary opacity-0 transition-opacity group-hover:opacity-100"
+                                ></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <button
+                        type="button"
+                        class="mt-auto bg-primary py-3 text-white md:mt-6 md:self-center md:px-12 md:py-2 md:hover:bg-primary/90"
+                    >
+                        連結錢包
+                    </button>
+                </div>
+            </div>
+        </div>
+
         
-<main class="container mt-6 mb-10 lg:mt-10 lg:mb-20">
+<main class="container mt-6 mb-10 xl:mt-10 xl:mb-20">
     <ul id="explore-items">
         <li
-            class="explore-sizer w-[calc(50%-.75rem)] lg:w-[calc(25%-18px)]"
+            class="explore-sizer w-[calc(50%-.75rem)] xl:w-[calc(25%-18px)]"
         ></li>
         <li class="explore-gutter w-6"></li>
         <li
-            class="explore-sizer w-[calc(50%-.75rem)] lg:w-[calc(25%-18px)]"
+            class="explore-sizer w-[calc(50%-.75rem)] xl:w-[calc(25%-18px)]"
         ></li>
         <li class="explore-gutter w-6"></li>
         <li
-            class="explore-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:w-[calc(25%-18px)] lg:border-b"
+            class="explore-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
         >
-            <div class="group relative bg-white p-2 lg:p-6">
+            <div class="group relative bg-white p-2 xl:p-6">
                 <img
                     src="./assets/images/art09.jpg"
                     alt="區塊戀-他的私生活"
-                    class="h-[139px] w-full object-cover lg:h-[254px]"
+                    class="h-[139px] w-full object-cover xl:h-[254px]"
                 />
                 <div
-                    class="hidden lg:absolute lg:inset-0 lg:m-6 lg:bg-black/70 lg:p-4 lg:group-hover:block"
+                    class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
                 >
                     <div
-                        class="grid lg:h-full lg:content-between lg:border lg:border-white lg:p-4"
+                        class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
                     >
                         <div class="text-white">
                             <p class="mb-4">唯一想擁有的人，唯一不可以擁有的</p>
@@ -175,24 +310,24 @@
                     </div>
                 </div>
             </div>
-            <h3 class="p-2 text-[14px] font-bold lg:py-4 lg:px-0 lg:text-base">
+            <h3 class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base">
                 區塊戀-他的私生活
             </h3>
         </li>
         <li
-            class="explore-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:w-[calc(25%-18px)] lg:border-b"
+            class="explore-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
         >
-            <div class="group relative bg-white p-2 lg:p-6">
+            <div class="group relative bg-white p-2 xl:p-6">
                 <img
                     src="./assets/images/art10.jpg"
                     alt="夏娃的醜聞"
-                    class="h-[151px] w-full object-cover lg:h-[327px]"
+                    class="h-[151px] w-full object-cover xl:h-[327px]"
                 />
                 <div
-                    class="hidden lg:absolute lg:inset-0 lg:m-6 lg:bg-black/70 lg:p-4 lg:group-hover:block"
+                    class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
                 >
                     <div
-                        class="grid lg:h-full lg:content-between lg:border lg:border-white lg:p-4"
+                        class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
                     >
                         <div class="text-white">
                             <p class="mb-4">唯一想擁有的人，唯一不可以擁有的</p>
@@ -212,16 +347,16 @@
             </h3>
         </li>
         <li
-            class="explore-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:w-[calc(25%-18px)] lg:border-b"
+            class="explore-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
         >
-            <div class="group relative bg-white p-2 lg:p-6">
+            <div class="group relative bg-white p-2 xl:p-6">
                 <img
                     src="./assets/images/art02.jpg"
                     alt="藍色啤酒海"
-                    class="h-[93px] w-full object-cover lg:h-[254px]"
+                    class="h-[93px] w-full object-cover xl:h-[254px]"
                 />
                 <div
-                    class="hidden lg:absolute lg:inset-0 lg:m-6 lg:bg-black/70 lg:p-4 lg:group-hover:block"
+                    class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
                 >
                     <div
                         class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
@@ -242,19 +377,19 @@
             <h3 class="p-2 text-[14px]">藍色啤酒海</h3>
         </li>
         <li
-            class="explore-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:w-[calc(25%-18px)] lg:border-b"
+            class="explore-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
         >
-            <div class="group relative bg-white p-2 lg:p-6">
+            <div class="group relative bg-white p-2 xl:p-6">
                 <img
                     src="./assets/images/art11.jpg"
                     alt="沒有人愛我"
                     class="h-[174px] w-full object-cover"
                 />
                 <div
-                    class="hidden lg:absolute lg:inset-0 lg:m-6 lg:bg-black/70 lg:p-4 lg:group-hover:block"
+                    class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
                 >
                     <div
-                        class="grid lg:h-full lg:content-between lg:border lg:border-white lg:p-4"
+                        class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
                     >
                         <div class="text-white">
                             <p class="mb-4">唯一想擁有的人，唯一不可以擁有的</p>
@@ -274,19 +409,19 @@
             </h3>
         </li>
         <li
-            class="explore-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:w-[calc(25%-18px)] lg:border-b"
+            class="explore-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
         >
-            <div class="group relative bg-white p-2 lg:p-6">
+            <div class="group relative bg-white p-2 xl:p-6">
                 <img
                     src="./assets/images/art12.jpg"
                     alt="不哭不哭眼淚是珍珠"
-                    class="h-[192px] w-full object-cover lg:h-[174px]"
+                    class="h-[192px] w-full object-cover xl:h-[174px]"
                 />
                 <div
-                    class="hidden lg:absolute lg:inset-0 lg:m-6 lg:bg-black/70 lg:p-4 lg:group-hover:block"
+                    class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
                 >
                     <div
-                        class="grid lg:h-full lg:content-between lg:border lg:border-white lg:p-4"
+                        class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
                     >
                         <div class="text-white">
                             <p class="mb-4">唯一想擁有的人，唯一不可以擁有的</p>
@@ -306,19 +441,19 @@
             </h3>
         </li>
         <li
-            class="explore-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:w-[calc(25%-18px)] lg:border-b"
+            class="explore-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
         >
-            <div class="group relative bg-white p-2 lg:p-6">
+            <div class="group relative bg-white p-2 xl:p-6">
                 <img
                     src="./assets/images/art03.jpg"
                     alt="十分鐘就到"
-                    class="h-[99px] w-full object-cover lg:h-[254px]"
+                    class="h-[99px] w-full object-cover xl:h-[254px]"
                 />
                 <div
-                    class="hidden lg:absolute lg:inset-0 lg:m-6 lg:bg-black/70 lg:p-4 lg:group-hover:block"
+                    class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
                 >
                     <div
-                        class="grid lg:h-full lg:content-between lg:border lg:border-white lg:p-4"
+                        class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
                     >
                         <div class="text-white">
                             <p class="mb-4">唯一想擁有的人，唯一不可以擁有的</p>
@@ -338,19 +473,19 @@
             </h3>
         </li>
         <li
-            class="explore-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:w-[calc(25%-18px)] lg:border-b"
+            class="explore-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
         >
-            <div class="group relative bg-white p-2 lg:p-6">
+            <div class="group relative bg-white p-2 xl:p-6">
                 <img
                     src="./assets/images/art04.jpg"
                     alt="我這樣有美嗎"
-                    class="h-[139px] w-full object-cover lg:h-[395px]"
+                    class="h-[139px] w-full object-cover xl:h-[395px]"
                 />
                 <div
-                    class="hidden lg:absolute lg:inset-0 lg:m-6 lg:bg-black/70 lg:p-4 lg:group-hover:block"
+                    class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
                 >
                     <div
-                        class="grid lg:h-full lg:content-between lg:border lg:border-white lg:p-4"
+                        class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
                     >
                         <div class="text-white">
                             <p class="mb-4">唯一想擁有的人，唯一不可以擁有的</p>
@@ -372,11 +507,11 @@
         <li
             class="explore-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
         >
-            <div class="group relative bg-white p-2 lg:p-6">
+            <div class="group relative bg-white p-2 xl:p-6">
                 <img
                     src="./assets/images/art27.jpg"
                     alt="我真的受傷了"
-                    class="h-[185px] w-full object-cover lg:h-[254px]"
+                    class="h-[185px] w-full object-cover xl:h-[254px]"
                 />
                 <div
                     class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
@@ -402,13 +537,13 @@
             </h3>
         </li>
         <li
-            class="explore-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
+            class="explore-item mb-4 w-[calc(50%-.75rem)] border-black xl:w-[calc(25%-18px)] xl:border-b"
         >
-            <div class="group relative bg-white p-2 lg:p-6">
+            <div class="group relative bg-white p-2 xl:p-6">
                 <img
                     src="./assets/images/art19.jpg"
                     alt="野小孩——叫你不要玩那個"
-                    class="h-[173px] w-full object-cover lg:h-[334px]"
+                    class="h-[173px] w-full object-cover xl:h-[334px]"
                 />
                 <div
                     class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
@@ -434,13 +569,13 @@
             </h3>
         </li>
         <li
-            class="explore-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
+            class="explore-item mb-4 w-[calc(50%-.75rem)] border-black xl:w-[calc(25%-18px)] xl:border-b"
         >
-            <div class="group relative bg-white p-2 lg:p-6">
+            <div class="group relative bg-white p-2 xl:p-6">
                 <img
                     src="./assets/images/art16.jpg"
                     alt="柔美的細胞小將"
-                    class="h-[97px] w-full object-cover lg:h-[254px]"
+                    class="h-[97px] w-full object-cover xl:h-[254px]"
                 />
                 <div
                     class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
@@ -461,18 +596,18 @@
                     </div>
                 </div>
             </div>
-            <h3 class="p-2 text-[14px] font-bold lg:py-4 lg:px-0 lg:text-base">
+            <h3 class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base">
                 柔美的細胞小將
             </h3>
         </li>
         <li
-            class="explore-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
+            class="explore-item w-[calc(50%-.75rem)] border-black xl:w-[calc(25%-18px)] xl:border-b"
         >
-            <div class="group relative bg-white p-2 lg:p-6">
+            <div class="group relative bg-white p-2 xl:p-6">
                 <img
                     src="./assets/images/art15.jpg"
                     alt="心如止水——今天吃素"
-                    class="h-[174px] w-full object-cover lg:h-[326px]"
+                    class="h-[174px] w-full object-cover xl:h-[326px]"
                 />
                 <div
                     class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
@@ -493,18 +628,18 @@
                     </div>
                 </div>
             </div>
-            <h3 class="p-2 text-[14px] font-bold lg:py-4 lg:px-0 lg:text-base">
+            <h3 class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base">
                 心如止水——今天吃素
             </h3>
         </li>
         <li
-            class="explore-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
+            class="explore-item w-[calc(50%-.75rem)] border-black xl:w-[calc(25%-18px)] xl:border-b"
         >
-            <div class="group relative bg-white p-2 lg:p-6">
+            <div class="group relative bg-white p-2 xl:p-6">
                 <img
                     src="./assets/images/art06.jpg"
                     alt="每當夏天我吹著溫暖的風"
-                    class="h-[160px] w-full object-cover lg:h-[340px]"
+                    class="h-[160px] w-full object-cover xl:h-[340px]"
                 />
                 <div
                     class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
@@ -525,7 +660,7 @@
                     </div>
                 </div>
             </div>
-            <h3 class="p-2 text-[14px] font-bold lg:py-4 lg:px-0 lg:text-base">
+            <h3 class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base">
                 每當夏天我吹著溫暖的風
             </h3>
         </li>
@@ -541,6 +676,7 @@
         <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
         <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
         <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="./assets/js/vendors.js"></script>
         <script src="./assets/js/all.js"></script>
     </body>

@@ -19,6 +19,10 @@
             rel="stylesheet"
         />
         <link
+            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+            rel="stylesheet"
+        />
+        <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
         />
@@ -29,7 +33,6 @@
         <header class="sticky top-0 z-10 border-b border-black bg-gray-light">
             <div class="container">
                 <div class="flex items-center justify-between">
-                    <!-- left -->
                     <a href="./index.html" class="grow py-4 xl:py-8" id="logo">
                         <img
                             src="./assets/images/logo.svg"
@@ -37,7 +40,6 @@
                             class="h-[18px] xl:h-10"
                         />
                     </a>
-                    <!-- right -->
                     <div class="xl:hidden" id="header-right-items">
                         <div class="flex bg-gray-light py-4">
                             <button
@@ -75,7 +77,6 @@
                         </div>
                     </div>
 
-                    <!-- right for desktop -->
                     <nav class="hidden xl:flex xl:divide-x xl:divide-black">
                         <label
                             class="xl:border-l xl:border-black xl:px-12 xl:py-10"
@@ -106,7 +107,7 @@
                         >
                             市值
                         </a>
-                        <a href="./wallet.html" class="group xl:py-10 xl:px-12">
+                        <a class="group xl:py-10 xl:px-12" id="wallet-btn">
                             <i
                                 class="fa-solid fa-wallet text-[1.5rem] xl:font-bold xl:group-hover:text-primary"
                             >
@@ -117,614 +118,730 @@
             </div>
 
             <nav
-                class="absolute top-[calc(100%+1px)] left-0 right-0 hidden bg-white py-6 text-center"
+                class="absolute top-[calc(100%+1px)] left-0 right-0 hidden bg-white px-3 py-6 text-center xl:hidden"
                 id="mobile-nav-menu"
             >
-                <div class="container">
-                    <a
-                        href="#"
-                        class="block border-b border-black pb-6 font-bold"
-                        >探索</a
-                    >
-                    <a href="#" class="my-6 block font-bold">市值</a>
-                    <a
-                        href="#"
-                        class="block border border-black bg-primary py-3 text-white"
-                        >連結錢包</a
-                    >
-                </div>
+                <a
+                    href="./explore.html"
+                    class="block border-b border-black pb-6 font-bold"
+                    >探索</a
+                >
+                <a href="./market-value.html" class="my-6 block font-bold"
+                    >市值</a
+                >
+                <a
+                    id="mobile-wallet-btn"
+                    class="block border border-black bg-primary py-3 text-white"
+                    >連結錢包</a
+                >
             </nav>
         </header>
 
+        <div
+            id="wallet-modal"
+            class="pointer-events-none fixed inset-0 z-20 bg-black/[.65] opacity-0 md:grid md:place-items-center"
+        >
+            <div
+                class="flex h-full w-full flex-col bg-white md:h-auto md:max-w-[500px]"
+            >
+                <div class="flex border-b border-gray-dark px-3 py-4">
+                    <p class="ml-auto text-[1.25rem] leading-none">
+                        連結你的錢包
+                    </p>
+                    <button
+                        type="button"
+                        class="ml-auto"
+                        id="wallet-modal-close-btn"
+                    >
+                        <i class="fa-solid fa-times"></i>
+                    </button>
+                </div>
+                <div class="flex grow flex-col px-3 pt-6 md:py-6 md:px-4">
+                    <ul class="grid gap-2 md:grid-cols-2">
+                        <li>
+                            <a
+                                href="#"
+                                class="group grid grid-cols-[auto,1fr,auto] gap-4 border-2 border-gray-dark p-4 transition-colors hover:border-primary"
+                            >
+                                <img
+                                    src="./assets/images/logo/connect01.png"
+                                    class="h-4 w-4 object-cover"
+                                />
+                                <span class="font-squareOne leading-none">
+                                    MetaMask
+                                </span>
+                                <i
+                                    class="fa-solid fa-check text-primary opacity-0 transition-opacity group-hover:opacity-100"
+                                ></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="group grid grid-cols-[auto,1fr,auto] gap-4 border-2 border-gray-dark p-4 transition-colors hover:border-primary"
+                            >
+                                <img
+                                    src="./assets/images/logo/connect02.png"
+                                    class="h-4 w-4 object-cover"
+                                />
+                                <span class="font-squareOne leading-none">
+                                    Coinbase Wallet
+                                </span>
+                                <i
+                                    class="fa-solid fa-check text-primary opacity-0 transition-opacity group-hover:opacity-100"
+                                ></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="group grid grid-cols-[auto,1fr,auto] gap-4 border-2 border-gray-dark p-4 transition-colors hover:border-primary"
+                            >
+                                <img
+                                    src="./assets/images/logo/connect03.png"
+                                    class="h-4 w-4 object-cover"
+                                />
+                                <span class="font-squareOne leading-none">
+                                    WalletConnect
+                                </span>
+                                <i
+                                    class="fa-solid fa-check text-primary opacity-0 transition-opacity group-hover:opacity-100"
+                                ></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="group grid grid-cols-[auto,1fr,auto] gap-4 border-2 border-gray-dark p-4 transition-colors hover:border-primary"
+                            >
+                                <img
+                                    src="./assets/images/logo/connect04.png"
+                                    class="h-4 w-4 object-cover"
+                                />
+                                <span class="font-squareOne leading-none">
+                                    Phantom
+                                </span>
+                                <i
+                                    class="fa-solid fa-check text-primary opacity-0 transition-opacity group-hover:opacity-100"
+                                ></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="group grid grid-cols-[auto,1fr,auto] gap-4 border-2 border-gray-dark p-4 transition-colors hover:border-primary"
+                            >
+                                <img
+                                    src="./assets/images/logo/connect05.png"
+                                    class="h-4 w-4 object-cover"
+                                />
+                                <span class="font-squareOne leading-none">
+                                    Glow
+                                </span>
+                                <i
+                                    class="fa-solid fa-check text-primary opacity-0 transition-opacity group-hover:opacity-100"
+                                ></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="group grid grid-cols-[auto,1fr,auto] gap-4 border-2 border-gray-dark p-4 transition-colors hover:border-primary"
+                            >
+                                <img
+                                    src="./assets/images/logo/connect06.png"
+                                    class="h-4 w-4 object-cover"
+                                />
+                                <span class="font-squareOne leading-none">
+                                    Fortmatic
+                                </span>
+                                <i
+                                    class="fa-solid fa-check text-primary opacity-0 transition-opacity group-hover:opacity-100"
+                                ></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <button
+                        type="button"
+                        class="mt-auto bg-primary py-3 text-white md:mt-6 md:self-center md:px-12 md:py-2 md:hover:bg-primary/90"
+                    >
+                        連結錢包
+                    </button>
+                </div>
+            </div>
+        </div>
+
         
-<main class="pt-6 pb-10 md:pt-10 md:pb-32">
-    <div class="container">
-        <section>
-            <div class="grid xl:grid-cols-12">
-                <img
-                    class="aspect-video h-full object-cover xl:col-span-4"
-                    src="./assets/images/artist01.jpg"
-                />
-                <div
-                    class="border border-black py-6 px-4 xl:col-span-5 xl:px-6 xl:pb-8"
-                >
-                    <div class="mb-2 flex justify-between md:mb-3 xl:mb-4">
-                        <h1
-                            class="font-squareOne text-[2rem] font-bold leading-none md:text-[2.5rem] xl:text-[3rem]"
-                        >
-                            Michael
-                        </h1>
-                        <ul class="flex items-center gap-2">
-                            <li>
-                                <a href="#">
-                                    <i class="fa-brands fa-discord"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa-brands fa-facebook-f"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa-solid fa-globe"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa-brands fa-twitter"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <p class="mb-6 font-squareOne leading-none">
-                        0x3ya666…88ef
+<main class="container pt-6 pb-10 md:pt-8 xl:pt-10 xl:pb-32">
+    <section>
+        <div class="grid md:grid-cols-12">
+            <img
+                class="h-full w-full object-cover md:col-span-6 xl:col-span-4"
+                src="./assets/images/artist01.jpg"
+            />
+            <div
+                class="border border-black py-6 px-4 md:col-span-6 xl:col-span-5 xl:px-6 xl:pb-8"
+            >
+                <div class="mb-2 flex justify-between md:mb-3 xl:mb-4">
+                    <h1
+                        class="font-squareOne text-[2rem] font-bold leading-none md:text-[2.5rem] xl:text-[3rem]"
+                    >
+                        Michael
+                    </h1>
+                    <ul class="flex items-center gap-2">
+                        <li>
+                            <a href="#">
+                                <i class="fa-brands fa-discord"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-globe"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p class="mb-6 font-squareOne leading-none">0x3ya666…88ef</p>
+                <p>
+                    Michael自小在山林長大，能夠與花草樹木大自然進行靈體溝通，創作題材常見大山、大水、花草與樹木，從日常生活出發，擁有個⼈獨樹⼀格的創作風格，作品觸及靈魂深處、探索未知宇宙，透過與大自然的溝通，探討著存在的本質。​
+                </p>
+            </div>
+            <ul
+                class="mt-4 grid auto-rows-fr divide-y divide-gray-dark border border-black md:col-span-full md:-mt-px xl:col-span-3 xl:ml-6 xl:mt-0"
+            >
+                <li class="flex items-center justify-between py-4 px-6">
+                    <p class="font-bold leading-loose">販售中</p>
+                    <p class="font-squareOne text-[2rem] leading-none">168</p>
+                </li>
+                <li class="flex items-center justify-between py-4 px-6">
+                    <p class="font-bold leading-loose">地板價格</p>
+                    <p class="font-squareOne text-[2rem] leading-none">
+                        0.6 <span class="text-[1.5rem]">ETH</span>
                     </p>
-                    <p>
-                        Michael自小在山林長大，能夠與花草樹木大自然進行靈體溝通，創作題材常見大山、大水、花草與樹木，從日常生活出發，擁有個⼈獨樹⼀格的創作風格，作品觸及靈魂深處、探索未知宇宙，透過與大自然的溝通，探討著存在的本質。​
+                </li>
+                <li class="flex items-center justify-between py-4 px-6">
+                    <p class="font-bold leading-loose">7 日成交</p>
+                    <p class="font-squareOne text-[2rem] leading-none">
+                        8.8 <span class="text-[1.5rem]">ETH</span>
                     </p>
-                </div>
-                <ul
-                    class="grid auto-rows-fr divide-y divide-gray-dark border border-black xl:col-span-3 xl:ml-6"
-                >
-                    <li class="flex items-center justify-between py-4 px-6">
-                        <p class="font-bold leading-loose">販售中</p>
-                        <p class="font-squareOne text-[2rem] leading-none">
-                            168
-                        </p>
-                    </li>
-                    <li class="flex items-center justify-between py-4 px-6">
-                        <p class="font-bold leading-loose">地板價格</p>
-                        <p class="font-squareOne text-[2rem] leading-none">
-                            0.6 <span class="text-[1.5rem]">ETH</span>
-                        </p>
-                    </li>
-                    <li class="flex items-center justify-between py-4 px-6">
-                        <p class="font-bold leading-loose">7 日成交</p>
-                        <p class="font-squareOne text-[2rem] leading-none">
-                            8.8 <span class="text-[1.5rem]">ETH</span>
-                        </p>
-                    </li>
-                    <li class="flex items-center justify-between py-4 px-6">
-                        <p class="font-bold leading-loose">30 日成交</p>
-                        <p class="font-squareOne text-[2rem] leading-none">
-                            23.1 <span class="text-[1.5rem]">ETH</span>
-                        </p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="mt-10 md:mt-[3.75rem] xl:mt-20">
-            <div class="flex border-b border-gray-dark">
-                <h2
-                    class="-mb-px cursor-pointer border border-gray-dark border-b-gray-light p-4 xl:py-4 xl:px-12"
-                    id="artwork-btn"
-                    data-target-el="#artwork-items"
-                >
-                    <span
-                        class="font-squareOne text-[2rem] leading-none md:text-[2.5rem] xl:mr-4 xl:text-[3rem]"
-                    >
-                        Art Works
-                    </span>
-                    <span
-                        class="hidden text-[1.25rem] font-bold xl:inline-block"
-                    >
-                        系列作品
-                    </span>
-                </h2>
-                <h2
-                    class="-mb-px cursor-pointer border border-transparent p-4 text-gray-dark xl:py-4 xl:px-12"
-                    id="collection-btn"
-                    data-target-el="#collection-items"
-                >
-                    <span
-                        class="font-squareOne text-[2rem] leading-none md:text-[2.5rem] xl:mr-4 xl:text-[3rem]"
-                    >
-                        Collection
-                    </span>
-                    <span
-                        class="hidden text-[1.25rem] font-bold xl:inline-block"
-                    >
-                        收藏品
-                    </span>
-                </h2>
-            </div>
-
-            <div id="artwork-items">
-                <div
-                    class="relative mt-6 border border-black px-4 py-8 md:mt-10 md:pb-0"
-                >
-                    <span
-                        class="absolute top-0 left-0 h-6 w-6 bg-black [clip-path:polygon(100%_0,0_0,0_100%)]"
-                    >
-                    </span>
-                    <span
-                        class="absolute top-0 right-0 h-6 w-6 bg-black [clip-path:polygon(100%_0,0_0,100%_100%)]"
-                    >
-                    </span>
-                    <div class="xl:mx-auto xl:w-10/12">
-                        <div
-                            class="grid grid-cols-[1fr,auto] md:gap-x-[5.5rem] xl:col-span-full"
-                        >
-                            <h3
-                                class="col-span-full mb-4 text-[1.5rem] font-bold"
-                            >
-                                追求者送我的花
-                            </h3>
-                            <p>
-                                我又沒有特別喜歡花，為什麼不給我現金就好，擺在那也不知道要幹嘛，只好畫起來看有沒有人要買，阿不然如果真的喜
-                                />歡我，把這些都買回去八。
-                            </p>
-                            <button
-                                type="button"
-                                class="btn-primary btn-outline relative hidden self-end md:block"
-                            >
-                                MORE<span class="decoration"></span>
-                            </button>
-                        </div>
-                        <ul
-                            class="mt-6 mb-4 md:grid md:translate-y-12 md:grid-cols-2 md:gap-2 lg:grid-cols-3 xl:my-0 xl:grid-cols-4"
-                        >
-                            <li>
-                                <img
-                                    src="./assets/images/the-new-york-public-library-vBejyCBXZBY-unsplash.jpg"
-                                    class="h-[313px] w-full border-[10px] border-black object-cover xl:h-[270px]"
-                                />
-                            </li>
-                            <li class="hidden md:block">
-                                <img
-                                    src="./assets/images/art30.jpg"
-                                    class="h-[313px] w-full border-[10px] border-black object-cover xl:h-[270px]"
-                                />
-                            </li>
-                            <li class="hidden lg:block">
-                                <img
-                                    src="./assets/images/art14.jpg"
-                                    class="h-[313px] w-full border-[10px] border-black object-cover xl:h-[270px]"
-                                />
-                            </li>
-                            <li class="hidden xl:block">
-                                <img
-                                    src="./assets/images/art29.jpg"
-                                    class="h-[313px] w-full border-[10px] border-black object-cover xl:h-[270px]"
-                                />
-                            </li>
-                        </ul>
-                        <button
-                            type="button"
-                            class="btn-primary btn-outline relative mx-auto block md:hidden"
-                        >
-                            MORE<span class="decoration"></span>
-                        </button>
-                    </div>
-                </div>
-
-                <div
-                    class="relative mt-[5.5rem] border border-black px-4 py-8 md:pb-0"
-                >
-                    <span
-                        class="absolute top-0 left-0 h-6 w-6 bg-black [clip-path:polygon(100%_0,0_0,0_100%)]"
-                    >
-                    </span>
-                    <span
-                        class="absolute top-0 right-0 h-6 w-6 bg-black [clip-path:polygon(100%_0,0_0,100%_100%)]"
-                    >
-                    </span>
-                    <div class="xl:mx-auto xl:w-10/12">
-                        <div
-                            class="grid grid-cols-[1fr,auto] gap-x-[5.5rem] xl:col-span-full"
-                        >
-                            <h3
-                                class="col-span-full mb-4 text-[1.5rem] font-bold"
-                            >
-                                我家窗前的鳥
-                            </h3>
-
-                            <p>
-                                家門前每天都有不同的小鳥，大多數的小鳥都有特殊能力，特殊能力是什麼我就不說了，希望大家能從作品感受到小鳥的快樂。
-                            </p>
-                            <button
-                                type="button"
-                                class="btn-primary btn-outline relative hidden self-end md:block"
-                            >
-                                MORE<span class="decoration"></span>
-                            </button>
-                        </div>
-                        <ul
-                            class="mt-6 mb-4 md:grid md:translate-y-12 md:grid-cols-2 md:gap-2 lg:grid-cols-3 xl:my-0 xl:grid-cols-4"
-                        >
-                            <li>
-                                <img
-                                    src="./assets/images/art27.jpg"
-                                    class="h-[270px] w-full border-[10px] border-black object-cover"
-                                />
-                            </li>
-                            <li class="hidden md:block">
-                                <img
-                                    src="./assets/images/art20.jpg"
-                                    class="h-[270px] w-full border-[10px] border-black object-cover"
-                                />
-                            </li>
-                            <li class="hidden lg:block">
-                                <img
-                                    src="./assets/images/art26.jpg"
-                                    class="h-[270px] w-full border-[10px] border-black object-cover"
-                                />
-                            </li>
-                            <li class="hidden xl:block">
-                                <img
-                                    src="./assets/images/art22.jpg"
-                                    class="h-[270px] w-full border-[10px] border-black object-cover"
-                                />
-                            </li>
-                        </ul>
-                        <!-- <img
-                            src="./assets/images/the-new-york-public-library-vBejyCBXZBY-unsplash.jpg"
-                            class="mb-4 border-[10px] border-black"
-                        /> -->
-                        <button
-                            type="button"
-                            class="btn-primary btn-outline relative mx-auto block md:hidden"
-                        >
-                            MORE<span class="decoration"></span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <ul class="collection-grid hidden md:mt-10" id="collection-items">
-                <li
-                    class="collection-sizer w-[calc(50%-.75rem)] lg:w-[calc(25%-18px)]"
-                ></li>
-                <li class="collection-gutter w-6"></li>
-                <li
-                    class="collection-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:w-[calc(25%-18px)] lg:border-b"
-                >
-                    <div class="group relative bg-white p-2 lg:p-6">
-                        <img
-                            src="./assets/images/art09.jpg"
-                            alt="區塊戀-他的私生活"
-                            class="h-[139px] w-full object-cover lg:h-[254px]"
-                        />
-                        <div
-                            class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
-                        >
-                            <div
-                                class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
-                            >
-                                <div class="text-white">
-                                    <p class="mb-4">
-                                        唯一想擁有的人，唯一不可以擁有的
-                                    </p>
-                                    <p>
-                                        <i
-                                            class="fa-brands fa-ethereum mr-2"
-                                        ></i
-                                        >300
-                                    </p>
-                                </div>
-                                <button
-                                    type="button"
-                                    class="btn-primary btn-outline relative justify-self-end"
-                                >
-                                    MORE<span class="decoration"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <h3
-                        class="p-2 text-[14px] font-bold lg:py-4 lg:px-0 lg:text-base"
-                    >
-                        區塊戀-他的私生活
-                    </h3>
                 </li>
-                <li
-                    class="collection-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:w-[calc(25%-18px)] lg:border-b"
-                >
-                    <div class="group relative bg-white p-2 lg:p-6">
-                        <img
-                            src="./assets/images/art10.jpg"
-                            alt="夏娃的醜聞"
-                            class="h-[151px] w-full object-cover xl:h-[327px]"
-                        />
-                        <div
-                            class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
-                        >
-                            <div
-                                class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
-                            >
-                                <div class="text-white">
-                                    <p class="mb-4">
-                                        唯一想擁有的人，唯一不可以擁有的
-                                    </p>
-                                    <p>
-                                        <i
-                                            class="fa-brands fa-ethereum mr-2"
-                                        ></i
-                                        >300
-                                    </p>
-                                </div>
-                                <button
-                                    type="button"
-                                    class="btn-primary btn-outline relative justify-self-end"
-                                >
-                                    MORE<span class="decoration"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <h3
-                        class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
-                    >
-                        夏娃的醜聞
-                    </h3>
-                </li>
-                <li
-                    class="collection-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
-                >
-                    <div class="group relative bg-white p-2 xl:p-6">
-                        <img
-                            src="./assets/images/art02.jpg"
-                            alt="藍色啤酒海"
-                            class="h-[93px] w-full object-cover xl:h-[254px]"
-                        />
-                        <div
-                            class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
-                        >
-                            <div
-                                class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
-                            >
-                                <div class="text-white">
-                                    <p class="mb-4">
-                                        唯一想擁有的人，唯一不可以擁有的
-                                    </p>
-                                    <p>
-                                        <i
-                                            class="fa-brands fa-ethereum mr-2"
-                                        ></i
-                                        >300
-                                    </p>
-                                </div>
-                                <button
-                                    type="button"
-                                    class="btn-primary btn-outline relative justify-self-end"
-                                >
-                                    MORE<span class="decoration"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <h3 class="p-2 text-[14px]">藍色啤酒海</h3>
-                </li>
-                <li
-                    class="collection-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
-                >
-                    <div class="group relative bg-white p-2">
-                        <img
-                            src="./assets/images/art11.jpg"
-                            alt="沒有人愛我"
-                            class="min-h-[169px] w-full object-cover"
-                        />
-                        <div
-                            class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
-                        >
-                            <div
-                                class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
-                            >
-                                <div class="text-white">
-                                    <p class="mb-4">
-                                        唯一想擁有的人，唯一不可以擁有的
-                                    </p>
-                                    <p>
-                                        <i
-                                            class="fa-brands fa-ethereum mr-2"
-                                        ></i
-                                        >300
-                                    </p>
-                                </div>
-                                <button
-                                    type="button"
-                                    class="btn-primary btn-outline relative justify-self-end"
-                                >
-                                    MORE<span class="decoration"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <h3
-                        class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
-                    >
-                        沒有人愛我
-                    </h3>
-                </li>
-                <li
-                    class="collection-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
-                >
-                    <div class="group relative bg-white p-2">
-                        <img
-                            src="./assets/images/art12.jpg"
-                            alt="不哭不哭眼淚是珍珠"
-                            class="min-h-[169px] w-full object-cover"
-                        />
-                        <div
-                            class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
-                        >
-                            <div
-                                class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
-                            >
-                                <div class="text-white">
-                                    <p class="mb-4">
-                                        唯一想擁有的人，唯一不可以擁有的
-                                    </p>
-                                    <p>
-                                        <i
-                                            class="fa-brands fa-ethereum mr-2"
-                                        ></i
-                                        >300
-                                    </p>
-                                </div>
-                                <button
-                                    type="button"
-                                    class="btn-primary btn-outline relative justify-self-end"
-                                >
-                                    MORE<span class="decoration"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <h3
-                        class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
-                    >
-                        不哭不哭眼淚是珍珠
-                    </h3>
-                </li>
-                <li
-                    class="collection-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
-                >
-                    <div class="group relative bg-white p-2">
-                        <img
-                            src="./assets/images/art03.jpg"
-                            alt="十分鐘就到"
-                            class="min-h-[254px] w-full object-cover"
-                        />
-                        <div
-                            class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
-                        >
-                            <div
-                                class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
-                            >
-                                <div class="text-white">
-                                    <p class="mb-4">
-                                        唯一想擁有的人，唯一不可以擁有的
-                                    </p>
-                                    <p>
-                                        <i
-                                            class="fa-brands fa-ethereum mr-2"
-                                        ></i
-                                        >300
-                                    </p>
-                                </div>
-                                <button
-                                    type="button"
-                                    class="btn-primary btn-outline relative justify-self-end"
-                                >
-                                    MORE<span class="decoration"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <h3
-                        class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
-                    >
-                        十分鐘就到
-                    </h3>
-                </li>
-                <li
-                    class="collection-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
-                >
-                    <div class="group relative bg-white p-2">
-                        <img
-                            src="./assets/images/art04.jpg"
-                            alt="我這樣有美嗎"
-                            class="h-[395px] w-full object-cover"
-                        />
-                        <div
-                            class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
-                        >
-                            <div
-                                class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
-                            >
-                                <div class="text-white">
-                                    <p class="mb-4">
-                                        唯一想擁有的人，唯一不可以擁有的
-                                    </p>
-                                    <p>
-                                        <i
-                                            class="fa-brands fa-ethereum mr-2"
-                                        ></i
-                                        >300
-                                    </p>
-                                </div>
-                                <button
-                                    type="button"
-                                    class="btn-primary btn-outline relative justify-self-end"
-                                >
-                                    MORE<span class="decoration"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <h3
-                        class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
-                    >
-                        我這樣有美嗎
-                    </h3>
-                </li>
-                <li
-                    class="collection-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
-                >
-                    <div class="group relative bg-white p-2">
-                        <img
-                            src="./assets/images/art27.jpg"
-                            alt="我真的受傷了"
-                            class="min-h-[254px] w-full object-cover"
-                        />
-                        <div
-                            class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
-                        >
-                            <div
-                                class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
-                            >
-                                <div class="text-white">
-                                    <p class="mb-4">
-                                        唯一想擁有的人，唯一不可以擁有的
-                                    </p>
-                                    <p>
-                                        <i
-                                            class="fa-brands fa-ethereum mr-2"
-                                        ></i
-                                        >300
-                                    </p>
-                                </div>
-                                <button
-                                    type="button"
-                                    class="btn-primary btn-outline relative justify-self-end"
-                                >
-                                    MORE<span class="decoration"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <h3
-                        class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
-                    >
-                        我真的受傷了
-                    </h3>
+                <li class="flex items-center justify-between py-4 px-6">
+                    <p class="font-bold leading-loose">30 日成交</p>
+                    <p class="font-squareOne text-[2rem] leading-none">
+                        23.1 <span class="text-[1.5rem]">ETH</span>
+                    </p>
                 </li>
             </ul>
-        </section>
-    </div>
+        </div>
+    </section>
+
+    <section class="mt-10 md:mt-[3.75rem] xl:mt-20">
+        <div class="flex border-b border-gray-dark">
+            <h2
+                class="-mb-px cursor-pointer border border-gray-dark border-b-gray-light p-4 xl:py-4 xl:px-12"
+                id="artwork-btn"
+                data-target-el="#artwork-items"
+            >
+                <span
+                    class="font-squareOne text-[2rem] leading-none md:text-[2.5rem] xl:mr-4 xl:text-[3rem]"
+                >
+                    Art Works
+                </span>
+                <span class="hidden text-[1.25rem] font-bold xl:inline-block">
+                    系列作品
+                </span>
+            </h2>
+            <h2
+                class="-mb-px cursor-pointer border border-transparent p-4 text-gray-dark xl:py-4 xl:px-12"
+                id="collection-btn"
+                data-target-el="#collection-items"
+            >
+                <span
+                    class="font-squareOne text-[2rem] leading-none md:text-[2.5rem] xl:mr-4 xl:text-[3rem]"
+                >
+                    Collection
+                </span>
+                <span class="hidden text-[1.25rem] font-bold xl:inline-block">
+                    收藏品
+                </span>
+            </h2>
+        </div>
+
+        <div id="artwork-items">
+            <div
+                class="relative mt-6 border border-black px-4 py-8 md:mt-10 md:pb-0"
+            >
+                <span
+                    class="absolute top-0 left-0 h-6 w-6 bg-black [clip-path:polygon(100%_0,0_0,0_100%)]"
+                >
+                </span>
+                <span
+                    class="absolute top-0 right-0 h-6 w-6 bg-black [clip-path:polygon(100%_0,0_0,100%_100%)]"
+                >
+                </span>
+                <div class="xl:mx-auto xl:w-10/12">
+                    <div
+                        class="grid grid-cols-[1fr,auto] md:gap-x-[5.5rem] xl:col-span-full"
+                    >
+                        <h3 class="col-span-full mb-4 text-[1.5rem] font-bold">
+                            追求者送我的花
+                        </h3>
+                        <p>
+                            我又沒有特別喜歡花，為什麼不給我現金就好，擺在那也不知道要幹嘛，只好畫起來看有沒有人要買，阿不然如果真的喜
+                            歡我，把這些都買回去八。
+                        </p>
+                        <button
+                            type="button"
+                            class="btn-primary btn-outline relative hidden self-end md:block"
+                        >
+                            MORE<span class="decoration"></span>
+                        </button>
+                    </div>
+                    <ul
+                        class="mt-6 mb-4 md:my-0 md:grid md:translate-y-12 md:grid-cols-2 md:gap-2 lg:grid-cols-3 xl:grid-cols-4"
+                    >
+                        <li class="overflow-hidden">
+                            <div
+                                class="h-[313px] overflow-hidden border-[10px] border-black xl:h-[270px]"
+                            >
+                                <img
+                                    src="./assets/images/the-new-york-public-library-vBejyCBXZBY-unsplash.jpg"
+                                    class="h-full w-full object-cover transition-transform duration-200 md:hover:scale-110"
+                                />
+                            </div>
+                        </li>
+                        <li class="hidden md:block">
+                            <div
+                                class="h-[313px] overflow-hidden border-[10px] border-black xl:h-[270px]"
+                            >
+                                <img
+                                    src="./assets/images/art30.jpg"
+                                    class="h-full w-full object-cover transition-transform duration-200 md:hover:scale-110"
+                                />
+                            </div>
+                        </li>
+                        <li class="hidden lg:block">
+                            <div
+                                class="h-[313px] overflow-hidden border-[10px] border-black xl:h-[270px]"
+                            >
+                                <img
+                                    src="./assets/images/art14.jpg"
+                                    class="h-full w-full object-cover transition-transform duration-200 md:hover:scale-110"
+                                />
+                            </div>
+                        </li>
+                        <li class="hidden xl:block">
+                            <div
+                                class="h-[313px] overflow-hidden border-[10px] border-black xl:h-[270px]"
+                            >
+                                <img
+                                    src="./assets/images/art29.jpg"
+                                    class="h-full w-full object-cover transition-transform duration-200 md:hover:scale-110"
+                                />
+                            </div>
+                        </li>
+                    </ul>
+                    <button
+                        type="button"
+                        class="btn-primary btn-outline relative mx-auto block md:hidden"
+                    >
+                        MORE<span class="decoration"></span>
+                    </button>
+                </div>
+            </div>
+
+            <div
+                class="relative mt-[5.5rem] border border-black px-4 py-8 md:pb-0"
+            >
+                <span
+                    class="absolute top-0 left-0 h-6 w-6 bg-black [clip-path:polygon(100%_0,0_0,0_100%)]"
+                >
+                </span>
+                <span
+                    class="absolute top-0 right-0 h-6 w-6 bg-black [clip-path:polygon(100%_0,0_0,100%_100%)]"
+                >
+                </span>
+                <div class="xl:mx-auto xl:w-10/12">
+                    <div
+                        class="grid grid-cols-[1fr,auto] gap-x-[5.5rem] xl:col-span-full"
+                    >
+                        <h3 class="col-span-full mb-4 text-[1.5rem] font-bold">
+                            我家窗前的鳥
+                        </h3>
+
+                        <p>
+                            家門前每天都有不同的小鳥，大多數的小鳥都有特殊能力，特殊能力是什麼我就不說了，希望大家能從作品感受到小鳥的快樂。
+                        </p>
+                        <button
+                            type="button"
+                            class="btn-primary btn-outline relative hidden self-end md:block"
+                        >
+                            MORE<span class="decoration"></span>
+                        </button>
+                    </div>
+                    <ul
+                        class="mt-6 mb-4 md:my-0 md:grid md:translate-y-12 md:grid-cols-2 md:gap-2 lg:grid-cols-3 xl:grid-cols-4"
+                    >
+                        <li>
+                            <img
+                                src="./assets/images/art27.jpg"
+                                class="h-[270px] w-full border-[10px] border-black object-cover"
+                            />
+                        </li>
+                        <li class="hidden md:block">
+                            <img
+                                src="./assets/images/art20.jpg"
+                                class="h-[270px] w-full border-[10px] border-black object-cover"
+                            />
+                        </li>
+                        <li class="hidden lg:block">
+                            <img
+                                src="./assets/images/art26.jpg"
+                                class="h-[270px] w-full border-[10px] border-black object-cover"
+                            />
+                        </li>
+                        <li class="hidden xl:block">
+                            <img
+                                src="./assets/images/art22.jpg"
+                                class="h-[270px] w-full border-[10px] border-black object-cover"
+                            />
+                        </li>
+                    </ul>
+                    <button
+                        type="button"
+                        class="btn-primary btn-outline relative mx-auto block md:hidden"
+                    >
+                        MORE<span class="decoration"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <ul class="collection-grid hidden md:mt-10" id="collection-items">
+            <li
+                class="collection-sizer w-[calc(50%-.75rem)] xl:w-[calc(25%-18px)]"
+            ></li>
+            <li class="collection-gutter w-6"></li>
+            <li
+                class="collection-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
+            >
+                <div class="group relative bg-white p-2 xl:p-6">
+                    <img
+                        src="./assets/images/art09.jpg"
+                        alt="區塊戀-他的私生活"
+                        class="h-[139px] w-full object-cover xl:h-[254px]"
+                    />
+                    <div
+                        class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                    >
+                        <div
+                            class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                        >
+                            <div class="text-white">
+                                <p class="mb-4">
+                                    唯一想擁有的人，唯一不可以擁有的
+                                </p>
+                                <p>
+                                    <i class="fa-brands fa-ethereum mr-2"></i
+                                    >300
+                                </p>
+                            </div>
+                            <button
+                                type="button"
+                                class="btn-primary btn-outline relative justify-self-end"
+                            >
+                                MORE<span class="decoration"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <h3
+                    class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
+                >
+                    區塊戀-他的私生活
+                </h3>
+            </li>
+            <li
+                class="collection-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
+            >
+                <div class="group relative bg-white p-2 xl:p-6">
+                    <img
+                        src="./assets/images/art10.jpg"
+                        alt="夏娃的醜聞"
+                        class="h-[151px] w-full object-cover xl:h-[327px]"
+                    />
+                    <div
+                        class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                    >
+                        <div
+                            class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                        >
+                            <div class="text-white">
+                                <p class="mb-4">
+                                    唯一想擁有的人，唯一不可以擁有的
+                                </p>
+                                <p>
+                                    <i class="fa-brands fa-ethereum mr-2"></i
+                                    >300
+                                </p>
+                            </div>
+                            <button
+                                type="button"
+                                class="btn-primary btn-outline relative justify-self-end"
+                            >
+                                MORE<span class="decoration"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <h3
+                    class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
+                >
+                    夏娃的醜聞
+                </h3>
+            </li>
+            <li
+                class="collection-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
+            >
+                <div class="group relative bg-white p-2 xl:p-6">
+                    <img
+                        src="./assets/images/art02.jpg"
+                        alt="藍色啤酒海"
+                        class="h-[93px] w-full object-cover xl:h-[254px]"
+                    />
+                    <div
+                        class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                    >
+                        <div
+                            class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                        >
+                            <div class="text-white">
+                                <p class="mb-4">
+                                    唯一想擁有的人，唯一不可以擁有的
+                                </p>
+                                <p>
+                                    <i class="fa-brands fa-ethereum mr-2"></i
+                                    >300
+                                </p>
+                            </div>
+                            <button
+                                type="button"
+                                class="btn-primary btn-outline relative justify-self-end"
+                            >
+                                MORE<span class="decoration"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="p-2 text-[14px]">藍色啤酒海</h3>
+            </li>
+            <li
+                class="collection-item mb-4 w-[calc(50%-.75rem)] border-black xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
+            >
+                <div class="group relative bg-white p-2 xl:p-6">
+                    <img
+                        src="./assets/images/art11.jpg"
+                        alt="沒有人愛我"
+                        class="min-h-[169px] w-full object-cover"
+                    />
+                    <div
+                        class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                    >
+                        <div
+                            class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                        >
+                            <div class="text-white">
+                                <p class="mb-4">
+                                    唯一想擁有的人，唯一不可以擁有的
+                                </p>
+                                <p>
+                                    <i class="fa-brands fa-ethereum mr-2"></i
+                                    >300
+                                </p>
+                            </div>
+                            <button
+                                type="button"
+                                class="btn-primary btn-outline relative justify-self-end"
+                            >
+                                MORE<span class="decoration"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <h3
+                    class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
+                >
+                    沒有人愛我
+                </h3>
+            </li>
+            <li
+                class="collection-item mb-4 w-[calc(50%-.75rem)] border-black xl:w-[calc(25%-18px)] xl:border-b"
+            >
+                <div class="group relative bg-white p-2 xl:p-6">
+                    <img
+                        src="./assets/images/art12.jpg"
+                        alt="不哭不哭眼淚是珍珠"
+                        class="min-h-[169px] w-full object-cover"
+                    />
+                    <div
+                        class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                    >
+                        <div
+                            class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                        >
+                            <div class="text-white">
+                                <p class="mb-4">
+                                    唯一想擁有的人，唯一不可以擁有的
+                                </p>
+                                <p>
+                                    <i class="fa-brands fa-ethereum mr-2"></i
+                                    >300
+                                </p>
+                            </div>
+                            <button
+                                type="button"
+                                class="btn-primary btn-outline relative justify-self-end"
+                            >
+                                MORE<span class="decoration"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <h3
+                    class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
+                >
+                    不哭不哭眼淚是珍珠
+                </h3>
+            </li>
+            <li
+                class="collection-item mb-4 w-[calc(50%-.75rem)] border-black xl:w-[calc(25%-18px)] xl:border-b"
+            >
+                <div class="group relative bg-white p-2 xl:p-6">
+                    <img
+                        src="./assets/images/art03.jpg"
+                        alt="十分鐘就到"
+                        class="min-h-[254px] w-full object-cover"
+                    />
+                    <div
+                        class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                    >
+                        <div
+                            class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                        >
+                            <div class="text-white">
+                                <p class="mb-4">
+                                    唯一想擁有的人，唯一不可以擁有的
+                                </p>
+                                <p>
+                                    <i class="fa-brands fa-ethereum mr-2"></i
+                                    >300
+                                </p>
+                            </div>
+                            <button
+                                type="button"
+                                class="btn-primary btn-outline relative justify-self-end"
+                            >
+                                MORE<span class="decoration"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <h3
+                    class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
+                >
+                    十分鐘就到
+                </h3>
+            </li>
+            <li
+                class="collection-item w-[calc(50%-.75rem)] border-black xl:w-[calc(25%-18px)] xl:border-b"
+            >
+                <div class="group relative bg-white p-2 xl:p-6">
+                    <img
+                        src="./assets/images/art04.jpg"
+                        alt="我這樣有美嗎"
+                        class="h-[395px] w-full object-cover"
+                    />
+                    <div
+                        class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                    >
+                        <div
+                            class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                        >
+                            <div class="text-white">
+                                <p class="mb-4">
+                                    唯一想擁有的人，唯一不可以擁有的
+                                </p>
+                                <p>
+                                    <i class="fa-brands fa-ethereum mr-2"></i
+                                    >300
+                                </p>
+                            </div>
+                            <button
+                                type="button"
+                                class="btn-primary btn-outline relative justify-self-end"
+                            >
+                                MORE<span class="decoration"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <h3
+                    class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
+                >
+                    我這樣有美嗎
+                </h3>
+            </li>
+            <li
+                class="collection-item w-[calc(50%-.75rem)] border-black xl:w-[calc(25%-18px)] xl:border-b"
+            >
+                <div class="group relative bg-white p-2 xl:p-6">
+                    <img
+                        src="./assets/images/art27.jpg"
+                        alt="我真的受傷了"
+                        class="min-h-[254px] w-full object-cover"
+                    />
+                    <div
+                        class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
+                    >
+                        <div
+                            class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
+                        >
+                            <div class="text-white">
+                                <p class="mb-4">
+                                    唯一想擁有的人，唯一不可以擁有的
+                                </p>
+                                <p>
+                                    <i class="fa-brands fa-ethereum mr-2"></i
+                                    >300
+                                </p>
+                            </div>
+                            <button
+                                type="button"
+                                class="btn-primary btn-outline relative justify-self-end"
+                            >
+                                MORE<span class="decoration"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <h3
+                    class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
+                >
+                    我真的受傷了
+                </h3>
+            </li>
+        </ul>
+    </section>
 </main>
 
 
@@ -736,6 +853,7 @@
         <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
         <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
         <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="./assets/js/vendors.js"></script>
         <script src="./assets/js/all.js"></script>
     </body>

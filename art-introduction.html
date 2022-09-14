@@ -19,6 +19,10 @@
             rel="stylesheet"
         />
         <link
+            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+            rel="stylesheet"
+        />
+        <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
         />
@@ -29,7 +33,6 @@
         <header class="sticky top-0 z-10 border-b border-black bg-gray-light">
             <div class="container">
                 <div class="flex items-center justify-between">
-                    <!-- left -->
                     <a href="./index.html" class="grow py-4 xl:py-8" id="logo">
                         <img
                             src="./assets/images/logo.svg"
@@ -37,7 +40,6 @@
                             class="h-[18px] xl:h-10"
                         />
                     </a>
-                    <!-- right -->
                     <div class="xl:hidden" id="header-right-items">
                         <div class="flex bg-gray-light py-4">
                             <button
@@ -75,7 +77,6 @@
                         </div>
                     </div>
 
-                    <!-- right for desktop -->
                     <nav class="hidden xl:flex xl:divide-x xl:divide-black">
                         <label
                             class="xl:border-l xl:border-black xl:px-12 xl:py-10"
@@ -106,7 +107,7 @@
                         >
                             市值
                         </a>
-                        <a href="./wallet.html" class="group xl:py-10 xl:px-12">
+                        <a class="group xl:py-10 xl:px-12" id="wallet-btn">
                             <i
                                 class="fa-solid fa-wallet text-[1.5rem] xl:font-bold xl:group-hover:text-primary"
                             >
@@ -117,24 +118,158 @@
             </div>
 
             <nav
-                class="absolute top-[calc(100%+1px)] left-0 right-0 hidden bg-white py-6 text-center"
+                class="absolute top-[calc(100%+1px)] left-0 right-0 hidden bg-white px-3 py-6 text-center xl:hidden"
                 id="mobile-nav-menu"
             >
-                <div class="container">
-                    <a
-                        href="#"
-                        class="block border-b border-black pb-6 font-bold"
-                        >探索</a
-                    >
-                    <a href="#" class="my-6 block font-bold">市值</a>
-                    <a
-                        href="#"
-                        class="block border border-black bg-primary py-3 text-white"
-                        >連結錢包</a
-                    >
-                </div>
+                <a
+                    href="./explore.html"
+                    class="block border-b border-black pb-6 font-bold"
+                    >探索</a
+                >
+                <a href="./market-value.html" class="my-6 block font-bold"
+                    >市值</a
+                >
+                <a
+                    id="mobile-wallet-btn"
+                    class="block border border-black bg-primary py-3 text-white"
+                    >連結錢包</a
+                >
             </nav>
         </header>
+
+        <div
+            id="wallet-modal"
+            class="pointer-events-none fixed inset-0 z-20 bg-black/[.65] opacity-0 md:grid md:place-items-center"
+        >
+            <div
+                class="flex h-full w-full flex-col bg-white md:h-auto md:max-w-[500px]"
+            >
+                <div class="flex border-b border-gray-dark px-3 py-4">
+                    <p class="ml-auto text-[1.25rem] leading-none">
+                        連結你的錢包
+                    </p>
+                    <button
+                        type="button"
+                        class="ml-auto"
+                        id="wallet-modal-close-btn"
+                    >
+                        <i class="fa-solid fa-times"></i>
+                    </button>
+                </div>
+                <div class="flex grow flex-col px-3 pt-6 md:py-6 md:px-4">
+                    <ul class="grid gap-2 md:grid-cols-2">
+                        <li>
+                            <a
+                                href="#"
+                                class="group grid grid-cols-[auto,1fr,auto] gap-4 border-2 border-gray-dark p-4 transition-colors hover:border-primary"
+                            >
+                                <img
+                                    src="./assets/images/logo/connect01.png"
+                                    class="h-4 w-4 object-cover"
+                                />
+                                <span class="font-squareOne leading-none">
+                                    MetaMask
+                                </span>
+                                <i
+                                    class="fa-solid fa-check text-primary opacity-0 transition-opacity group-hover:opacity-100"
+                                ></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="group grid grid-cols-[auto,1fr,auto] gap-4 border-2 border-gray-dark p-4 transition-colors hover:border-primary"
+                            >
+                                <img
+                                    src="./assets/images/logo/connect02.png"
+                                    class="h-4 w-4 object-cover"
+                                />
+                                <span class="font-squareOne leading-none">
+                                    Coinbase Wallet
+                                </span>
+                                <i
+                                    class="fa-solid fa-check text-primary opacity-0 transition-opacity group-hover:opacity-100"
+                                ></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="group grid grid-cols-[auto,1fr,auto] gap-4 border-2 border-gray-dark p-4 transition-colors hover:border-primary"
+                            >
+                                <img
+                                    src="./assets/images/logo/connect03.png"
+                                    class="h-4 w-4 object-cover"
+                                />
+                                <span class="font-squareOne leading-none">
+                                    WalletConnect
+                                </span>
+                                <i
+                                    class="fa-solid fa-check text-primary opacity-0 transition-opacity group-hover:opacity-100"
+                                ></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="group grid grid-cols-[auto,1fr,auto] gap-4 border-2 border-gray-dark p-4 transition-colors hover:border-primary"
+                            >
+                                <img
+                                    src="./assets/images/logo/connect04.png"
+                                    class="h-4 w-4 object-cover"
+                                />
+                                <span class="font-squareOne leading-none">
+                                    Phantom
+                                </span>
+                                <i
+                                    class="fa-solid fa-check text-primary opacity-0 transition-opacity group-hover:opacity-100"
+                                ></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="group grid grid-cols-[auto,1fr,auto] gap-4 border-2 border-gray-dark p-4 transition-colors hover:border-primary"
+                            >
+                                <img
+                                    src="./assets/images/logo/connect05.png"
+                                    class="h-4 w-4 object-cover"
+                                />
+                                <span class="font-squareOne leading-none">
+                                    Glow
+                                </span>
+                                <i
+                                    class="fa-solid fa-check text-primary opacity-0 transition-opacity group-hover:opacity-100"
+                                ></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="group grid grid-cols-[auto,1fr,auto] gap-4 border-2 border-gray-dark p-4 transition-colors hover:border-primary"
+                            >
+                                <img
+                                    src="./assets/images/logo/connect06.png"
+                                    class="h-4 w-4 object-cover"
+                                />
+                                <span class="font-squareOne leading-none">
+                                    Fortmatic
+                                </span>
+                                <i
+                                    class="fa-solid fa-check text-primary opacity-0 transition-opacity group-hover:opacity-100"
+                                ></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <button
+                        type="button"
+                        class="mt-auto bg-primary py-3 text-white md:mt-6 md:self-center md:px-12 md:py-2 md:hover:bg-primary/90"
+                    >
+                        連結錢包
+                    </button>
+                </div>
+            </div>
+        </div>
 
         
 <main class="container">
@@ -378,16 +513,16 @@
         </ul>
     </section>
 
-    <section class="my-10 lg:mb-20">
+    <section class="my-10 xl:mb-20">
         <div
-            class="mb-6 flex items-end justify-between border-b border-black lg:mb-12"
+            class="mb-6 flex items-end justify-between border-b border-black xl:mb-12"
         >
             <h2
                 class="mb-2 font-squareOne text-[2rem] font-bold leading-none xl:mb-4 xl:text-[3rem]"
             >
                 Other
                 <span
-                    class="hidden text-[1.25rem] leading-normal lg:ml-4 lg:inline-block"
+                    class="hidden text-[1.25rem] leading-normal xl:ml-4 xl:inline-block"
                 >
                     其餘作品
                 </span>
@@ -397,13 +532,13 @@
             </button>
         </div>
 
-        <div class="swiper pb-8 lg:pb-14" id="other-works-swiper">
+        <div class="swiper pb-8 xl:pb-14" id="other-works-swiper">
             <div class="swiper-wrapper">
                 <div class="other-works-slide border-b border-gray-dark">
                     <div class="bg-white p-2 xl:p-6">
                         <img
                             src="./assets/images/art22.jpg"
-                            class="h-[164px] w-full object-cover lg:h-[327px]"
+                            class="h-[164px] w-full object-cover xl:h-[327px]"
                         />
                     </div>
                     <p class="py-4 font-bold">群聚的小鳥們</p>
@@ -412,7 +547,7 @@
                     <div class="bg-white p-2 xl:p-6">
                         <img
                             src="./assets/images/art27.jpg"
-                            class="h-[164px] w-full object-cover lg:h-[327px]"
+                            class="h-[164px] w-full object-cover xl:h-[327px]"
                         />
                     </div>
                     <p class="py-4 font-bold">我真的受傷了</p>
@@ -421,7 +556,7 @@
                     <div class="bg-white p-2 xl:p-6">
                         <img
                             src="./assets/images/art20.jpg"
-                            class="h-[164px] w-full object-cover lg:h-[327px]"
+                            class="h-[164px] w-full object-cover xl:h-[327px]"
                         />
                     </div>
                     <p class="py-4 font-bold">這兩隻也太像企鵝了吧</p>
@@ -430,7 +565,7 @@
                     <div class="bg-white p-2 xl:p-6">
                         <img
                             src="./assets/images/art23.jpg"
-                            class="h-[164px] w-full object-cover lg:h-[327px]"
+                            class="h-[164px] w-full object-cover xl:h-[327px]"
                         />
                     </div>
                     <p class="py-4 font-bold">群聚囉～小鳥</p>
@@ -439,7 +574,7 @@
                     <div class="bg-white p-2 xl:p-6">
                         <img
                             src="./assets/images/art22.jpg"
-                            class="h-[164px] w-full object-cover lg:h-[327px]"
+                            class="h-[164px] w-full object-cover xl:h-[327px]"
                         />
                     </div>
                     <p class="py-4 font-bold">群聚囉～小鳥</p>
@@ -448,7 +583,7 @@
                     <div class="bg-white p-2 xl:p-6">
                         <img
                             src="./assets/images/art24.jpg"
-                            class="h-[164px] w-full object-cover lg:h-[327px]"
+                            class="h-[164px] w-full object-cover xl:h-[327px]"
                         />
                     </div>
                     <p class="py-4 font-bold">會唱metal的鳥</p>
@@ -457,7 +592,7 @@
                     <div class="bg-white p-2 xl:p-6">
                         <img
                             src="./assets/images/art25.jpg"
-                            class="h-[164px] w-full object-cover lg:h-[327px]"
+                            class="h-[164px] w-full object-cover xl:h-[327px]"
                         />
                     </div>
                     <p class="py-4 font-bold">一大一小兩個恰恰好</p>
@@ -466,7 +601,7 @@
                     <div class="bg-white p-2 xl:p-6">
                         <img
                             src="./assets/images/art26.jpg"
-                            class="h-[164px] w-full object-cover lg:h-[327px]"
+                            class="h-[164px] w-full object-cover xl:h-[327px]"
                         />
                     </div>
                     <p class="py-4 font-bold">與你分享的快樂勝過獨自擁有</p>
@@ -488,6 +623,7 @@
         <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
         <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
         <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="./assets/js/vendors.js"></script>
         <script src="./assets/js/all.js"></script>
     </body>

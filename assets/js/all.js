@@ -1,6 +1,8 @@
 "use strict";
 
 window.addEventListener("DOMContentLoaded", function () {
+  AOS.init();
+
   var masonryInit = function masonryInit(element, options) {
     var gutter = options.gutter,
         columnWidth = options.columnWidth,
@@ -12,6 +14,7 @@ window.addEventListener("DOMContentLoaded", function () {
       percentPosition: true,
       horizontalOrder: true
     });
+    if (!element) return;
     imagesLoaded(element).on("progress", function () {
       // layout Masonry after each image loads
       masonry.layout();
@@ -199,5 +202,20 @@ window.addEventListener("DOMContentLoaded", function () {
     };
     masonryInit(exploreItems, _options4);
   }
+
+  var walletBtn = document.querySelector("#wallet-btn");
+  var mobileWalletBtn = document.querySelector("#mobile-wallet-btn");
+  var walletCloseBtn = document.querySelector("#wallet-modal-close-btn");
+
+  var toggleWalletModal = function toggleWalletModal(e) {
+    e.preventDefault();
+    var walletModal = document.querySelector("#wallet-modal");
+    walletModal.classList.toggle("pointer-events-none");
+    walletModal.classList.toggle("opacity-0");
+  };
+
+  walletBtn.addEventListener("click", toggleWalletModal);
+  mobileWalletBtn.addEventListener("click", toggleWalletModal);
+  walletCloseBtn.addEventListener("click", toggleWalletModal);
 });
 //# sourceMappingURL=all.js.map
