@@ -1,4 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
+    AOS.init();
     const masonryInit = (element, options) => {
         const { gutter, columnWidth, itemSelector } = options;
         const masonry = new Masonry(element, {
@@ -8,6 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
             percentPosition: true,
             horizontalOrder: true,
         });
+        if (!element) return;
         imagesLoaded(element).on("progress", function () {
             // layout Masonry after each image loads
             masonry.layout();
@@ -204,4 +206,18 @@ window.addEventListener("DOMContentLoaded", () => {
         };
         masonryInit(exploreItems, options);
     }
+
+    const walletBtn = document.querySelector("#wallet-btn");
+    const mobileWalletBtn = document.querySelector("#mobile-wallet-btn");
+    const walletCloseBtn = document.querySelector("#wallet-modal-close-btn");
+    const toggleWalletModal = (e) => {
+        e.preventDefault();
+        const walletModal = document.querySelector("#wallet-modal");
+        walletModal.classList.toggle("pointer-events-none");
+        walletModal.classList.toggle("opacity-0");
+    };
+
+    walletBtn.addEventListener("click", toggleWalletModal);
+    mobileWalletBtn.addEventListener("click", toggleWalletModal);
+    walletCloseBtn.addEventListener("click", toggleWalletModal);
 });

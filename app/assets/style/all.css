@@ -47,40 +47,36 @@
 
 .artist-slide-prev,
 .artist-slide-next {
-    @apply lg:!w-3/12;
+    @apply xl:!w-3/12;
 }
 
 .artist-slide.artist-slide-active {
-    @apply lg:!w-6/12;
+    @apply xl:!w-6/12;
 }
 
 .artist-slide img {
-    @apply h-[232px] lg:h-[262px] lg:[filter:grayscale(100%)];
+    @apply h-[232px] xl:h-[262px] xl:[filter:grayscale(100%)];
 }
 
 .artist-slide.artist-slide-active img {
-    @apply [filter:grayscale(0)] lg:h-[439px];
+    @apply [filter:grayscale(0)] xl:h-[439px];
 }
 
 .artist-slide .artist-name,
 .artist-slide .artist-description,
 .artist-slide .artist-more-btn {
-    @apply lg:hidden;
+    @apply xl:hidden;
 }
 
 .artist-slide.artist-slide-active .artist-name,
 .artist-slide.artist-slide-active .artist-description,
 .artist-slide.artist-slide-active .artist-more-btn {
-    @apply lg:block;
-}
-
-.other-works-slide {
-    /* @apply !w-1/3; */
+    @apply xl:block;
 }
 
 @layer components {
     .btn-primary {
-        @apply bg-white px-12 py-2 text-[18px] leading-none text-black transition-colors hover:bg-primary hover:text-white;
+        @apply border border-black bg-white px-12 py-2 text-[18px] leading-none text-black transition-colors hover:bg-primary hover:text-white;
     }
 
     .btn-outline {

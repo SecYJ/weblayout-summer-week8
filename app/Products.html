@@ -4,7 +4,7 @@ engine: ejs
 layout: ./app/layout.ejs
 ---
 
-<div class="container mt-6 xl:mt-10">
+<main class="container mt-6 mb-12 xl:mb-20 xl:mt-10">
     <div class="xl:grid xl:grid-cols-[25%,1fr] xl:gap-6">
         <aside
             class="fixed inset-0 z-10 -translate-x-full overflow-y-auto bg-white transition-transform xl:static xl:block xl:translate-x-0 xl:bg-transparent"
@@ -192,7 +192,7 @@ layout: ./app/layout.ejs
                     class="mt-4 grid grid-cols-4 border border-black text-center xl:col-span-4 xl:mt-0"
                 >
                     <li class="relative grid content-between px-2 py-4">
-                        <p class="text-[14px] xl:text-base">項目</p>
+                        <p class="text-[14px] md:text-base">項目</p>
                         <p
                             class="font-squareOne text-[1.25rem] xl:text-[1.5rem]"
                         >
@@ -206,7 +206,7 @@ layout: ./app/layout.ejs
                         ></div>
                     </li>
                     <li class="relative grid content-between px-2 py-4">
-                        <p class="text-[14px] xl:text-base">擁有者</p>
+                        <p class="text-[14px] md:text-base">擁有者</p>
                         <p
                             class="font-squareOne text-[1.25rem] xl:text-[1.5rem]"
                         >
@@ -220,7 +220,7 @@ layout: ./app/layout.ejs
                         ></div>
                     </li>
                     <li class="relative grid content-between py-4 px-2">
-                        <p class="text-[14px] xl:text-base">底價</p>
+                        <p class="text-[14px] md:text-base">底價</p>
                         <p
                             class="font-squareOne text-[1.25rem] xl:text-[1.5rem]"
                         >
@@ -237,7 +237,7 @@ layout: ./app/layout.ejs
                         ></div>
                     </li>
                     <li class="grid content-between py-4 px-2">
-                        <p class="text-[14px] xl:text-base">總額</p>
+                        <p class="text-[14px] md:text-base">總額</p>
                         <p
                             class="font-squareOne text-[1.25rem] xl:text-[1.5rem]"
                         >
@@ -260,13 +260,13 @@ layout: ./app/layout.ejs
                 ></li>
                 <li class="product-gutter w-6"></li>
                 <li
-                    class="product-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:border-b xl:w-[calc(33.33%-1rem)]"
+                    class="product-item mb-4 w-[calc(50%-.75rem)] border-black md:mb-8 xl:mb-12 xl:w-[calc(33.33%-1rem)] xl:border-b"
                 >
-                    <div class="group relative bg-white p-2 lg:p-6">
+                    <div class="group relative bg-white p-2 xl:p-6">
                         <img
                             src="./assets/images/art20.jpg"
                             alt="這兩隻也太像企鵝了吧"
-                            class="h-[139px] w-full object-cover lg:h-[254px]"
+                            class="h-[139px] w-full object-cover md:h-[254px]"
                         />
                         <div
                             class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
@@ -295,19 +295,19 @@ layout: ./app/layout.ejs
                         </div>
                     </div>
                     <h3
-                        class="p-2 text-[14px] font-bold lg:py-4 lg:px-0 lg:text-base"
+                        class="p-2 text-[14px] font-bold md:text-base xl:py-4 xl:px-0"
                     >
                         這兩隻也太像企鵝了吧
                     </h3>
                 </li>
                 <li
-                    class="product-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:border-b xl:w-[calc(33.33%-1rem)]"
+                    class="product-item mb-4 w-[calc(50%-.75rem)] border-black md:mb-8 xl:mb-12 xl:w-[calc(33.33%-1rem)] xl:border-b"
                 >
-                    <div class="group relative bg-white p-2 lg:p-6">
+                    <div class="group relative bg-white p-2 xl:p-6">
                         <img
                             src="./assets/images/art21.jpg"
                             alt="兩情相悅"
-                            class="h-[151px] w-full object-cover lg:h-[327px]"
+                            class="h-[151px] w-full object-cover md:h-[327px]"
                         />
                         <div
                             class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
@@ -336,19 +336,19 @@ layout: ./app/layout.ejs
                         </div>
                     </div>
                     <h3
-                        class="p-2 text-[14px] font-bold lg:py-4 lg:px-0 lg:text-base"
+                        class="p-2 text-[14px] font-bold md:text-base xl:py-4 xl:px-0"
                     >
                         兩情相悅
                     </h3>
                 </li>
                 <li
-                    class="product-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:border-b xl:w-[calc(33.33%-1rem)]"
+                    class="product-item mb-4 w-[calc(50%-.75rem)] border-black md:mb-8 xl:mb-12 xl:w-[calc(33.33%-1rem)] xl:border-b"
                 >
-                    <div class="group relative bg-white p-2 lg:p-6">
+                    <div class="group relative bg-white p-2 xl:p-6">
                         <img
                             src="./assets/images/art22.jpg"
                             alt="群聚的小鳥們"
-                            class="h-[93px] w-full object-cover lg:h-[254px]"
+                            class="h-[93px] w-full object-cover md:h-[254px]"
                         />
                         <div
                             class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
@@ -377,19 +377,19 @@ layout: ./app/layout.ejs
                         </div>
                     </div>
                     <h3
-                        class="p-2 text-[14px] font-bold lg:py-4 lg:px-0 lg:text-base"
+                        class="p-2 text-[14px] font-bold md:text-base xl:py-4 xl:px-0"
                     >
                         群聚的小鳥們
                     </h3>
                 </li>
                 <li
-                    class="product-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:border-b xl:w-[calc(33.33%-1rem)]"
+                    class="product-item mb-4 w-[calc(50%-.75rem)] border-black md:mb-8 xl:w-[calc(33.33%-1rem)] xl:border-b"
                 >
-                    <div class="group relative bg-white p-2 lg:p-6">
+                    <div class="group relative bg-white p-2 xl:p-6">
                         <img
                             src="./assets/images/art23.jpg"
                             alt="與你分享的快樂勝過獨自擁有"
-                            class="h-[173px] w-full object-cover lg:h-[254px]"
+                            class="h-[173px] w-full object-cover md:h-[254px]"
                         />
                         <div
                             class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
@@ -418,19 +418,19 @@ layout: ./app/layout.ejs
                         </div>
                     </div>
                     <h3
-                        class="p-2 text-[14px] font-bold lg:py-4 lg:px-0 lg:text-base"
+                        class="p-2 text-[14px] font-bold md:text-base xl:py-4 xl:px-0"
                     >
                         與你分享的快樂勝過獨自擁有
                     </h3>
                 </li>
                 <li
-                    class="product-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:border-b xl:w-[calc(33.33%-1rem)]"
+                    class="product-item w-[calc(50%-.75rem)] border-black xl:w-[calc(33.33%-1rem)] xl:border-b"
                 >
-                    <div class="group relative bg-white p-2 lg:p-6">
+                    <div class="group relative bg-white p-2 xl:p-6">
                         <img
                             src="./assets/images/art24.jpg"
                             alt="會唱metal的鳥"
-                            class="h-[192px] w-full object-cover lg:h-[368px]"
+                            class="h-[192px] w-full object-cover md:h-[368px]"
                         />
                         <div
                             class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
@@ -459,19 +459,19 @@ layout: ./app/layout.ejs
                         </div>
                     </div>
                     <h3
-                        class="p-2 text-[14px] font-bold lg:py-4 lg:px-0 lg:text-base"
+                        class="p-2 text-[14px] font-bold md:text-base xl:py-4 xl:px-0"
                     >
                         會唱metal的鳥
                     </h3>
                 </li>
                 <li
-                    class="product-item mb-4 w-[calc(50%-.75rem)] border-black lg:mb-12 lg:border-b xl:w-[calc(33.33%-1rem)]"
+                    class="product-item w-[calc(50%-.75rem)] border-black xl:w-[calc(33.33%-1rem)] xl:border-b"
                 >
-                    <div class="group relative bg-white p-2 lg:p-6">
+                    <div class="group relative bg-white p-2 xl:p-6">
                         <img
                             src="./assets/images/art25.jpg"
                             alt="一大一小兩個恰恰好"
-                            class="h-[99px] w-full object-cover lg:h-[395px]"
+                            class="h-[99px] w-full object-cover md:h-[395px]"
                         />
                         <div
                             class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
@@ -500,7 +500,7 @@ layout: ./app/layout.ejs
                         </div>
                     </div>
                     <h3
-                        class="p-2 text-[14px] font-bold lg:py-4 lg:px-0 lg:text-base"
+                        class="p-2 text-[14px] font-bold md:text-base xl:py-4 xl:px-0"
                     >
                         一大一小兩個恰恰好
                     </h3>
@@ -508,7 +508,7 @@ layout: ./app/layout.ejs
             </ul>
         </div>
     </div>
-</div>
+</main>
 
 <button
     type="button"
