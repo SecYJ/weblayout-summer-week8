@@ -55,7 +55,7 @@
                                 type="text"
                                 name="search"
                                 id="search"
-                                class="mx-4 hidden w-full grow border-0 bg-transparent text-[14px] text-gray-dark outline-none"
+                                class="mx-4 hidden w-full grow border-0 bg-transparent text-sm text-gray-dark outline-none"
                                 placeholder="搜尋作品名稱、藝術家名稱"
                             />
                             <button
@@ -107,18 +107,22 @@
                         >
                             市值
                         </a>
-                        <a class="group xl:py-10 xl:px-12" id="wallet-btn">
+                        <button
+                            type="button"
+                            class="group xl:py-10 xl:px-12"
+                            id="wallet-btn"
+                        >
                             <i
                                 class="fa-solid fa-wallet text-[1.5rem] xl:font-bold xl:group-hover:text-primary"
                             >
                             </i>
-                        </a>
+                        </button>
                     </nav>
                 </div>
             </div>
 
             <nav
-                class="absolute top-[calc(100%+1px)] left-0 right-0 hidden bg-white px-3 py-6 text-center xl:hidden"
+                class="absolute top-[calc(100%+1px)] left-0 right-0 hidden bg-white px-3 py-6 text-center text-lg xl:hidden"
                 id="mobile-nav-menu"
             >
                 <a
@@ -129,25 +133,25 @@
                 <a href="./market-value.html" class="my-6 block font-bold"
                     >市值</a
                 >
-                <a
+                <button
+                    type="button"
                     id="mobile-wallet-btn"
-                    class="block border border-black bg-primary py-3 text-white"
-                    >連結錢包</a
+                    class="block w-full border border-black bg-primary py-3 text-white"
                 >
+                    連結錢包
+                </button>
             </nav>
         </header>
 
         <div
             id="wallet-modal"
-            class="pointer-events-none fixed inset-0 z-20 bg-black/[.65] opacity-0 md:grid md:place-items-center"
+            class="pointer-events-none fixed inset-0 z-20 -translate-x-full bg-black/[.65] opacity-0 transition-all duration-200 md:grid md:translate-x-0 md:place-items-center"
         >
             <div
                 class="flex h-full w-full flex-col bg-white md:h-auto md:max-w-[500px]"
             >
                 <div class="flex border-b border-gray-dark px-3 py-4">
-                    <p class="ml-auto text-[1.25rem] leading-none">
-                        連結你的錢包
-                    </p>
+                    <p class="ml-auto text-xl leading-none">連結你的錢包</p>
                     <button
                         type="button"
                         class="ml-auto"
@@ -167,7 +171,7 @@
                                     src="./assets/images/logo/connect01.png"
                                     class="h-4 w-4 object-cover"
                                 />
-                                <span class="font-squareOne leading-none">
+                                <span class="font-squareOne text-tiny">
                                     MetaMask
                                 </span>
                                 <i
@@ -184,7 +188,7 @@
                                     src="./assets/images/logo/connect02.png"
                                     class="h-4 w-4 object-cover"
                                 />
-                                <span class="font-squareOne leading-none">
+                                <span class="font-squareOne text-tiny">
                                     Coinbase Wallet
                                 </span>
                                 <i
@@ -201,7 +205,7 @@
                                     src="./assets/images/logo/connect03.png"
                                     class="h-4 w-4 object-cover"
                                 />
-                                <span class="font-squareOne leading-none">
+                                <span class="font-squareOne text-tiny">
                                     WalletConnect
                                 </span>
                                 <i
@@ -218,7 +222,7 @@
                                     src="./assets/images/logo/connect04.png"
                                     class="h-4 w-4 object-cover"
                                 />
-                                <span class="font-squareOne leading-none">
+                                <span class="font-squareOne text-tiny">
                                     Phantom
                                 </span>
                                 <i
@@ -235,7 +239,7 @@
                                     src="./assets/images/logo/connect05.png"
                                     class="h-4 w-4 object-cover"
                                 />
-                                <span class="font-squareOne leading-none">
+                                <span class="font-squareOne text-tiny">
                                     Glow
                                 </span>
                                 <i
@@ -252,7 +256,7 @@
                                     src="./assets/images/logo/connect06.png"
                                     class="h-4 w-4 object-cover"
                                 />
-                                <span class="font-squareOne leading-none">
+                                <span class="font-squareOne text-tiny">
                                     Fortmatic
                                 </span>
                                 <i
@@ -263,7 +267,7 @@
                     </ul>
                     <button
                         type="button"
-                        class="mt-auto bg-primary py-3 text-white md:mt-6 md:self-center md:px-12 md:py-2 md:hover:bg-primary/90"
+                        class="-mx-3 mt-auto bg-primary py-3 text-lg text-white md:mt-6 md:self-center md:px-12 md:py-2 md:hover:bg-primary/90"
                     >
                         連結錢包
                     </button>
@@ -313,7 +317,7 @@
 
     <ul class="mt-8 xl:mt-12">
         <li
-            class="hidden grid-cols-[1fr,repeat(6,138px)] pl-16 pr-6 text-right xl:mb-4 xl:grid"
+            class="hidden grid-cols-[1fr,repeat(6,138px)] pl-16 pr-6 text-right leading-loose xl:mb-4 xl:grid"
         >
             <p class="text-left">系列作品名稱</p>
             <p>價值</p>
@@ -324,9 +328,9 @@
             <p>作品數量</p>
         </li>
         <li
-            class="relative grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
+            class="relative grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 text-xl xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
         >
-            <p class="justify-self-center">1</p>
+            <p class="justify-self-center text-2xl leading-none">1</p>
             <div
                 class="flex items-center gap-2 border-l border-gray-dark py-4 pl-2 xl:gap-4 xl:justify-self-start"
             >
@@ -334,7 +338,7 @@
                     src="./assets/images/art13.jpg"
                     class="h-12 w-12 rounded-full object-cover"
                 />
-                <p class="text-sm font-bold">追求者送我的花</p>
+                <p class="text-sm font-bold xl:text-base">追求者送我的花</p>
             </div>
             <p class="flex items-center gap-2 pr-2 xl:pr-0">
                 <i class="fa-brands fa-ethereum"></i>
@@ -365,9 +369,9 @@
             </div>
         </li>
         <li
-            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
+            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 text-xl xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
         >
-            <p class="justify-self-center">2</p>
+            <p class="justify-self-center text-2xl leading-none">2</p>
             <div
                 class="flex items-center gap-2 border-l border-gray-dark py-4 pl-2 xl:gap-4 xl:justify-self-start"
             >
@@ -375,7 +379,7 @@
                     src="./assets/images/art06.jpg"
                     class="h-12 w-12 rounded-full object-cover"
                 />
-                <p class="text-sm font-bold">夏天的時候</p>
+                <p class="text-sm font-bold xl:text-base">夏天的時候</p>
             </div>
             <p class="flex items-center gap-2 pr-2 xl:pr-0">
                 <i class="fa-brands fa-ethereum"></i>
@@ -406,9 +410,9 @@
             </div>
         </li>
         <li
-            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
+            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 text-xl xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
         >
-            <p class="justify-self-center">3</p>
+            <p class="justify-self-center text-2xl leading-none">3</p>
             <div
                 class="flex items-center gap-2 border-l border-gray-dark py-4 pl-2 xl:gap-4 xl:justify-self-start"
             >
@@ -416,7 +420,7 @@
                     src="./assets/images/art02.jpg"
                     class="h-12 w-12 rounded-full object-cover"
                 />
-                <p class="text-sm font-bold">海洋波度</p>
+                <p class="text-sm font-bold xl:text-base">海洋波度</p>
             </div>
             <p class="flex items-center gap-2 pr-2 xl:pr-0">
                 <i class="fa-brands fa-ethereum"></i>
@@ -447,9 +451,9 @@
             </div>
         </li>
         <li
-            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
+            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 text-xl xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
         >
-            <p class="justify-self-center">4</p>
+            <p class="justify-self-center text-2xl leading-none">4</p>
             <div
                 class="flex items-center gap-2 border-l border-gray-dark py-4 pl-2 xl:gap-4 xl:justify-self-start"
             >
@@ -457,7 +461,7 @@
                     src="./assets/images/art03.jpg"
                     class="h-12 w-12 rounded-full object-cover"
                 />
-                <p class="text-sm font-bold">賴床真的很不好</p>
+                <p class="text-sm font-bold xl:text-base">賴床真的很不好</p>
             </div>
             <p class="flex items-center gap-2 pr-2 xl:pr-0">
                 <i class="fa-brands fa-ethereum"></i>
@@ -516,9 +520,9 @@
             </div>
         </li>
         <li
-            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
+            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 text-xl xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
         >
-            <p class="justify-self-center">5</p>
+            <p class="justify-self-center text-2xl leading-none">5</p>
             <div
                 class="flex items-center gap-2 border-l border-gray-dark py-4 pl-2 xl:gap-4 xl:justify-self-start"
             >
@@ -526,7 +530,7 @@
                     src="./assets/images/art01.jpg"
                     class="h-12 w-12 rounded-full object-cover"
                 />
-                <p class="text-sm font-bold">瞳孔:流動的脈絡</p>
+                <p class="text-sm font-bold xl:text-base">瞳孔:流動的脈絡</p>
             </div>
             <p class="flex items-center gap-2 pr-2 xl:pr-0">
                 <i class="fa-brands fa-ethereum"></i>
@@ -558,9 +562,9 @@
             </div>
         </li>
         <li
-            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
+            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 text-xl xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
         >
-            <p class="justify-self-center">6</p>
+            <p class="justify-self-center text-2xl leading-none">6</p>
             <div
                 class="flex items-center gap-2 border-l border-gray-dark py-4 pl-2 xl:gap-4 xl:justify-self-start"
             >
@@ -568,7 +572,7 @@
                     src="./assets/images/art12.jpg"
                     class="h-12 w-12 rounded-full object-cover"
                 />
-                <p class="text-sm font-bold">哭泣的時候</p>
+                <p class="text-sm font-bold xl:text-base">哭泣的時候</p>
             </div>
             <p class="flex items-center gap-2 pr-2 xl:pr-0">
                 <i class="fa-brands fa-ethereum"></i>
@@ -600,9 +604,9 @@
             </div>
         </li>
         <li
-            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
+            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 text-xl xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
         >
-            <p class="justify-self-center">7</p>
+            <p class="justify-self-center text-2xl leading-none">7</p>
             <div
                 class="flex items-center gap-2 border-l border-gray-dark py-4 pl-2 xl:gap-4 xl:justify-self-start"
             >
@@ -610,7 +614,7 @@
                     src="./assets/images/art14.jpg"
                     class="h-12 w-12 rounded-full object-cover"
                 />
-                <p class="text-sm font-bold">破碎的菠蘿麵包</p>
+                <p class="text-sm font-bold xl:text-base">破碎的菠蘿麵包</p>
             </div>
             <p class="flex items-center gap-2 pr-2 xl:pr-0">
                 <i class="fa-brands fa-ethereum"></i>
@@ -642,9 +646,9 @@
             </div>
         </li>
         <li
-            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
+            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 text-xl xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
         >
-            <p class="justify-self-center">8</p>
+            <p class="justify-self-center text-2xl leading-none">8</p>
             <div
                 class="flex items-center gap-2 border-l border-gray-dark py-4 pl-2 xl:gap-4 xl:justify-self-start"
             >
@@ -652,7 +656,7 @@
                     src="./assets/images/art08.jpg"
                     class="h-12 w-12 rounded-full object-cover"
                 />
-                <p class="text-sm font-bold">人生中的貓咪們</p>
+                <p class="text-sm font-bold xl:text-base">人生中的貓咪們</p>
             </div>
             <p class="flex items-center gap-2 pr-2 xl:pr-0">
                 <i class="fa-brands fa-ethereum"></i>
@@ -684,9 +688,9 @@
             </div>
         </li>
         <li
-            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
+            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 text-xl xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
         >
-            <p class="justify-self-center">9</p>
+            <p class="justify-self-center text-2xl leading-none">9</p>
             <div
                 class="flex items-center gap-2 border-l border-gray-dark py-4 pl-2 xl:gap-4 xl:justify-self-start"
             >
@@ -694,7 +698,7 @@
                     src="./assets/images/art28.jpg"
                     class="h-12 w-12 rounded-full object-cover"
                 />
-                <p class="text-sm font-bold">髒兮兮的家</p>
+                <p class="text-sm font-bold xl:text-base">髒兮兮的家</p>
             </div>
             <p class="flex items-center gap-2 pr-2 xl:pr-0">
                 <i class="fa-brands fa-ethereum"></i>
@@ -726,9 +730,9 @@
             </div>
         </li>
         <li
-            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
+            class="relative -mt-px grid grid-cols-[50px,1fr,auto] items-center border border-black pr-2 text-xl xl:grid-cols-[54px,1fr,repeat(6,138px)] xl:justify-items-end xl:pr-6"
         >
-            <p class="justify-self-center">10</p>
+            <p class="justify-self-center text-2xl leading-none">10</p>
             <div
                 class="flex items-center gap-2 border-l border-gray-dark py-4 pl-2 xl:gap-4 xl:justify-self-start"
             >
@@ -736,7 +740,7 @@
                     src="./assets/images/art16.jpg"
                     class="h-12 w-12 rounded-full object-cover"
                 />
-                <p class="text-sm font-bold">細胞小將</p>
+                <p class="text-sm font-bold xl:text-base">細胞小將</p>
             </div>
             <p class="flex items-center gap-2 pr-2 xl:pr-0">
                 <i class="fa-brands fa-ethereum"></i>

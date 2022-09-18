@@ -55,7 +55,7 @@
                                 type="text"
                                 name="search"
                                 id="search"
-                                class="mx-4 hidden w-full grow border-0 bg-transparent text-[14px] text-gray-dark outline-none"
+                                class="mx-4 hidden w-full grow border-0 bg-transparent text-sm text-gray-dark outline-none"
                                 placeholder="搜尋作品名稱、藝術家名稱"
                             />
                             <button
@@ -107,18 +107,22 @@
                         >
                             市值
                         </a>
-                        <a class="group xl:py-10 xl:px-12" id="wallet-btn">
+                        <button
+                            type="button"
+                            class="group xl:py-10 xl:px-12"
+                            id="wallet-btn"
+                        >
                             <i
                                 class="fa-solid fa-wallet text-[1.5rem] xl:font-bold xl:group-hover:text-primary"
                             >
                             </i>
-                        </a>
+                        </button>
                     </nav>
                 </div>
             </div>
 
             <nav
-                class="absolute top-[calc(100%+1px)] left-0 right-0 hidden bg-white px-3 py-6 text-center xl:hidden"
+                class="absolute top-[calc(100%+1px)] left-0 right-0 hidden bg-white px-3 py-6 text-center text-lg xl:hidden"
                 id="mobile-nav-menu"
             >
                 <a
@@ -129,25 +133,25 @@
                 <a href="./market-value.html" class="my-6 block font-bold"
                     >市值</a
                 >
-                <a
+                <button
+                    type="button"
                     id="mobile-wallet-btn"
-                    class="block border border-black bg-primary py-3 text-white"
-                    >連結錢包</a
+                    class="block w-full border border-black bg-primary py-3 text-white"
                 >
+                    連結錢包
+                </button>
             </nav>
         </header>
 
         <div
             id="wallet-modal"
-            class="pointer-events-none fixed inset-0 z-20 bg-black/[.65] opacity-0 md:grid md:place-items-center"
+            class="pointer-events-none fixed inset-0 z-20 -translate-x-full bg-black/[.65] opacity-0 transition-all duration-200 md:grid md:translate-x-0 md:place-items-center"
         >
             <div
                 class="flex h-full w-full flex-col bg-white md:h-auto md:max-w-[500px]"
             >
                 <div class="flex border-b border-gray-dark px-3 py-4">
-                    <p class="ml-auto text-[1.25rem] leading-none">
-                        連結你的錢包
-                    </p>
+                    <p class="ml-auto text-xl leading-none">連結你的錢包</p>
                     <button
                         type="button"
                         class="ml-auto"
@@ -167,7 +171,7 @@
                                     src="./assets/images/logo/connect01.png"
                                     class="h-4 w-4 object-cover"
                                 />
-                                <span class="font-squareOne leading-none">
+                                <span class="font-squareOne text-tiny">
                                     MetaMask
                                 </span>
                                 <i
@@ -184,7 +188,7 @@
                                     src="./assets/images/logo/connect02.png"
                                     class="h-4 w-4 object-cover"
                                 />
-                                <span class="font-squareOne leading-none">
+                                <span class="font-squareOne text-tiny">
                                     Coinbase Wallet
                                 </span>
                                 <i
@@ -201,7 +205,7 @@
                                     src="./assets/images/logo/connect03.png"
                                     class="h-4 w-4 object-cover"
                                 />
-                                <span class="font-squareOne leading-none">
+                                <span class="font-squareOne text-tiny">
                                     WalletConnect
                                 </span>
                                 <i
@@ -218,7 +222,7 @@
                                     src="./assets/images/logo/connect04.png"
                                     class="h-4 w-4 object-cover"
                                 />
-                                <span class="font-squareOne leading-none">
+                                <span class="font-squareOne text-tiny">
                                     Phantom
                                 </span>
                                 <i
@@ -235,7 +239,7 @@
                                     src="./assets/images/logo/connect05.png"
                                     class="h-4 w-4 object-cover"
                                 />
-                                <span class="font-squareOne leading-none">
+                                <span class="font-squareOne text-tiny">
                                     Glow
                                 </span>
                                 <i
@@ -252,7 +256,7 @@
                                     src="./assets/images/logo/connect06.png"
                                     class="h-4 w-4 object-cover"
                                 />
-                                <span class="font-squareOne leading-none">
+                                <span class="font-squareOne text-tiny">
                                     Fortmatic
                                 </span>
                                 <i
@@ -263,7 +267,7 @@
                     </ul>
                     <button
                         type="button"
-                        class="mt-auto bg-primary py-3 text-white md:mt-6 md:self-center md:px-12 md:py-2 md:hover:bg-primary/90"
+                        class="-mx-3 mt-auto bg-primary py-3 text-lg text-white md:mt-6 md:self-center md:px-12 md:py-2 md:hover:bg-primary/90"
                     >
                         連結錢包
                     </button>
@@ -281,18 +285,18 @@
                 class="relative h-[238px] bg-[url('../images/art01.jpg')] bg-cover bg-center md:h-[350px] xl:col-span-8 xl:h-[500px]"
             >
                 <h2
-                    class="hidden bg-black text-[3rem] leading-none text-white xl:absolute xl:top-0 xl:left-0 xl:bottom-0 xl:block xl:px-6 xl:text-center xl:[writing-mode:vertical-rl]"
+                    class="hidden bg-black text-white xl:absolute xl:top-0 xl:left-0 xl:bottom-0 xl:block xl:px-6 xl:text-center xl:[writing-mode:vertical-rl]"
                 >
-                    <span class="font-squareOne">Recommend</span>
-                    <span class="text-[1.25rem] font-bold"> 推薦系列 </span>
+                    <span class="font-squareOne xl:text-5xl">Recommend</span>
+                    <span class="font-bold xl:text-xl"> 推薦系列 </span>
                 </h2>
             </div>
             <div
                 class="grid py-8 px-3 xl:col-span-4 xl:content-between xl:p-6 xl:pt-20"
             >
                 <div>
-                    <p class="font-squareOne">Kemus Wu</p>
-                    <h1 class="mt-2 text-[1.5rem] font-bold xl:text-[3rem]">
+                    <p class="font-squareOne text-md">Kemus Wu</p>
+                    <h1 class="mt-2 text-2xl font-bold xl:text-6xl">
                         瞳孔:流動的脈絡
                     </h1>
                     <div class="mt-6">
@@ -325,15 +329,17 @@
                 class="grid px-3 pt-8 pb-6 md:content-between md:px-6 md:pt-10 xl:pt-12"
             >
                 <div>
-                    <p class="font-squareOne">Joanne</p>
-                    <h3 class="mt-2 text-[1.5rem] font-bold">海洋波度</h3>
+                    <p class="font-squareOne text-md">Joanne</p>
+                    <h3 class="mt-2 text-2xl font-bold xl:text-4xl">
+                        海洋波度
+                    </h3>
                     <p class="mt-6">
                         海洋的奧秘向我們揭示了深不可測的一面，它的深度——反映了我們的恐懼、同時也吸引著我們。
                     </p>
                 </div>
                 <button
                     type="button"
-                    class="btn btn-primary btn-outline group relative justify-self-end"
+                    class="btn btn-primary btn-outline group relative mt-6 justify-self-end"
                 >
                     MORE
                     <span class="decoration"></span>
@@ -354,8 +360,10 @@
                 class="grid px-3 pt-8 pb-6 md:col-start-1 md:mx-0 md:content-between md:px-6 md:pt-10 xl:col-start-3 xl:pt-12"
             >
                 <div>
-                    <p class="font-squareOne">Michael</p>
-                    <h3 class="mt-2 text-[1.5rem] font-bold">我家窗前的鳥</h3>
+                    <p class="font-squareOne text-md">Michael</p>
+                    <h3 class="mt-2 text-2xl font-bold xl:text-4xl">
+                        我家窗前的鳥
+                    </h3>
                     <p class="my-6">
                         家門前每天都有不同的小鳥，大多數的小鳥都有特殊能力，特殊能力是什麼我就不說了，希望大家能從作品感受到小鳥的快樂。
                     </p>
@@ -381,12 +389,11 @@
             class="mb-6 flex items-end justify-between border-b border-black xl:mb-12"
         >
             <h2 class="mb-2 md:mb-3 xl:mb-4">
-                <span
-                    class="font-squareOne text-[2rem] leading-none md:text-[2.5rem] xl:text-[3rem]"
+                <span class="font-squareOne text-3xl leading-none xl:text-5xl"
                     >Ranking</span
                 >
                 <span
-                    class="hidden text-[1.25rem] font-bold leading-normal xl:ml-4 xl:inline-block"
+                    class="hidden font-bold leading-normal xl:ml-4 xl:inline-block xl:text-xl"
                 >
                     市價排行榜
                 </span>
@@ -402,7 +409,7 @@
             <li class="hidden border border-black xl:block">
                 <div class="group relative">
                     <div
-                        class="absolute top-0 left-0 z-[1] h-16 w-16 border-r border-b border-black bg-white p-2 text-center text-[2rem] font-bold"
+                        class="absolute top-0 left-0 z-[1] h-16 w-16 border-r border-b border-black bg-white p-2 text-center font-bold xl:text-4xl"
                     >
                         1
                     </div>
@@ -422,10 +429,12 @@
                         class="h-[374px] w-full object-cover object-top"
                     />
                 </div>
-                <h3 class="border-t border-b border-black p-4 font-bold">
+                <h3
+                    class="border-t border-b border-black p-4 text-lg font-bold"
+                >
                     散步遇到的女人
                 </h3>
-                <div class="flex justify-between px-4 py-2 leading-none">
+                <div class="flex justify-between px-4 py-2 text-tiny">
                     <p class="font-squareOne">Zoe Jiang</p>
                     <p>
                         <i class="fa-brands fa-ethereum mr-2"></i>
@@ -436,7 +445,7 @@
             <li class="hidden border border-black xl:block">
                 <div class="group relative">
                     <div
-                        class="absolute top-0 left-0 z-[1] h-16 w-16 border-r border-b border-black bg-white p-2 text-center text-[2rem] font-bold"
+                        class="absolute top-0 left-0 z-[1] h-16 w-16 border-r border-b border-black bg-white p-2 text-center font-bold xl:text-4xl"
                     >
                         2
                     </div>
@@ -456,10 +465,12 @@
                         class="h-[374px] w-full object-cover object-top"
                     />
                 </div>
-                <h3 class="border-t border-b border-black p-4 font-bold">
+                <h3
+                    class="border-t border-b border-black p-4 text-lg font-bold"
+                >
                     爆炸頭的母親
                 </h3>
-                <div class="flex justify-between px-4 py-2 leading-none">
+                <div class="flex justify-between px-4 py-2 text-tiny">
                     <p class="font-squareOne">Yui</p>
                     <p>
                         <i class="fa-brands fa-ethereum mr-2"></i>
@@ -467,11 +478,10 @@
                     </p>
                 </div>
             </li>
-
             <li class="hidden border border-black xl:block">
                 <div class="group relative">
                     <div
-                        class="absolute top-0 left-0 z-[1] h-16 w-16 border-r border-b border-black bg-white p-2 text-center text-[2rem] font-bold"
+                        class="absolute top-0 left-0 z-[1] h-16 w-16 border-r border-b border-black bg-white p-2 text-center font-bold xl:text-4xl"
                     >
                         3
                     </div>
@@ -502,11 +512,10 @@
                     </p>
                 </div>
             </li>
-
             <li
                 class="group grid grid-cols-[auto,87px,1fr] items-center overflow-hidden border border-black xl:hidden"
             >
-                <p class="px-4 text-[1.5rem] font-bold leading-none">1</p>
+                <p class="px-4 text-2xl font-bold leading-none">1</p>
                 <div class="relative h-full border-r border-l border-black">
                     <img
                         src="./assets/images/art04.jpg"
@@ -522,8 +531,10 @@
                     </a>
                 </div>
                 <div class="grid items-center">
-                    <p class="border-b border-black p-4">散步遇到的女人</p>
-                    <div class="flex justify-between py-2 px-4">
+                    <p class="border-b border-black p-4 text-lg font-bold">
+                        散步遇到的女人
+                    </p>
+                    <div class="flex justify-between py-2 px-4 text-tiny">
                         <p class="font-squareOne">Zoe Jiang</p>
                         <p>
                             <i class="fa-brands fa-ethereum mr-2"></i>
@@ -535,7 +546,7 @@
             <li
                 class="group grid grid-cols-[auto,87px,1fr] items-center overflow-hidden border border-black xl:hidden"
             >
-                <p class="px-4 text-[1.5rem] font-bold leading-none">2</p>
+                <p class="px-4 text-2xl font-bold leading-none">2</p>
                 <div class="relative h-full border-r border-l border-black">
                     <img
                         src="./assets/images/art05.jpg"
@@ -551,8 +562,10 @@
                     </a>
                 </div>
                 <div class="grid items-center">
-                    <p class="border-b border-black p-4">爆炸頭的母親</p>
-                    <div class="flex justify-between py-2 px-4">
+                    <p class="border-b border-black p-4 text-lg font-bold">
+                        爆炸頭的母親
+                    </p>
+                    <div class="flex justify-between py-2 px-4 text-tiny">
                         <p class="font-squareOne">Yui</p>
                         <p>
                             <i class="fa-brands fa-ethereum mr-2"></i>
@@ -564,7 +577,7 @@
             <li
                 class="group grid grid-cols-[auto,87px,1fr] items-center overflow-hidden border border-black xl:hidden"
             >
-                <p class="px-4 text-[1.5rem] font-bold leading-none">3</p>
+                <p class="px-4 text-2xl font-bold leading-none">3</p>
                 <div class="relative h-full border-r border-l border-black">
                     <img
                         src="./assets/images/art06.jpg"
@@ -580,8 +593,10 @@
                     </a>
                 </div>
                 <div class="grid items-center">
-                    <p class="border-b border-black p-4">夏天的時候</p>
-                    <div class="flex justify-between py-2 px-4">
+                    <p class="border-b border-black p-4 font-bold">
+                        夏天的時候
+                    </p>
+                    <div class="flex justify-between py-2 px-4 text-tiny">
                         <p class="font-squareOne">Bug Lin</p>
                         <p>
                             <i class="fa-brands fa-ethereum mr-2"></i>
@@ -593,7 +608,7 @@
             <li
                 class="group grid grid-cols-[auto,87px,1fr] items-center overflow-hidden border border-black"
             >
-                <p class="px-4 text-[1.5rem] font-bold leading-none">4</p>
+                <p class="px-4 text-2xl font-bold leading-none">4</p>
                 <div class="relative h-full border-r border-l border-black">
                     <img
                         src="./assets/images/art29.jpg"
@@ -602,15 +617,17 @@
                     />
                     <a
                         href="#"
-                        class="group-ho absolute inset-0 grid translate-y-full place-items-center bg-black/70 font-squareOne text-white transition-transform duration-200 md:group-hover:translate-y-0"
+                        class="absolute inset-0 grid translate-y-full place-items-center bg-black/70 font-squareOne text-white transition-transform duration-200 md:group-hover:translate-y-0"
                     >
                         MORE
                         <span class="decoration"></span>
                     </a>
                 </div>
                 <div class="grid items-center">
-                    <p class="border-b border-black p-4">追求者送我的花</p>
-                    <div class="flex justify-between py-2 px-4">
+                    <p class="border-b border-black p-4 text-lg font-bold">
+                        追求者送我的花
+                    </p>
+                    <div class="flex justify-between py-2 px-4 text-tiny">
                         <p class="font-squareOne">Michael</p>
                         <p>
                             <i class="fa-brands fa-ethereum mr-2"></i>
@@ -622,7 +639,7 @@
             <li
                 class="group grid grid-cols-[auto,87px,1fr] items-center overflow-hidden border border-black"
             >
-                <p class="px-4 text-[1.5rem] font-bold leading-none">5</p>
+                <p class="px-4 text-2xl font-bold leading-none">5</p>
                 <div class="relative h-full border-r border-l border-black">
                     <img
                         src="./assets/images/art07.jpg"
@@ -631,15 +648,17 @@
                     />
                     <a
                         href="#"
-                        class="group-ho absolute inset-0 grid translate-y-full place-items-center bg-black/70 font-squareOne text-white transition-transform duration-200 md:group-hover:translate-y-0"
+                        class="absolute inset-0 grid translate-y-full place-items-center bg-black/70 font-squareOne text-white transition-transform duration-200 md:group-hover:translate-y-0"
                     >
                         MORE
                         <span class="decoration"></span>
                     </a>
                 </div>
                 <div class="grid items-center">
-                    <p class="border-b border-black p-4">今天釣到的魚</p>
-                    <div class="flex justify-between py-2 px-4">
+                    <p class="border-b border-black p-4 text-lg font-bold">
+                        今天釣到的魚
+                    </p>
+                    <div class="flex justify-between py-2 px-4 text-tiny">
                         <p class="font-squareOne">Wei JJ</p>
                         <p>
                             <i class="fa-brands fa-ethereum mr-2"></i>
@@ -651,7 +670,7 @@
             <li
                 class="group grid grid-cols-[auto,87px,1fr] items-center overflow-hidden border border-black"
             >
-                <p class="px-4 text-[1.5rem] font-bold leading-none">6</p>
+                <p class="px-4 text-2xl font-bold leading-none">6</p>
                 <div class="relative h-full border-r border-l border-black">
                     <img
                         src="./assets/images/art08.jpg"
@@ -660,15 +679,17 @@
                     />
                     <a
                         href="#"
-                        class="group-ho absolute inset-0 grid translate-y-full place-items-center bg-black/70 font-squareOne text-white transition-transform duration-200 md:group-hover:translate-y-0"
+                        class="absolute inset-0 grid translate-y-full place-items-center bg-black/70 font-squareOne text-white transition-transform duration-200 md:group-hover:translate-y-0"
                     >
                         MORE
                         <span class="decoration"></span>
                     </a>
                 </div>
                 <div class="grid items-center">
-                    <p class="border-b border-black p-4">人生中的貓咪們</p>
-                    <div class="flex justify-between py-2 px-4">
+                    <p class="border-b border-black p-4 text-lg font-bold">
+                        人生中的貓咪們
+                    </p>
+                    <div class="flex justify-between py-2 px-4 text-tiny">
                         <p class="font-squareOne">Even Lai</p>
                         <p>
                             <i class="fa-brands fa-ethereum mr-2"></i>
@@ -690,13 +711,8 @@
             class="mb-6 flex items-end justify-between border-b border-black xl:mb-12"
         >
             <h2 class="mb-2 md:mb-3 xl:mb-4">
-                <span
-                    class="font-squareOne text-[2rem] leading-none md:text-[2.5rem] xl:text-[3rem]"
-                    >Artist</span
-                >
-                <span
-                    class="hidden text-[1.25rem] font-bold leading-normal xl:ml-4 xl:inline-block"
-                >
+                <span class="font-squareOne text-3xl xl:text-5xl">Artist</span>
+                <span class="hidden text-xl font-bold xl:ml-4 xl:inline-block">
                     熱門藝術家
                 </span>
             </h2>
@@ -718,13 +734,13 @@
                             alt="Christopher Robinson is painting"
                         />
                         <h4
-                            class="artist-name absolute top-6 left-6 font-squareOne text-[2rem] font-bold leading-none text-white xl:text-[5rem]"
+                            class="artist-name absolute top-6 left-6 font-squareOne text-3xl font-bold text-white xl:text-7xl"
                         >
                             Christopher Robinson
                         </h4>
                         <a
                             href="./showcase.html"
-                            class="artist-more-btn btn-primary btn-outline group absolute bottom-2 right-2 xl:bottom-6"
+                            class="artist-more-btn btn-primary btn-outline group absolute bottom-2 right-2 bg-white xl:bottom-6"
                         >
                             MORE <span class="decoration"></span>
                         </a>
@@ -745,13 +761,13 @@
                             alt="Antony Wu shows his paint project"
                         />
                         <h4
-                            class="artist-name absolute top-6 left-6 font-squareOne text-[2rem] font-bold leading-none text-white xl:text-[5rem]"
+                            class="artist-name absolute top-6 left-6 font-squareOne text-3xl font-bold text-white xl:text-7xl"
                         >
                             Antony Wu
                         </h4>
                         <a
                             href="./showcase.html"
-                            class="artist-more-btn btn-primary btn-outline group absolute bottom-2 right-2 xl:bottom-6"
+                            class="artist-more-btn btn-primary btn-outline group absolute bottom-2 right-2 bg-white xl:bottom-6"
                         >
                             MORE <span class="decoration"></span>
                         </a>
@@ -773,13 +789,13 @@
                             alt="John Wick is looking at the sky"
                         />
                         <h4
-                            class="artist-name absolute top-6 left-6 font-squareOne text-[2rem] font-bold leading-none text-white xl:text-[5rem]"
+                            class="artist-name absolute top-6 left-6 font-squareOne text-3xl font-bold text-white xl:text-7xl"
                         >
                             John Wick
                         </h4>
                         <a
                             href="./showcase.html"
-                            class="artist-more-btn btn-primary btn-outline group absolute bottom-2 right-2 xl:bottom-6"
+                            class="artist-more-btn btn-primary btn-outline group absolute bottom-2 right-2 bg-white xl:bottom-6"
                         >
                             MORE <span class="decoration"></span>
                         </a>
@@ -800,13 +816,13 @@
                             alt="Sharon Ng is painting"
                         />
                         <h4
-                            class="artist-name absolute top-6 left-6 font-squareOne text-[2rem] font-bold leading-none text-white xl:text-[5rem]"
+                            class="artist-name absolute top-6 left-6 font-squareOne text-3xl font-bold text-white xl:text-7xl"
                         >
                             Sharon Ng
                         </h4>
                         <a
                             href="./showcase.html"
-                            class="artist-more-btn btn-primary btn-outline group absolute bottom-2 right-2 xl:bottom-6"
+                            class="artist-more-btn btn-primary btn-outline group absolute bottom-2 right-2 bg-white xl:bottom-6"
                         >
                             MORE <span class="decoration"></span>
                         </a>
@@ -834,13 +850,10 @@
             class="mb-6 flex items-end justify-between border-b border-black xl:mb-12"
         >
             <h2 class="mb-2 md:mb-3 xl:mb-4">
-                <span
-                    class="font-squareOne text-[2rem] font-bold leading-none xl:text-[3rem]"
+                <span class="font-squareOne text-3xl font-bold xl:text-5xl"
                     >Artwork</span
                 >
-                <span
-                    class="hidden text-[1.25rem] leading-normal xl:ml-4 xl:inline-block"
-                >
+                <span class="hidden text-xl xl:ml-4 xl:inline-block">
                     最新藝術品
                 </span>
             </h2>
@@ -883,7 +896,7 @@
                             </div>
                             <button
                                 type="button"
-                                class="btn-primary btn-outline relative justify-self-end"
+                                class="btn-primary btn-outline relative justify-self-end bg-white"
                             >
                                 MORE<span class="decoration"></span>
                             </button>
@@ -891,7 +904,7 @@
                     </div>
                 </div>
                 <h3
-                    class="p-2 text-[14px] font-bold md:py-4 md:px-0 md:text-base"
+                    class="p-2 text-sm font-bold md:text-base md:text-base xl:py-4 xl:px-0 xl:text-base"
                 >
                     區塊戀-他的私生活
                 </h3>
@@ -922,7 +935,7 @@
                             </div>
                             <button
                                 type="button"
-                                class="btn-primary btn-outline relative justify-self-end"
+                                class="btn-primary btn-outline relative justify-self-end bg-white"
                             >
                                 MORE<span class="decoration"></span>
                             </button>
@@ -930,15 +943,15 @@
                     </div>
                 </div>
                 <h3
-                    class="p-2 text-[14px] font-bold md:py-4 md:px-0 md:text-base"
+                    class="p-2 text-sm font-bold md:text-base md:text-base xl:py-4 xl:px-0"
                 >
                     夏娃的醜聞
                 </h3>
             </li>
             <li
-                class="artwork-item mb-4 w-[calc(50%-.75rem)] border-black md:w-[calc(33.33%-1rem)] md:border-b xl:mb-12 xl:w-[calc(25%-18px)]"
+                class="artwork-item mb-4 w-[calc(50%-.75rem)] border-black md:mb-8 md:w-[calc(33.33%-1rem)] md:border-b xl:mb-12 xl:w-[calc(25%-18px)]"
             >
-                <div class="group relative bg-white p-2 md:p-6">
+                <div class="group relative bg-white p-2 xl:p-6">
                     <img
                         src="./assets/images/art02.jpg"
                         alt="藍色啤酒海"
@@ -961,17 +974,21 @@
                             </div>
                             <button
                                 type="button"
-                                class="btn-primary btn-outline relative justify-self-end"
+                                class="btn-primary btn-outline relative justify-self-end bg-white"
                             >
                                 MORE<span class="decoration"></span>
                             </button>
                         </div>
                     </div>
                 </div>
-                <h3 class="p-2 text-[14px]">藍色啤酒海</h3>
+                <h3
+                    class="p-2 text-sm font-bold md:text-base md:text-base xl:py-4 xl:px-0"
+                >
+                    藍色啤酒海
+                </h3>
             </li>
             <li
-                class="artwork-item mb-4 w-[calc(50%-.75rem)] border-black md:mb-8 md:w-[calc(33.33%-1rem)] xl:mb-12 xl:w-[calc(25%-18px)] xl:border-b"
+                class="artwork-item mb-4 w-[calc(50%-.75rem)] border-black md:mb-8 md:w-[calc(33.33%-1rem)] md:border-b xl:mb-12 xl:w-[calc(25%-18px)]"
             >
                 <div class="group relative bg-white p-2 xl:p-6">
                     <img
@@ -980,10 +997,10 @@
                         class="h-[169px] w-full object-cover md:h-[210px]"
                     />
                     <div
-                        class="hidden md:absolute md:inset-0 md:m-6 md:bg-black/70 md:p-4 md:group-hover:block"
+                        class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
                     >
                         <div
-                            class="grid md:h-full md:content-between md:border md:border-white md:p-4"
+                            class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
                         >
                             <div class="text-white">
                                 <p class="mb-4">
@@ -996,7 +1013,7 @@
                             </div>
                             <button
                                 type="button"
-                                class="btn-primary btn-outline relative justify-self-end"
+                                class="btn-primary btn-outline relative justify-self-end bg-white"
                             >
                                 MORE<span class="decoration"></span>
                             </button>
@@ -1004,13 +1021,13 @@
                     </div>
                 </div>
                 <h3
-                    class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
+                    class="p-2 text-sm font-bold md:text-base md:text-base xl:py-4 xl:px-0"
                 >
                     沒有人愛我
                 </h3>
             </li>
             <li
-                class="artwork-item w-[calc(50%-.75rem)] border-black md:w-[calc(33.33%-1rem)] md:border-b xl:w-[calc(25%-18px)]"
+                class="artwork-item w-[calc(50%-.75rem)] border-black md:mb-8 md:w-[calc(33.33%-1rem)] md:border-b xl:w-[calc(25%-18px)]"
             >
                 <div class="group relative bg-white p-2 xl:p-6">
                     <img
@@ -1035,7 +1052,7 @@
                             </div>
                             <button
                                 type="button"
-                                class="btn-primary btn-outline relative justify-self-end"
+                                class="btn-primary btn-outline relative justify-self-end bg-white"
                             >
                                 MORE<span class="decoration"></span>
                             </button>
@@ -1043,13 +1060,13 @@
                     </div>
                 </div>
                 <h3
-                    class="p-2 text-[14px] font-bold md:py-4 md:px-0 md:text-base"
+                    class="p-2 text-sm font-bold md:text-base md:text-base xl:py-4 xl:px-0"
                 >
                     不哭不哭眼淚是珍珠
                 </h3>
             </li>
             <li
-                class="artwork-item w-[calc(50%-.75rem)] border-black md:w-[calc(33.33%-1rem)] md:border-b xl:w-[calc(25%-18px)]"
+                class="artwork-item w-[calc(50%-.75rem)] border-black md:mb-8 md:w-[calc(33.33%-1rem)] md:border-b xl:w-[calc(25%-18px)]"
             >
                 <div class="group relative bg-white p-2 xl:p-6">
                     <img
@@ -1074,7 +1091,7 @@
                             </div>
                             <button
                                 type="button"
-                                class="btn-primary btn-outline relative justify-self-end"
+                                class="btn-primary btn-outline relative justify-self-end bg-white"
                             >
                                 MORE<span class="decoration"></span>
                             </button>
@@ -1082,13 +1099,13 @@
                     </div>
                 </div>
                 <h3
-                    class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
+                    class="p-2 text-sm font-bold md:text-base md:text-base xl:py-4 xl:px-0"
                 >
                     十分鐘就到
                 </h3>
             </li>
             <li
-                class="artwork-item hidden w-[calc(50%-.75rem)] border-black md:w-[calc(33.33%-1rem)] xl:block xl:w-[calc(25%-18px)] xl:border-b"
+                class="artwork-item hidden w-[calc(50%-.75rem)] border-black md:block md:w-[calc(33.33%-1rem)] md:border-b xl:w-[calc(25%-18px)]"
             >
                 <div class="group relative bg-white p-2 xl:p-6">
                     <img
@@ -1097,10 +1114,10 @@
                         class="h-[395px] w-full object-cover"
                     />
                     <div
-                        class="hidden md:absolute md:inset-0 md:m-6 md:bg-black/70 md:p-4 md:group-hover:block"
+                        class="hidden xl:absolute xl:inset-0 xl:m-6 xl:bg-black/70 xl:p-4 xl:group-hover:block"
                     >
                         <div
-                            class="grid md:h-full md:content-between md:border md:border-white md:p-4"
+                            class="grid xl:h-full xl:content-between xl:border xl:border-white xl:p-4"
                         >
                             <div class="text-white">
                                 <p class="mb-4">
@@ -1113,7 +1130,7 @@
                             </div>
                             <button
                                 type="button"
-                                class="btn-primary btn-outline relative justify-self-end"
+                                class="btn-primary btn-outline relative justify-self-end bg-white"
                             >
                                 MORE<span class="decoration"></span>
                             </button>
@@ -1122,13 +1139,13 @@
                 </div>
 
                 <h3
-                    class="p-2 text-[14px] font-bold md:py-4 md:px-0 md:text-base"
+                    class="p-2 text-sm font-bold md:text-base md:text-base xl:py-4 xl:px-0"
                 >
                     我這樣有美嗎
                 </h3>
             </li>
             <li
-                class="artwork-item hidden w-[calc(50%-.75rem)] border-black xl:block xl:w-[calc(25%-18px)] xl:border-b"
+                class="artwork-item hidden w-[calc(50%-.75rem)] border-black md:block md:w-[calc(33.33%-1rem)] md:border-b xl:w-[calc(25%-18px)]"
             >
                 <div class="group relative bg-white p-2 xl:p-6">
                     <img
@@ -1153,7 +1170,7 @@
                             </div>
                             <button
                                 type="button"
-                                class="btn-primary btn-outline relative justify-self-end"
+                                class="btn-primary btn-outline relative justify-self-end bg-white"
                             >
                                 MORE<span class="decoration"></span>
                             </button>
@@ -1161,7 +1178,7 @@
                     </div>
                 </div>
                 <h3
-                    class="p-2 text-[14px] font-bold xl:py-4 xl:px-0 xl:text-base"
+                    class="p-2 text-sm font-bold md:text-base md:text-base xl:py-4 xl:px-0"
                 >
                     我真的受傷了
                 </h3>
@@ -1169,10 +1186,12 @@
         </ul>
     </section>
 
-    <section class="mt-12 xl:mt-20" data-aos="fade-up" data-aos-duration="400">
+    <section class="mt-12 xl:mt-20">
         <div class="border-b-4 border-black pb-8 text-center">
-            <h2 class="mb-4 text-[2rem] font-bold leading-none">Join Us</h2>
-            <h3 class="text-[1.25rem] font-bold">創建並出售你的藝術品</h3>
+            <h2 class="mb-4 text-3xl font-bold leading-none xl:text-5xl">
+                Join Us
+            </h2>
+            <h3 class="text-xl font-bold">創建並出售你的藝術品</h3>
         </div>
         <div class="mt-2 border-t border-black py-12 md:py-16 xl:py-20">
             <div class="container">
@@ -1183,7 +1202,7 @@
                         <i
                             class="fa-solid fa-wallet text-[2.5rem] text-primary"
                         ></i>
-                        <h3 class="mt-4 font-bold">設置你的錢包</h3>
+                        <h3 class="mt-4 text-lg font-bold">設置你的錢包</h3>
                         <p class="mt-6">
                             設置好您選擇的錢包後<br />點擊右上角的錢包圖標進行連接
                         </p>
@@ -1192,7 +1211,7 @@
                         <i
                             class="fa-solid fa-pen-ruler text-[2.5rem] text-primary"
                         ></i>
-                        <h3 class="mt-4 font-bold">創建您的主頁</h3>
+                        <h3 class="mt-4 text-lg font-bold">創建您的主頁</h3>
                         <p class="mt-6">
                             註冊成為會員，編輯您的資料<br />讓大家了解你
                         </p>
@@ -1201,14 +1220,14 @@
                         <i
                             class="fa-solid fa-icons text-[2.5rem] text-primary"
                         ></i>
-                        <h3 class="mt-4 font-bold">添加你的 NFT</h3>
+                        <h3 class="mt-4 text-lg font-bold">添加你的 NFT</h3>
                         <p class="mt-6">上傳你的作品<br />添加標題和描述</p>
                     </li>
                     <li class="text-center">
                         <i
                             class="fa-solid fa-tags text-[2.5rem] text-primary"
                         ></i>
-                        <h3 class="mt-4 font-bold">列出它們出售</h3>
+                        <h3 class="mt-4 text-lg font-bold">列出它們出售</h3>
 
                         <p class="mt-6">
                             選擇出售 NFT 的方式<br />並設定價格，等待有緣人
