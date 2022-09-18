@@ -215,6 +215,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const walletModal = document.querySelector("#wallet-modal");
         walletModal.classList.toggle("pointer-events-none");
         walletModal.classList.toggle("opacity-0");
+        walletModal.classList.toggle("-translate-x-full");
     };
 
     walletBtn.addEventListener("click", toggleWalletModal);

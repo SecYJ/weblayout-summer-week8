@@ -55,7 +55,7 @@
                                 type="text"
                                 name="search"
                                 id="search"
-                                class="mx-4 hidden w-full grow border-0 bg-transparent text-[14px] text-gray-dark outline-none"
+                                class="mx-4 hidden w-full grow border-0 bg-transparent text-sm text-gray-dark outline-none"
                                 placeholder="搜尋作品名稱、藝術家名稱"
                             />
                             <button
@@ -107,18 +107,22 @@
                         >
                             市值
                         </a>
-                        <a class="group xl:py-10 xl:px-12" id="wallet-btn">
+                        <button
+                            type="button"
+                            class="group xl:py-10 xl:px-12"
+                            id="wallet-btn"
+                        >
                             <i
                                 class="fa-solid fa-wallet text-[1.5rem] xl:font-bold xl:group-hover:text-primary"
                             >
                             </i>
-                        </a>
+                        </button>
                     </nav>
                 </div>
             </div>
 
             <nav
-                class="absolute top-[calc(100%+1px)] left-0 right-0 hidden bg-white px-3 py-6 text-center xl:hidden"
+                class="absolute top-[calc(100%+1px)] left-0 right-0 hidden bg-white px-3 py-6 text-center text-lg xl:hidden"
                 id="mobile-nav-menu"
             >
                 <a
@@ -129,25 +133,25 @@
                 <a href="./market-value.html" class="my-6 block font-bold"
                     >市值</a
                 >
-                <a
+                <button
+                    type="button"
                     id="mobile-wallet-btn"
-                    class="block border border-black bg-primary py-3 text-white"
-                    >連結錢包</a
+                    class="block w-full border border-black bg-primary py-3 text-white"
                 >
+                    連結錢包
+                </button>
             </nav>
         </header>
 
         <div
             id="wallet-modal"
-            class="pointer-events-none fixed inset-0 z-20 bg-black/[.65] opacity-0 md:grid md:place-items-center"
+            class="pointer-events-none fixed inset-0 z-20 -translate-x-full bg-black/[.65] opacity-0 transition-all duration-200 md:grid md:translate-x-0 md:place-items-center"
         >
             <div
                 class="flex h-full w-full flex-col bg-white md:h-auto md:max-w-[500px]"
             >
                 <div class="flex border-b border-gray-dark px-3 py-4">
-                    <p class="ml-auto text-[1.25rem] leading-none">
-                        連結你的錢包
-                    </p>
+                    <p class="ml-auto text-xl leading-none">連結你的錢包</p>
                     <button
                         type="button"
                         class="ml-auto"
@@ -167,7 +171,7 @@
                                     src="./assets/images/logo/connect01.png"
                                     class="h-4 w-4 object-cover"
                                 />
-                                <span class="font-squareOne leading-none">
+                                <span class="font-squareOne text-tiny">
                                     MetaMask
                                 </span>
                                 <i
@@ -184,7 +188,7 @@
                                     src="./assets/images/logo/connect02.png"
                                     class="h-4 w-4 object-cover"
                                 />
-                                <span class="font-squareOne leading-none">
+                                <span class="font-squareOne text-tiny">
                                     Coinbase Wallet
                                 </span>
                                 <i
@@ -201,7 +205,7 @@
                                     src="./assets/images/logo/connect03.png"
                                     class="h-4 w-4 object-cover"
                                 />
-                                <span class="font-squareOne leading-none">
+                                <span class="font-squareOne text-tiny">
                                     WalletConnect
                                 </span>
                                 <i
@@ -218,7 +222,7 @@
                                     src="./assets/images/logo/connect04.png"
                                     class="h-4 w-4 object-cover"
                                 />
-                                <span class="font-squareOne leading-none">
+                                <span class="font-squareOne text-tiny">
                                     Phantom
                                 </span>
                                 <i
@@ -235,7 +239,7 @@
                                     src="./assets/images/logo/connect05.png"
                                     class="h-4 w-4 object-cover"
                                 />
-                                <span class="font-squareOne leading-none">
+                                <span class="font-squareOne text-tiny">
                                     Glow
                                 </span>
                                 <i
@@ -252,7 +256,7 @@
                                     src="./assets/images/logo/connect06.png"
                                     class="h-4 w-4 object-cover"
                                 />
-                                <span class="font-squareOne leading-none">
+                                <span class="font-squareOne text-tiny">
                                     Fortmatic
                                 </span>
                                 <i
@@ -263,7 +267,7 @@
                     </ul>
                     <button
                         type="button"
-                        class="mt-auto bg-primary py-3 text-white md:mt-6 md:self-center md:px-12 md:py-2 md:hover:bg-primary/90"
+                        class="-mx-3 mt-auto bg-primary py-3 text-lg text-white md:mt-6 md:self-center md:px-12 md:py-2 md:hover:bg-primary/90"
                     >
                         連結錢包
                     </button>
